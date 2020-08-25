@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>在路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="在路上">
+<meta property="og:url" content="http://www.lushunming.com.cn/page/5/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="machine">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="在路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">在路上</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.lushunming.com.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-web/2016-03-6-6with" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/06/web/2016-03-6-6with/" class="article-date">
+  <time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">2016-03-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/06/web/2016-03-6-6with/">knockoutjs六  with 绑定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs六-with-绑定"><a href="#knockoutjs六-with-绑定" class="headerlink" title="knockoutjs六  with 绑定"></a>knockoutjs六  with 绑定</h1><p>今天要讲的是with绑定，with绑定和if有点相似，用官方文档的说法他的作用是创建了一个上下文，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: city&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">&quot;with: coords&quot;</span>&gt;</span></span><br><span class="line">       Latitude: <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: latitude&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">span</span>&gt;</span>, Longitude: <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: longitude&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">     </span><br><span class="line"><span class="javascript">       <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">           city=ko.observable( <span class="string">&quot;London&quot;</span>);</span></span><br><span class="line">               coords=ko.observable( &#123;</span><br><span class="line">                   latitude: 51.5001524,</span><br><span class="line">                   longitude: -0.1262362</span><br><span class="line">               &#125;);</span><br><span class="line">       &#125;</span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">    </span><br><span class="line">   <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>因为用了with，所以with下面的子元素的节点就不需要使用coords.latitude和coords.longitude了，因为他们这时候的上下文已经切换到了coords下了。</p>
+<p>当然with还有个作用，当with的条件是null或者是undefined，那么下面的子元素就不会加载，如果不空就加载，这样就避免了一些错误，不会当coords是null或者是undefined的时候还调用coords.latitude发生报错。<br>        也可以使用虚节点调用with：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Header element<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ko with: outboundFlight --&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="comment">&lt;!-- /ko --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ko with: inboundFlight --&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="comment">&lt;!-- /ko --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>这次的比较简单，就介绍这么多。代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/06/web/2016-03-6-6with/" data-id="cke8orhtk003g49096m1p4lio" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web/2016-03-5-5if" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/05/web/2016-03-5-5if/" class="article-date">
+  <time datetime="2016-03-04T16:00:00.000Z" itemprop="datePublished">2016-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/05/web/2016-03-5-5if/">knockoutjs五  if的绑定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs五-if的绑定"><a href="#knockoutjs五-if的绑定" class="headerlink" title="knockoutjs五  if的绑定"></a>knockoutjs五  if的绑定</h1><p>今天是大年初一，实在无聊，写点东西，希望大家新的一年有新的收获。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;checked: displayMessage&quot;</span> /&gt;</span> Display message</span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;if: displayMessage&quot;</span>&gt;</span>Here is a message. Astonishing.<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	displayMessage = ko.observable(<span class="literal">false</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>if绑定和visible绑定有点相似的，visible是使用css让节点不显示，但是if是直接隐藏这个标记，不显示出来。大家可以f12查看下，看看他们的不同。</p>
+<p>if绑定是很重要的，不信看看下面的这个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">data-bind</span>=<span class="string">&quot;foreach: planets&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					Planet: <span class="tag">&lt;<span class="name">b</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: name&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;if: capital&quot;</span>&gt;</span></span><br><span class="line">						Capital: <span class="tag">&lt;<span class="name">b</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: capital.cityName&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">planets = ko.observableArray([&#123;</span><br><span class="line"><span class="javascript">					name: <span class="string">&#x27;Mercury&#x27;</span>,</span></span><br><span class="line"><span class="javascript">					capital: <span class="literal">null</span></span></span><br><span class="line">				&#125;, &#123;</span><br><span class="line"><span class="javascript">					name: <span class="string">&#x27;Earth&#x27;</span>,</span></span><br><span class="line">					capital: &#123;</span><br><span class="line"><span class="javascript">						cityName: <span class="string">&#x27;Barnsley&#x27;</span></span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;]);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>数组中第一个capital元素是空的，如果直接绑定那么capital.cityName是会报错的，但是使用capital判断之后，如果是capital是空或者是类空的元素，<br>那么其下的标记是不会显示的，避免了错误。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>This item always appears<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- ko if:displayMessage  --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>I want to make this item present/absent dynamically<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- /ko --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如上，想只判断第二个li元素，如果条件符合就显示，不符合就不显示，但是绑定在ul上会对两个都起作用，<br>这时候用一个虚拟节点，就避免了这个问题，大家要灵活的运用。</p>
+<p>ifnot就是一个否定的if，用法一样，有时候想相反的时候可以用ifnot，还有要记得如果判定条件是一个函数,一定要记得加（），不然返回的是一个函数，是个非空的值，就不起作用了。<br>今天的例子就到这里，比较简单，代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/05/web/2016-03-5-5if/" data-id="cke8orhsi001549095ofze3rk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web/2016-03-4-4Foreach" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/04/web/2016-03-4-4Foreach/" class="article-date">
+  <time datetime="2016-03-03T16:00:00.000Z" itemprop="datePublished">2016-03-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/04/web/2016-03-4-4Foreach/">knockoutjs四  foreach的绑定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs四-foreach的绑定"><a href="#knockoutjs四-foreach的绑定" class="headerlink" title="knockoutjs四  foreach的绑定"></a>knockoutjs四  foreach的绑定</h1><p> 今天要讲的是foreach绑定</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">data-bind</span>=<span class="string">&quot;foreach:people&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:$index()+1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:firstName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:lastName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">     <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line">            self.people = ko.observableArray([</span><br><span class="line"><span class="javascript">                &#123;<span class="attr">firstName</span>: <span class="string">&#x27;Bert&#x27;</span>, <span class="attr">lastName</span>: <span class="string">&#x27;Bertington&#x27;</span>&#125;,</span></span><br><span class="line"><span class="javascript">                &#123;<span class="attr">firstName</span>: <span class="string">&#x27;Charles&#x27;</span>, <span class="attr">lastName</span>: <span class="string">&#x27;Charlesforth&#x27;</span>&#125;,</span></span><br><span class="line"><span class="javascript">                &#123;<span class="attr">firstName</span>: <span class="string">&#x27;Denise&#x27;</span>, <span class="attr">lastName</span>: <span class="string">&#x27;Dentiste&#x27;</span>&#125;</span></span><br><span class="line">            ]);</span><br><span class="line"><span class="javascript">            self.remove = <span class="function"><span class="keyword">function</span> (<span class="params">data,target</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                self.people.remove(<span class="built_in">this</span>);</span></span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">        ko.applyBindings(model);</span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span>   </span><br><span class="line">```    </span><br><span class="line">    </span><br><span class="line">foreach 绑定需要绑定一个数组对象，foreach中的元素就会循环出现，</span><br><span class="line">再看看下面的例子：</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:$index()+1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:$data.firstName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:$data.lastName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">data-bind</span>=<span class="string">&quot;click:$parent.remove &quot;</span>  <span class="attr">href</span>=<span class="string">&#x27;#&#x27;</span> <span class="attr">class</span>=<span class="string">&quot;text-warning&quot;</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>$index代表的是绑定的数组的元素的当前索引，$data代表的是当前循环到的对象，$parent代表的是当前对象的父对象，当前对象是people，父对象是model所以$parent.remove代表的是<br>model中的remove方法，这方法有两个参数：data，target。data对应的是当前对象绑定的数据，比如这个绑定中的data如图：</p>
+<p>target.currentTarget对应的绑定这个方法的对象，当前的例子中如图：</p>
+<p>当然，也可以像jstl中一样取一个别名给当前对象</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tbody</span> <span class="attr">data-bind</span>=<span class="string">&quot;foreach:&#123;data:people , as :&#x27;p&#x27;&#125;&quot;</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:$index()+1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:p.firstName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:p.lastName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">data-bind</span>=<span class="string">&quot;click:$parent.remove &quot;</span> <span class="attr">href</span>=<span class="string">&#x27;#&#x27;</span> <span class="attr">class</span>=<span class="string">&quot;text-warning&quot;</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>今天的例子就到这里，比较简单，代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/04/web/2016-03-4-4Foreach/" data-id="cke8orhsn001b490969xlbc4f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web/2016-03-3-3textAndApperance" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/03/web/2016-03-3-3textAndApperance/" class="article-date">
+  <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/03/web/2016-03-3-3textAndApperance/">knockoutjs三  text和apperance的绑定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs三-text和apperance的绑定"><a href="#knockoutjs三-text和apperance的绑定" class="headerlink" title="knockoutjs三  text和apperance的绑定"></a>knockoutjs三  text和apperance的绑定</h1><p> 由于换了工作，要熟悉新的工作环境，所以没有什么时间做自己的事情，今天开始重新开始继续下面的文章，争取尽早写完</p>
+<pre><code>中间有一部分computed绑定没有写入文章，那是比较高级的用法，开发基本用不到，我在github中有例子，大家想了解
+可以自己去看看。</code></pre>
+<p>首先是visible绑定：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;list-group-item-danger&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: shouldShowMessage&quot;</span>&gt;</span></span><br><span class="line">                    你能看到</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        self.shouldShowMessage = ko.observable(true);</span><br><span class="line">        self.shouldShowMessage1 = ko.observable(false);</span><br><span class="line">        self.shouldShowMessage2 = ko.observable(0);</span><br><span class="line">        self.shouldShowMessage3 = ko.observable(undefined);</span><br><span class="line">        self.shouldShowMessage4 = ko.observable(null);</span><br><span class="line">        self.shouldShowMessage5 = ko.observable(&quot;&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>visible后面的值是类false的值那么该元素就不会显示，比如false，0，undefined，null，“”都是类false的值<br>相反，是类true的值就会显示该元素。visible后面的不仅仅可以是一个observable的值，也可以是一个function，但是记得返回值，不然返回的是undefined，永远不会显示;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;list-group-item-danger&quot;</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: shouldShowMessage5()&quot;</span>&gt;</span></span><br><span class="line">               你能看到5</span><br><span class="line">           <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       self.shouldShowMessage5 = function()&#123;</span><br><span class="line">       	//return 1;</span><br><span class="line">       &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>方法绑定要加（），不然showShowMessage5返回的是一个function对象，永远是true。</p>
+<p>第二个是text绑定，text就是绑定一个值，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--绑定会覆盖你节点中的值--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-muted text-warning&quot;</span>&gt;</span>这是第<span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:index&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span>个例子<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--该处绑定的是一个对象，那么就会调用他的toString方法，返回一个字符串，进行绑定--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>切记绑定会覆盖你节点中的值，你要是想加入一点别的字段，可以在js中处理</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.index(&quot;6&quot;)//就像jQuery中的赋值一样改变这个值。</span><br></pre></td></tr></table></figure>
+
+<p>其他还有些简单的用法可以看我的例子，<br>第三介绍属性绑定;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--html绑定，需要确保是安全的html，而不是别人插入你数据库的，防止脚本注入攻击--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;html: details&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--css绑定--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--可以添加几个class，当后面条件满足时就起作用--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--不符合JavaScript命名规范的css变量名需要加上&#x27;&#x27;，不然会失效--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">&quot;css: &#123;&#x27;text-danger text-center&#x27;:price()&gt;50 &#125;&quot;</span>&gt;</span>价格高于50就显示红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">id</span>=<span class="string">&quot;upPrice&quot;</span>&gt;</span>提高价格<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">id</span>=<span class="string">&quot;downPrice&quot;</span>&gt;</span>降低价格<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--style绑定--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">&quot;style:&#123;color:price() &gt;50?&#x27;red &#x27;:&#x27;black&#x27;,textDecoration: &#x27;line-through&#x27; &#125;&quot;</span>&gt;</span>价格高于50就显示红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--attr绑定--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">data-bind</span>=<span class="string">&quot;attr:&#123;&#x27;id&#x27;:attr().id,&#x27;title&#x27;:attr().title,&#x27;href&#x27;:attr().href&#125;&quot;</span>&gt;</span>属性绑定,点击可直通百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>  属性绑定最重要的是要记住不符合JavaScript命名规范的css变量名需要加上’’，不然会失效，比如background-color就需要加‘’，不然会绑定失败。</p>
+<p>  这次的东西很简单，很抱歉很久没有更新，新的一年希望大家进步不断，工作顺利！！！<br>  代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/" data-id="cke8orhsd000t49095xvue4tx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web/2016-03-2-2ObservableArray" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/02/web/2016-03-2-2ObservableArray/" class="article-date">
+  <time datetime="2016-03-01T16:00:00.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/web/2016-03-2-2ObservableArray/">knockoutjs二   observableArray的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs二-observableArray的使用"><a href="#knockoutjs二-observableArray的使用" class="headerlink" title="knockoutjs二   observableArray的使用"></a>knockoutjs二   observableArray的使用</h1><p> 上次忘记讲了，viewmodel可以有好几仲形式。<br>1.<code>var viewModel=&#123;&#125;</code> 这样写对应的绑定为    <code>ko.applyBindings(viewModel);</code><br>2. <code>function ViewModel()&#123;&#125;</code>这样写的把绑定方式是 <code> var viewMode=new ViewModel(); ko.applyBindings(viewModel);</code></p>
+<p>obervableArray的用法如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;foreach:&#123;data:myObservableArray, as :&#x27;item&#x27;&#125; &quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">			<span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">				self.myObservableArray = ko.observableArray(<span class="string">&#x27;&#x27;</span>);</span></span><br><span class="line"><span class="javascript">				self.myObservableArray.push(<span class="string">&#x27;Some value&#x27;</span>);</span></span><br><span class="line"><span class="javascript">				self.myObservableArray.push(<span class="string">&#x27;Some &#x27;</span>);</span></span><br><span class="line">			&#125;</span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">			ko.applyBindings(model);</span><br><span class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在使用时我们在model的内部可以使用this.myObservableArray 来获取这个操作进行操作，在model的外部则可以使用model.myObservableArray来获取这个方法进行操作。其实model.myObservableArray这是一个方法，所以其实dom中绑定是可以这样<code>&lt;div data-bind=&quot;foreach:&#123;data:myObservableArray(), as :&#39;item&#39;&#125; &quot;&gt;</code><br>如下图</p>
+<p><img src="http://img.blog.csdn.net/20151230192620973" alt="这里写图片描述"><br>这证明了他是一个方法。<br>而我用console给他添加了一个元素。<br><img src="http://img.blog.csdn.net/20151230192639729" alt="这里写图片描述"><br>就立即在view中显示了。如下：<br><img src="http://img.blog.csdn.net/20151230192537253" alt="改变后的值"><br>这次的例子中用到了foreach绑定，先不介绍，只要把它当做一个循环就可以了。<br>可以在obervableArray中初始化数据的，不一定要push进去</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var anotherObservableArray = ko.observableArray([</span><br><span class="line">    &#123; name: &quot;Bungle&quot;, type: &quot;Bear&quot; &#125;,</span><br><span class="line">    &#123; name: &quot;George&quot;, type: &quot;Hippo&quot; &#125;,</span><br><span class="line">    &#123; name: &quot;Zippy&quot;, type: &quot;Unknown&quot; &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<p>可以用操作数组的方式操作它,比如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model.myObservableArray.push(&quot;1&quot;);</span><br><span class="line">	alert(&#x27;The length of the array is &#x27; + model.myObservableArray().length);</span><br><span class="line">	alert(&#x27;The first element is &#x27; + model.myObservableArray()[0]);</span><br><span class="line">	model.myObservableArray.splice(0, 1);</span><br><span class="line">	alert(&#x27;The length of the array is &#x27; + model.myObservableArray().length);</span><br><span class="line">	alert(&#x27;The first element is &#x27; + model.myObservableArray()[0]);</span><br></pre></td></tr></table></figure>
+
+<p>官网说model.myObservableArray.push(“1”);这个方法比这样调用原生js 的myObservableArray().push(‘1’)的array的潜在push要好，但是我发现调用myObservableArray().push(‘1’)这个方法调用后view不会改变，也即是说根本没有通知到view进行改变（不知道是不是一个bug）。</p>
+<ul>
+<li>knockoutjs给出了对于observableArray的这些操作：pop, push, shift, unshift, reverse, sort, splice。就个原生js中数组的操作一样。</li>
+<li>knockoutjs还增加了一些有用的方法如：remove and removeAll，</li>
+<li><code>remove（）</code>中传入一个方法如：<code>remove( function (item) &#123; return item.age &lt; 18; &#125; )</code> 就是去除所有item的age小于18的，并返回一个剩余元素的数组。</li>
+<li><code>removeAll( [&#39;Chad&#39;, 132, undefined] )</code>：就是去除所有传入的数组中的元素，并返回一个包含剩余元素的数组。</li>
+</ul>
+<p>代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/" data-id="cke8orhsc000s4909eweb6tff" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web/2016-03-1-1Observable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/01/web/2016-03-1-1Observable/" class="article-date">
+  <time datetime="2016-02-29T16:00:00.000Z" itemprop="datePublished">2016-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/01/web/2016-03-1-1Observable/">knockoutjs一 关于knockoutjs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs一-关于knockoutjs"><a href="#knockoutjs一-关于knockoutjs" class="headerlink" title="knockoutjs一 关于knockoutjs"></a>knockoutjs一 关于knockoutjs</h1><p>=============<br> 实习期间，我们公司用的前端框架是knockoutjs，这是一种MVVM的框架。在使用的时候，发现中国关于它的资料很少。所以想写点关于它的文章。</p>
+<p>knockoutjs的主页：<a target="_blank" rel="noopener" href="http://knockoutjs.com/">http://knockoutjs.com</a> 。使用方法详见官网。</p>
+<p>首先是入门，关于如何用observables创建viewModels。</p>
+<p>Model-View-View Model (MVVM) 是一种用来建立用户界面的设计模式。    </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;firstModel&quot;</span>&gt;</span></span><br><span class="line">	div&gt;The name is <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: personName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>His age is<span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:personAge&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这就是一个绑定的例子。<br>而它对应的model是</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">&lt;!--第一个model--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> firstViewModel = &#123;</span></span><br><span class="line"><span class="javascript">			personName: <span class="string">&#x27;Bob&#x27;</span>,</span></span><br><span class="line">			personAge: 123</span><br><span class="line">		&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>最后在script的末尾加上ko.applyBindings(firstViewModel);进行绑定。<br>ko.applyBindings(firstViewModel)这是用来激活knockout的，当然ko.applyBindings()可以传入第二个参数，代表你要将模板绑定到哪一块dom上<br>，如ko.applyBindings(firstViewModel, $(“#firstModel”)[0]);就是把这个模板绑定到id为firstModel的dom上，注意用jquery选择器的时候需要加上<code>[0]</code>(因为用$(“#firstModel”)返回的是一个dom数组);<br>如图：<br><img src="http://img.blog.csdn.net/20151229232558678?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="1"></p>
+<p>如果你想设置一个双向绑定model可以设置成这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> var secondViewModel = &#123;</span><br><span class="line">		personName: ko.observable(&#x27;Bob&#x27;),</span><br><span class="line">		personAge: ko.observable(&#x27;123&#x27;),</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这样只要你的model里的personName，personAge改变，那么view也会改变。而使用第一种viewmodel即使personName，personAge改变，view也不会改变。<br>还有一些高级的应用，暂时先不介绍，在我的demo里有，github地址 <a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%EF%BC%8C%E6%88%91%E4%BD%BF%E7%94%A8%E7%9A%84hbuild%E7%BC%96%E5%86%99%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8hubild%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%E8%BF%90%E8%A1%8C%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆，我使用的hbuild编写，可以用hubild直接打开运行。</a><br>第一次写写博客写的有点烂，有宝贵意见请提出。以后会不定期更新。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/" data-id="cke8orhry00064909bejzcguz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-生活/2016-02-9-welcome" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/09/%E7%94%9F%E6%B4%BB/2016-02-9-welcome/" class="article-date">
+  <time datetime="2016-02-08T16:00:00.000Z" itemprop="datePublished">2016-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/09/%E7%94%9F%E6%B4%BB/2016-02-9-welcome/">博客搭建好的第一天</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <br/>
+<br/>
+今天是搭建博客的第一天，希望大家喜欢我的博客。<i class='fa fa-qq'></i>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/02/09/%E7%94%9F%E6%B4%BB/2016-02-9-welcome/" data-id="cke8orhum0056490968y624k2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/util/">util</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMq/" rel="tag">ActiveMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/designPattern/" rel="tag">designPattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javamelody/" rel="tag">javamelody</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%A7%A3%E6%9E%90/" rel="tag">json解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%BD%AC%E6%8D%A2/" rel="tag">json转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflection/" rel="tag">reflection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E7%9B%91%E6%8E%A7/" rel="tag">sql监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tocmat/" rel="tag">tocmat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">web性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix-agent/" rel="tag">zabbix agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" rel="tag">关于自己</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%91%8A/" rel="tag">广告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ActiveMq/" style="font-size: 10px;">ActiveMq</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/annoation/" style="font-size: 11.25px;">annoation</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/designPattern/" style="font-size: 10px;">designPattern</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/javamelody/" style="font-size: 11.25px;">javamelody</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/json%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">json解析</a> <a href="/tags/json%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">json转换</a> <a href="/tags/knockoutjs/" style="font-size: 18.75px;">knockoutjs</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/sql%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">sql监控</a> <a href="/tags/summary/" style="font-size: 10px;">summary</a> <a href="/tags/tocmat/" style="font-size: 10px;">tocmat</a> <a href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">web性能监控</a> <a href="/tags/windows/" style="font-size: 13.75px;">windows</a> <a href="/tags/zabbix/" style="font-size: 15px;">zabbix</a> <a href="/tags/zabbix-agent/" style="font-size: 10px;">zabbix agent</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" style="font-size: 10px;">关于自己</a> <a href="/tags/%E5%B9%BF%E5%91%8A/" style="font-size: 10px;">广告</a> <a href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">性能监控</a> <a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 10px;">闲聊</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/24/web/2019-11-24-jackson%E7%9A%84%E4%BD%BF%E7%94%A8/">jackson 的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/14/web/2019-09-14-javamelody%E4%BD%BF%E7%94%A8/">javamelody使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/13/web/2019-09-13-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/">记一次线上问题（监控的重要性）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/">oracle分页时排序问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/">git子项目clone问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 machine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

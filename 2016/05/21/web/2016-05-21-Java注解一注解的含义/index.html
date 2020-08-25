@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java注解一 注解的含义 | 在路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java注解的用法和原理等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java注解一 注解的含义">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="Java注解的用法和原理等">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-05-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-11-24T07:17:53.642Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="annoation">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="在路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">在路上</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.lushunming.com.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-web/2016-05-21-Java注解一注解的含义" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" class="article-date">
+  <time datetime="2016-05-20T16:00:00.000Z" itemprop="datePublished">2016-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java注解一 注解的含义
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java注解一-注解的含义"><a href="#Java注解一-注解的含义" class="headerlink" title="Java注解一 注解的含义"></a>Java注解一 注解的含义</h1><p>在学习Spring框架的时候就觉得注解很神奇，为什么简单的注解有这么神奇的功能，一直想去了解其中的奥秘，可惜的是到今天才实践。在Spring框架中一个<code>@Controller</code> 就可以把一个简单的类变得神奇，我一直以为这个注解干了所有的事。然而并非我想的那样。<br>找了不少资料，感觉讲的都不是很好，终于看到了《java核心技术2》这本书才了解了一些。 在本书中提及:    <em>注解是插入到源代码中使用其他工具可以对其进行处理的标签。</em> 注解并不会改变代码，而是这些工具产生了这些所用，所以没有工具处理的注解也不会发挥效用。这些工具可以在源代码的层次上进行操作，或者是可以处理在其中放置了注解的类文件。<br>注解可以使用在</p>
+<ul>
+<li>附属文件的自动生成。例如部署描述符或者bean信息类。</li>
+<li>测试、日志、事务语义等代码的自动生成。</li>
+</ul>
+<p>在Java中自带了几个注解，这些注解是为了注解别的注解，所以称为meta注解。<br>其中包括了</p>
+<ul>
+<li>@Retention：这个注解注在其他注解上，并用来说明如何存储已被标记的注解。可能的值是：<ul>
+<li>SOURCE：表明这个注解会被编译器忽略，并只会保留在源代码中。</li>
+<li>CLASS:表明这个注解会通过编译驻留在CLASS文件，但会被JVM在运行时忽略,正因为如此,其在运行时不可见。</li>
+<li>RUNTIME：表示这个注解会被JVM获取，并在运行时通过反射获取</li>
+</ul>
+</li>
+<li>@Target：这个注解用于限制某个元素可以被注解的类型。例如：<ul>
+<li>ANNOTATION_TYPE 表示该注解可以应用到其他注解上</li>
+<li>CONSTRUCTOR 表示可以使用到构造器上</li>
+<li>FIELD 表示可以使用到域或属性上</li>
+<li>LOCAL_VARIABLE表示可以使用到局部变量上。</li>
+<li>METHOD可以使用到方法级别的注解上。</li>
+<li>PACKAGE可以使用到包声明上。</li>
+<li>PARAMETER可以使用到方法的参数上</li>
+<li>TYPE可以使用到一个类的任何元素上。</li>
+</ul>
+</li>
+<li>@Documented：被注解的元素将会作为Javadoc产生的文档中的内容。注解都默认不会成为成为文档中的内容。这个注解可以对其它注解使用。</li>
+<li>@Inherited：在默认情况下，注解不会被子类继承。被此注解标记的注解会被所有子类继承。这个注解可以对类使用。</li>
+<li>@Deprecated：说明被标记的元素不应该再度使用。这个注解会让编译器产生警告消息。可以使用到方法，类和域上。相应的解释和原因，包括另一个可取代的方法应该同时和这个注解使用。</li>
+<li>@SuppressWarnings：说明编译器不会针对指定的一个或多个原因产生警告。</li>
+<li>@Override：向编译器说明被注解元素是重写的父类的一个元素。在重写父类元素的时候此注解并非强制性的，不过可以在重写错误时帮助编译器产生错误以提醒我们。比如子类方法的参数和父类不匹配，或返回值类型不同。</li>
+<li>@SafeVarargs：断言方法或者构造器的代码不会对参数进行不安全的操作。在Java的后续版本中，使用这个注解时将会令编译器产生一个错误在编译期间防止潜在的不安全操作。</li>
+</ul>
+<p>本次只是简单的介绍了注解，后续会讲解怎么自定义注解和一些例子。</p>
+<p>由于jekyll的环境非常难维护，所以转转阵营了，blog换为Hexo的了，而且换了主题。博客的地址是<a href="http://www.lushunming.com.cn/">http://www.lushunming.com.cn</a> ，我的博客中的排版更为美观，欢迎大家去看我的博客，也可以用邮箱订阅。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" data-id="cke8orhu500424909f16nhv38" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java注解二 自定义注解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/14/%E7%94%9F%E6%B4%BB/2016-05-14-%E5%85%B3%E4%BA%8E%E5%B9%BF%E5%91%8A/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于广告的感想</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/util/">util</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMq/" rel="tag">ActiveMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/designPattern/" rel="tag">designPattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javamelody/" rel="tag">javamelody</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%A7%A3%E6%9E%90/" rel="tag">json解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%BD%AC%E6%8D%A2/" rel="tag">json转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflection/" rel="tag">reflection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E7%9B%91%E6%8E%A7/" rel="tag">sql监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tocmat/" rel="tag">tocmat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">web性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix-agent/" rel="tag">zabbix agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" rel="tag">关于自己</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%91%8A/" rel="tag">广告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ActiveMq/" style="font-size: 10px;">ActiveMq</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/annoation/" style="font-size: 11.25px;">annoation</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/designPattern/" style="font-size: 10px;">designPattern</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/javamelody/" style="font-size: 11.25px;">javamelody</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/json%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">json解析</a> <a href="/tags/json%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">json转换</a> <a href="/tags/knockoutjs/" style="font-size: 18.75px;">knockoutjs</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/sql%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">sql监控</a> <a href="/tags/summary/" style="font-size: 10px;">summary</a> <a href="/tags/tocmat/" style="font-size: 10px;">tocmat</a> <a href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">web性能监控</a> <a href="/tags/windows/" style="font-size: 13.75px;">windows</a> <a href="/tags/zabbix/" style="font-size: 15px;">zabbix</a> <a href="/tags/zabbix-agent/" style="font-size: 10px;">zabbix agent</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" style="font-size: 10px;">关于自己</a> <a href="/tags/%E5%B9%BF%E5%91%8A/" style="font-size: 10px;">广告</a> <a href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">性能监控</a> <a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 10px;">闲聊</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/24/web/2019-11-24-jackson%E7%9A%84%E4%BD%BF%E7%94%A8/">jackson 的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/14/web/2019-09-14-javamelody%E4%BD%BF%E7%94%A8/">javamelody使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/13/web/2019-09-13-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/">记一次线上问题（监控的重要性）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/">oracle分页时排序问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/">git子项目clone问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 machine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

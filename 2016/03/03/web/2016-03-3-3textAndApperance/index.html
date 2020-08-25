@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>knockoutjs三  text和apperance的绑定 | 在路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="knockoutjs  text和apperance的绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs三  text和apperance的绑定">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs  text和apperance的绑定">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-03-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-11-24T07:17:53.640Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="在路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">在路上</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.lushunming.com.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-web/2016-03-3-3textAndApperance" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/03/web/2016-03-3-3textAndApperance/" class="article-date">
+  <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      knockoutjs三  text和apperance的绑定
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs三-text和apperance的绑定"><a href="#knockoutjs三-text和apperance的绑定" class="headerlink" title="knockoutjs三  text和apperance的绑定"></a>knockoutjs三  text和apperance的绑定</h1><p> 由于换了工作，要熟悉新的工作环境，所以没有什么时间做自己的事情，今天开始重新开始继续下面的文章，争取尽早写完</p>
+<pre><code>中间有一部分computed绑定没有写入文章，那是比较高级的用法，开发基本用不到，我在github中有例子，大家想了解
+可以自己去看看。</code></pre>
+<p>首先是visible绑定：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;list-group-item-danger&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: shouldShowMessage&quot;</span>&gt;</span></span><br><span class="line">                    你能看到</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        self.shouldShowMessage = ko.observable(true);</span><br><span class="line">        self.shouldShowMessage1 = ko.observable(false);</span><br><span class="line">        self.shouldShowMessage2 = ko.observable(0);</span><br><span class="line">        self.shouldShowMessage3 = ko.observable(undefined);</span><br><span class="line">        self.shouldShowMessage4 = ko.observable(null);</span><br><span class="line">        self.shouldShowMessage5 = ko.observable(&quot;&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>visible后面的值是类false的值那么该元素就不会显示，比如false，0，undefined，null，“”都是类false的值<br>相反，是类true的值就会显示该元素。visible后面的不仅仅可以是一个observable的值，也可以是一个function，但是记得返回值，不然返回的是undefined，永远不会显示;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;list-group-item-danger&quot;</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: shouldShowMessage5()&quot;</span>&gt;</span></span><br><span class="line">               你能看到5</span><br><span class="line">           <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       self.shouldShowMessage5 = function()&#123;</span><br><span class="line">       	//return 1;</span><br><span class="line">       &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>方法绑定要加（），不然showShowMessage5返回的是一个function对象，永远是true。</p>
+<p>第二个是text绑定，text就是绑定一个值，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--绑定会覆盖你节点中的值--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text-muted text-warning&quot;</span>&gt;</span>这是第<span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:index&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span>个例子<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--该处绑定的是一个对象，那么就会调用他的toString方法，返回一个字符串，进行绑定--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>切记绑定会覆盖你节点中的值，你要是想加入一点别的字段，可以在js中处理</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.index(&quot;6&quot;)//就像jQuery中的赋值一样改变这个值。</span><br></pre></td></tr></table></figure>
+
+<p>其他还有些简单的用法可以看我的例子，<br>第三介绍属性绑定;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--html绑定，需要确保是安全的html，而不是别人插入你数据库的，防止脚本注入攻击--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;html: details&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--css绑定--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--可以添加几个class，当后面条件满足时就起作用--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--不符合JavaScript命名规范的css变量名需要加上&#x27;&#x27;，不然会失效--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">&quot;css: &#123;&#x27;text-danger text-center&#x27;:price()&gt;50 &#125;&quot;</span>&gt;</span>价格高于50就显示红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">id</span>=<span class="string">&quot;upPrice&quot;</span>&gt;</span>提高价格<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">id</span>=<span class="string">&quot;downPrice&quot;</span>&gt;</span>降低价格<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--style绑定--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">&quot;style:&#123;color:price() &gt;50?&#x27;red &#x27;:&#x27;black&#x27;,textDecoration: &#x27;line-through&#x27; &#125;&quot;</span>&gt;</span>价格高于50就显示红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--attr绑定--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">data-bind</span>=<span class="string">&quot;attr:&#123;&#x27;id&#x27;:attr().id,&#x27;title&#x27;:attr().title,&#x27;href&#x27;:attr().href&#125;&quot;</span>&gt;</span>属性绑定,点击可直通百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>  属性绑定最重要的是要记住不符合JavaScript命名规范的css变量名需要加上’’，不然会失效，比如background-color就需要加‘’，不然会绑定失败。</p>
+<p>  这次的东西很简单，很抱歉很久没有更新，新的一年希望大家进步不断，工作顺利！！！<br>  代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/" data-id="cke8orhsd000t49095xvue4tx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/04/web/2016-03-4-4Foreach/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          knockoutjs四  foreach的绑定
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/02/web/2016-03-2-2ObservableArray/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">knockoutjs二   observableArray的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/util/">util</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMq/" rel="tag">ActiveMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/designPattern/" rel="tag">designPattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javamelody/" rel="tag">javamelody</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%A7%A3%E6%9E%90/" rel="tag">json解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%BD%AC%E6%8D%A2/" rel="tag">json转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflection/" rel="tag">reflection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E7%9B%91%E6%8E%A7/" rel="tag">sql监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tocmat/" rel="tag">tocmat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">web性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix-agent/" rel="tag">zabbix agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" rel="tag">关于自己</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%91%8A/" rel="tag">广告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ActiveMq/" style="font-size: 10px;">ActiveMq</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/annoation/" style="font-size: 11.25px;">annoation</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/designPattern/" style="font-size: 10px;">designPattern</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/javamelody/" style="font-size: 11.25px;">javamelody</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/json%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">json解析</a> <a href="/tags/json%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">json转换</a> <a href="/tags/knockoutjs/" style="font-size: 18.75px;">knockoutjs</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/sql%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">sql监控</a> <a href="/tags/summary/" style="font-size: 10px;">summary</a> <a href="/tags/tocmat/" style="font-size: 10px;">tocmat</a> <a href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">web性能监控</a> <a href="/tags/windows/" style="font-size: 13.75px;">windows</a> <a href="/tags/zabbix/" style="font-size: 15px;">zabbix</a> <a href="/tags/zabbix-agent/" style="font-size: 10px;">zabbix agent</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" style="font-size: 10px;">关于自己</a> <a href="/tags/%E5%B9%BF%E5%91%8A/" style="font-size: 10px;">广告</a> <a href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">性能监控</a> <a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 10px;">闲聊</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/24/web/2019-11-24-jackson%E7%9A%84%E4%BD%BF%E7%94%A8/">jackson 的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/14/web/2019-09-14-javamelody%E4%BD%BF%E7%94%A8/">javamelody使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/13/web/2019-09-13-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/">记一次线上问题（监控的重要性）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/">oracle分页时排序问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/">git子项目clone问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 machine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

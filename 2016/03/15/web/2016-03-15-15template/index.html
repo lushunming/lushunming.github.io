@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>knockoutjs十五  template | 在路上</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="knockoutjs  template 绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs十五  template">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/15/web/2016-03-15-15template/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs  template 绑定">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-03-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-11-24T07:17:53.639Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="在路上" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">在路上</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.lushunming.com.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-web/2016-03-15-15template" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/15/web/2016-03-15-15template/" class="article-date">
+  <time datetime="2016-03-14T16:00:00.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      knockoutjs十五  template
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="knockoutjs十五-template"><a href="#knockoutjs十五-template" class="headerlink" title="knockoutjs十五  template"></a>knockoutjs十五  template</h1><p>template 是很重要的一个用法，last but not least，他使我们的代码更加的简洁，我们在写代码的时候，经常会遇到很多的重复代码，我们总是重复的写，浪费事件也不容易维护，那么我们就做成膜版，多用于循环之类的。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">data-bind</span>=<span class="string">&#x27;template: &#123; name: displayMode,</span></span></span><br><span class="line"><span class="tag"><span class="string">                       foreach: employees ,as:&quot;employee&quot;&#125;&#x27;</span>&gt;</span> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/html&quot;</span> <span class="attr">id</span>=<span class="string">&quot;active&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">        &lt;a data-bind=<span class="string">&quot;text:employee.name&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;active btn btn-success&quot;</span>&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:employee.active&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/html&quot;</span> <span class="attr">id</span>=<span class="string">&quot;inactive&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">        &lt;a data-bind=<span class="string">&quot;text:employee.name&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;disabled btn btn-default&quot;</span>&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:employee.active&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line">        self.employees = ko.observableArray([&#123;</span><br><span class="line"><span class="javascript">            name: <span class="string">&quot;Kari&quot;</span>,</span></span><br><span class="line"><span class="javascript">            active: ko.observable(<span class="literal">true</span>)</span></span><br><span class="line">        &#125;, &#123;</span><br><span class="line"><span class="javascript">            name: <span class="string">&quot;Brynn&quot;</span>,</span></span><br><span class="line"><span class="javascript">            active: ko.observable(<span class="literal">false</span>)</span></span><br><span class="line">        &#125;, &#123;</span><br><span class="line"><span class="javascript">            name: <span class="string">&quot;Nora&quot;</span>,</span></span><br><span class="line"><span class="javascript">            active: ko.observable(<span class="literal">false</span>)</span></span><br><span class="line">        &#125;]);</span><br><span class="line"><span class="javascript">        self.displayMode = <span class="function"><span class="keyword">function</span>(<span class="params">employee</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// Initially &quot;Kari&quot; uses the &quot;active&quot; template, while the others use &quot;inactive&quot;</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> employee.active() ? <span class="string">&quot;active&quot;</span> : <span class="string">&quot;inactive&quot;</span>;</span></span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">    ko.applyBindings(model);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的一个例子是我抄的官网的一个例子，他可以实现了动态的切换模板，其实就是动态的切换name而已。</p>
+<ul>
+<li>参数name 是你想引用的模板的id</li>
+<li>参数nodes 可以直接传入一个dom的数组直接作为模板，但是我觉得这么什么价值，既然使用了模板就是为了提取出来，我感觉官方这个设计多此一举</li>
+<li>参数data就是你要放模板数据</li>
+<li>参数if 只有当为true或者是true like的值的时候模板才会渲染。</li>
+<li>参数foreach 这是我们用来做循环的，和foreach的用法一致，</li>
+<li>参数as 当使用佛reach的时候，我们申明一个依赖</li>
+<li>参数afterRender, afterAdd, or beforeRemove 这是几个回调方法，有一个参数elements ，代表的时刚刚渲染的dom节点的数组<br>ko还支持使用别的template模板，比如 Underscore.js 的模板引擎，可以自行学习。</li>
+</ul>
+<p>基本所有经常使用的知识我都介绍了，这个系列也算是完结了，还有一些高级的应用我也没有接触过，所以这个系列就暂时到此结束，maybe someday i will be back。谢谢大家的支持，这个系列将会在github pages维护。有误请联系我qq1357197829，我准备过一段时间把这个系列搬到github pages上了，到时候希望大家赏脸。代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.lushunming.com.cn/2016/03/15/web/2016-03-15-15template/" data-id="cke8orhsg00104909ecgu94sd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于MyBatis分页
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/14/web/2016-03-14-14option/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">knockoutjs十四  option绑定</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/util/">util</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMq/" rel="tag">ActiveMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/designPattern/" rel="tag">designPattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javamelody/" rel="tag">javamelody</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%A7%A3%E6%9E%90/" rel="tag">json解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%BD%AC%E6%8D%A2/" rel="tag">json转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflection/" rel="tag">reflection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E7%9B%91%E6%8E%A7/" rel="tag">sql监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tocmat/" rel="tag">tocmat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">web性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix-agent/" rel="tag">zabbix agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" rel="tag">关于自己</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%91%8A/" rel="tag">广告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ActiveMq/" style="font-size: 10px;">ActiveMq</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/annoation/" style="font-size: 11.25px;">annoation</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/designPattern/" style="font-size: 10px;">designPattern</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/javamelody/" style="font-size: 11.25px;">javamelody</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/json%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">json解析</a> <a href="/tags/json%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">json转换</a> <a href="/tags/knockoutjs/" style="font-size: 18.75px;">knockoutjs</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/sql%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">sql监控</a> <a href="/tags/summary/" style="font-size: 10px;">summary</a> <a href="/tags/tocmat/" style="font-size: 10px;">tocmat</a> <a href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">web性能监控</a> <a href="/tags/windows/" style="font-size: 13.75px;">windows</a> <a href="/tags/zabbix/" style="font-size: 15px;">zabbix</a> <a href="/tags/zabbix-agent/" style="font-size: 10px;">zabbix agent</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" style="font-size: 10px;">关于自己</a> <a href="/tags/%E5%B9%BF%E5%91%8A/" style="font-size: 10px;">广告</a> <a href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">性能监控</a> <a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 10px;">闲聊</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/24/web/2019-11-24-jackson%E7%9A%84%E4%BD%BF%E7%94%A8/">jackson 的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/14/web/2019-09-14-javamelody%E4%BD%BF%E7%94%A8/">javamelody使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/13/web/2019-09-13-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/">记一次线上问题（监控的重要性）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/">oracle分页时排序问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/">git子项目clone问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 machine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

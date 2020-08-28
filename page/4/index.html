@@ -1,740 +1,803 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>在路上</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+<html  lang="zh-CN" >
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <title>在路上</title>
+    <meta property="og:type" content="website">
 <meta property="og:title" content="在路上">
 <meta property="og:url" content="http://www.lushunming.com.cn/page/4/index.html">
 <meta property="og:site_name" content="在路上">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="machine">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="在路上" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
+    
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    
+<link rel="stylesheet" href="/css/common.min.css">
+
+
+
+    
+    
+    
+<link rel="stylesheet" href="/css/iconfont.min.css">
+
+    
 <meta name="generator" content="Hexo 5.1.1"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">在路上</a>
-      </h1>
-      
+    <body>
+        <header class="header header-fixture">
+    <div class="profile-search-wrap flex sm:block">
+        
+        
+        <div class="profile sm:text-center md:px-1 lg:px-3 sm:pb-4 sm:pt-6">
+            <a id="avatar" role="link" href="https://www.lushunming.com.cn" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_self" rel="noopener" rel="noreferrer" >
+                <img src="/images/avatar.jpg" class="rounded-full" alt="avatar">
+            </a>
+            <h2 id="name" class="hidden lg:block">lushunming</h2>
+            <h3 id="title" class="hidden xl:block">前码农</h3>
+            
+            <small id="location" class="hidden lg:block">
+                <i class="iconfont icon-map-icon"></i>
+                泰州
+            </small>
+            
+        </div>
+        
+        
+<div class="search flex-1 flex lg:inline-block sm:hidden lg:px-4 lg:mt-2 lg:mb-4 lg:w-full">
+    <form id="search-form" class="my-auto flex-1 lg:border lg:border-solid lg:border-gray-200">
+        <div class="input-group table bg-gray-100 lg:bg-white w-full">
+            <input id="search-input" type="text" placeholder="搜索" class="inline-block w-full bg-gray-100 lg:bg-white">
+            <span class="table-cell">
+                <button name="search tigger button" disabled>
+                    <i class="iconfont icon-search m-2"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+        
+<script id="search-teamplate" type="text/html" data-path="/content.json">
+    <div>
+        <div class="search-header bg-gray-400">
+            <input id="actual-search-input" model="keyword" ref="input" class="inline-block w-full h-10 px-2 py-1" placeholder="搜索" type="text">
+        </div>
+        <div class="search-result bg-gray-200">
+            {{#each searchPosts}}
+            <a href="/{{ path }}" class="result-item block px-2 pb-3 mb-1 pt-1 hover:bg-indigo-100">
+                <i class="iconfont icon-file"></i>
+                <h1 class="result-title inline font-medium text-lg">{{ title }}</h1>
+                <p class="result-content text-gray-600 text-sm">{{{ text }}}</p>
+            </a>
+            {{/each}}
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.lushunming.com.cn"></form>
-      </div>
+</script>
+
+</div>
+
+
+        <button name="menu toogle button" id="menu-toggle-btn" class="block sm:hidden p-3" role="button" aria-expanded="false">
+            <i class="iconfont icon-hamburger"></i>
+        </button>
     </div>
-  </div>
+    <nav id="menu-nav" class="hidden sm:flex flex-col">
+        
+        
+            <div class="menu-item menu-home" role="menuitem">
+                <a href="/.">
+                    <i class="iconfont icon-home" aria-hidden="true"></i>
+                    <span class="menu-title">首页</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-archives" role="menuitem">
+                <a href="/archives">
+                    <i class="iconfont icon-archive" aria-hidden="true"></i>
+                    <span class="menu-title">归档</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-categories" role="menuitem">
+                <a href="/categories">
+                    <i class="iconfont icon-folder" aria-hidden="true"></i>
+                    <span class="menu-title">分类</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-tags" role="menuitem">
+                <a href="/tags">
+                    <i class="iconfont icon-tag" aria-hidden="true"></i>
+                    <span class="menu-title">标签</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-repository" role="menuitem">
+                <a href="/repository">
+                    <i class="iconfont icon-project" aria-hidden="true"></i>
+                    <span class="menu-title">项目</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-links" role="menuitem">
+                <a href="/links">
+                    <i class="iconfont icon-friend" aria-hidden="true"></i>
+                    <span class="menu-title">友链</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-about" role="menuitem">
+                <a href="/about">
+                    <i class="iconfont icon-cup" aria-hidden="true"></i>
+                    <span class="menu-title">关于</span>
+                </a>
+            </div>
+        
+        
+<div class="social-links flex sm:flex-col lg:hidden mt-5">
+    
+        <span class="social-item text-center">
+            <a target="_blank" rel="noopener" href="https://github.com/lushunming">
+                <i class="iconfont social-icon icon-github"></i>
+                <span class="menu-title hidden lg:inline">menu.github</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/atom.xml">
+                <i class="iconfont social-icon icon-rss"></i>
+                <span class="menu-title hidden lg:inline">menu.rss</span>
+            </a>
+        </span>
+    
+</div>
+
+
+    </nav>
 </header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-web/2016-04-4-Mybatis分页" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" class="article-date">
-  <time datetime="2016-04-03T16:00:00.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+        <section class="main-section">
+            <main class="flex-1 px-4 py-12 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    <div class="content article-list">
     
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/">关于MyBatis分页</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Mybatis分页"><a href="#Mybatis分页" class="headerlink" title="Mybatis分页"></a>Mybatis分页</h1><p>身为一个java程序员，我的前十几篇的blog居然都是关于js的，所以我决定聊聊java。最近在做毕业设计，由于我的<br>毕设导师他们的实验室一直是使用PostgreSQL的，那个和mysql一样也是免费的数据库，而且还自带管理端，用起来很方便<br>。但是我在实习工作的时候一直是使用mysql的，关于分页的事就麻烦了。<br>每个数据库关于sql的语法都有点不同。刚开始在网上找到 <a target="_blank" rel="noopener" href="https://github.com/miemiedev/mybatis-paginator">paginator项目 </a><br>大家都很推荐这个，我觉得他应该是很不错的，但是在整合的时候，运行出现sql语法错误，说明他不适合PostgreSQL，但是可以修改源码解决。<br>但是我只是想找个解决办法，终于<a target="_blank" rel="noopener" href="http://git.oschina.net/free/Mybatis_PageHelper"> Mybatis_PageHelper</a>解决了问题。</p>
-<p> Mybatis_PageHelper很好用，而且他的兼容性好，Oracle、Mysql、MariaDB、SQLite、Hsqldb、PostgreSQL、DB2、SqlServer(2005,2008)、Informix、H2、SqlServer2012。<br> 这基本就包括了所有的数据库了。下面说说配置。<br> 他的maven坐标：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/">关于MyBatis分页</a>
+        </h1>
+    
 
-<p>他还使用了jsqlparser.jar这个jar包也要引进来。</p>
-<p>重要的是配置一个Mybatis插件，在Mybatis的xml配置文件中，或者是通过spring的属性配置都可以，但是不要一起使用，<br>会发生错误。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;sqlSessionFactory&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;mapperLocations&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">value</span>&gt;</span>classpath:mapper/*.xml<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;typeAliasesPackage&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.isea533.ssm.model&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;plugins&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.github.pagehelper.PageHelper&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;properties&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">value</span>&gt;</span></span><br><span class="line">            dialect=hsqldb</span><br><span class="line">          <span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>我没有细看到底配置是有什么用，但是记住修改dialect为你使用的数据库，官方说在也可以不指定，他会自动识别。<br>我觉得还是配置为好。<br>使用时有两种调用方法，我使用的第二种：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PageHelper.startPage(<span class="number">1</span>, <span class="number">10</span>);</span><br><span class="line">List&lt;Country&gt; list = countryMapper.selectIf(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 
-<p>在你需要进行分页的Mybatis方法前调用PageHelper.startPage静态方法即可，紧跟在这个方法后的第一个Mybatis查询方法会被进行分页。但是我觉得已经足够使用了。</p>
-<p>我的java代码是这么写的  service中：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Task&gt; <span class="title">findList</span><span class="params">(<span class="keyword">int</span> pageNumber,<span class="keyword">int</span> pageSize)</span> </span>&#123;</span><br><span class="line">	TaskExample example = <span class="keyword">new</span> TaskExample();</span><br><span class="line">	PageHelper.startPage(pageNumber, pageSize);</span><br><span class="line">	List&lt;Task&gt; tasks = taskMapper.selectByExample(example);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> tasks;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>controller</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">queryTaskList</span><span class="params">(<span class="keyword">int</span> page, <span class="keyword">int</span> rows)</span> </span>&#123;</span><br><span class="line">		List&lt;Task&gt; tasks = taskService.findList(page, rows);</span><br><span class="line">		PageInfo&lt;Task&gt; taskPage = <span class="keyword">new</span> PageInfo&lt;Task&gt;(tasks);</span><br><span class="line">		Map&lt;String, Object&gt; result = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">		result.put(<span class="string">&quot;total&quot;</span>, taskPage.getTotal());</span><br><span class="line">		result.put(<span class="string">&quot;rows&quot;</span>, tasks);</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>分页中一般需要知道total，就可以使用<code>PageInfo page = new PageInfo(list);</code>pageinfo可以获取他的一些分页信息，很是方便。<br>有什么问题可以和加qq1357197829我一起讨论，共同进步。也可以到我的<a target="_blank" rel="noopener" href="http://github.lushunming.top/">个人博客</a>查看。</p>
-
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" data-id="cke8orhtz003p4909g91zc8z5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" class="article-date">
+	  <time datetime="2016-04-03T16:00:00.000Z" itemprop="datePublished">4月 4</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/Mybatis/" rel="tag">Mybatis</a>, <a class="article-tag-none-link" href="/tags/java/" rel="tag">java</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-15-15template" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/15/web/2016-03-15-15template/" class="article-date">
-  <time datetime="2016-03-14T16:00:00.000Z" itemprop="datePublished">2016-03-15</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/web/2016-03-15-15template/">knockoutjs十五  template</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs十五-template"><a href="#knockoutjs十五-template" class="headerlink" title="knockoutjs十五  template"></a>knockoutjs十五  template</h1><p>template 是很重要的一个用法，last but not least，他使我们的代码更加的简洁，我们在写代码的时候，经常会遇到很多的重复代码，我们总是重复的写，浪费事件也不容易维护，那么我们就做成膜版，多用于循环之类的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">data-bind</span>=<span class="string">&#x27;template: &#123; name: displayMode,</span></span></span><br><span class="line"><span class="tag"><span class="string">                       foreach: employees ,as:&quot;employee&quot;&#125;&#x27;</span>&gt;</span> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/html&quot;</span> <span class="attr">id</span>=<span class="string">&quot;active&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">        &lt;a data-bind=<span class="string">&quot;text:employee.name&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;active btn btn-success&quot;</span>&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:employee.active&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/html&quot;</span> <span class="attr">id</span>=<span class="string">&quot;inactive&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">        &lt;a data-bind=<span class="string">&quot;text:employee.name&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;disabled btn btn-default&quot;</span>&gt;&lt;/a&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text:employee.active&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line">        self.employees = ko.observableArray([&#123;</span><br><span class="line"><span class="javascript">            name: <span class="string">&quot;Kari&quot;</span>,</span></span><br><span class="line"><span class="javascript">            active: ko.observable(<span class="literal">true</span>)</span></span><br><span class="line">        &#125;, &#123;</span><br><span class="line"><span class="javascript">            name: <span class="string">&quot;Brynn&quot;</span>,</span></span><br><span class="line"><span class="javascript">            active: ko.observable(<span class="literal">false</span>)</span></span><br><span class="line">        &#125;, &#123;</span><br><span class="line"><span class="javascript">            name: <span class="string">&quot;Nora&quot;</span>,</span></span><br><span class="line"><span class="javascript">            active: ko.observable(<span class="literal">false</span>)</span></span><br><span class="line">        &#125;]);</span><br><span class="line"><span class="javascript">        self.displayMode = <span class="function"><span class="keyword">function</span>(<span class="params">employee</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// Initially &quot;Kari&quot; uses the &quot;active&quot; template, while the others use &quot;inactive&quot;</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> employee.active() ? <span class="string">&quot;active&quot;</span> : <span class="string">&quot;inactive&quot;</span>;</span></span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">    ko.applyBindings(model);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/15/web/2016-03-15-15template/">knockoutjs十五  template</a>
+        </h1>
+    
 
-<p>上面的一个例子是我抄的官网的一个例子，他可以实现了动态的切换模板，其实就是动态的切换name而已。</p>
-<ul>
-<li>参数name 是你想引用的模板的id</li>
-<li>参数nodes 可以直接传入一个dom的数组直接作为模板，但是我觉得这么什么价值，既然使用了模板就是为了提取出来，我感觉官方这个设计多此一举</li>
-<li>参数data就是你要放模板数据</li>
-<li>参数if 只有当为true或者是true like的值的时候模板才会渲染。</li>
-<li>参数foreach 这是我们用来做循环的，和foreach的用法一致，</li>
-<li>参数as 当使用佛reach的时候，我们申明一个依赖</li>
-<li>参数afterRender, afterAdd, or beforeRemove 这是几个回调方法，有一个参数elements ，代表的时刚刚渲染的dom节点的数组<br>ko还支持使用别的template模板，比如 Underscore.js 的模板引擎，可以自行学习。</li>
-</ul>
-<p>基本所有经常使用的知识我都介绍了，这个系列也算是完结了，还有一些高级的应用我也没有接触过，所以这个系列就暂时到此结束，maybe someday i will be back。谢谢大家的支持，这个系列将会在github pages维护。有误请联系我qq1357197829，我准备过一段时间把这个系列搬到github pages上了，到时候希望大家赏脸。代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
 
-      
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/15/web/2016-03-15-15template/" data-id="cke8orhsg00104909ecgu94sd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/15/web/2016-03-15-15template/" class="article-date">
+	  <time datetime="2016-03-14T16:00:00.000Z" itemprop="datePublished">3月 15</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/15/web/2016-03-15-15template/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-14-14option" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/14/web/2016-03-14-14option/" class="article-date">
-  <time datetime="2016-03-13T16:00:00.000Z" itemprop="datePublished">2016-03-14</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/14/web/2016-03-14-14option/">knockoutjs十四  option绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs十四-option绑定"><a href="#knockoutjs十四-option绑定" class="headerlink" title="knockoutjs十四  option绑定"></a>knockoutjs十四  option绑定</h1><p>option绑定出息在select 中，我只想讲单选的select，这个用的比较多，至于多选的请大家自行学习吧。<br>讲解select我就不照着官方的例子讲了，因为这是我之前用的比较多的，我也浪费了很多时间学习这个，所以我就用一个例子来讲解下，那就是select之间的联动。想必大家都知道联动是select经常出现的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">   	    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-4&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>省<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">select</span> <span class="attr">data-bind</span>=<span class="string">&quot;options: province, optionsText: &#x27;name&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   value: provinceSelected,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   optionsCaption: &#x27;Choose...&#x27;,event:&#123;change:changePro&#125;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control &quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-4&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>市<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">select</span> <span class="attr">data-bind</span>=<span class="string">&quot;options:city, optionsText: &#x27;name&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   value: citySelected,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   optionsCaption: &#x27;Choose...&#x27;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control &quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line">        self.citySelected = ko.observable();</span><br><span class="line">        self.provinceSelected = ko.observable();</span><br><span class="line">        self.province = ko.observableArray([&#123;</span><br><span class="line">            value: 1,</span><br><span class="line"><span class="javascript">            name: <span class="string">&#x27;jiangsu&#x27;</span></span></span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            value: 2,</span><br><span class="line"><span class="javascript">            name: <span class="string">&#x27;zhejiang&#x27;</span></span></span><br><span class="line">        &#125;]);</span><br><span class="line">        self.city = ko.observableArray();</span><br><span class="line"><span class="javascript">        self.changePro = <span class="function"><span class="keyword">function</span>(<span class="params">data, event</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> value = self.provinceSelected().value;</span></span><br><span class="line">            if (value == 1) &#123;</span><br><span class="line">                self.city([&#123;</span><br><span class="line">                    value: 1,</span><br><span class="line"><span class="javascript">                    name: <span class="string">&#x27;zuzhou&#x27;</span></span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    value: 2,</span><br><span class="line"><span class="javascript">                    name: <span class="string">&#x27;taizhou&#x27;</span></span></span><br><span class="line">                &#125;]);</span><br><span class="line"><span class="javascript">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value == <span class="number">2</span>) &#123;</span></span><br><span class="line">                self.city([&#123;</span><br><span class="line">                    value: 1,</span><br><span class="line"><span class="javascript">                    name: <span class="string">&#x27;huzhou&#x27;</span></span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    value: 2,</span><br><span class="line"><span class="javascript">                    name: <span class="string">&#x27;hangzhou&#x27;</span></span></span><br><span class="line">                &#125;]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">    ko.applyBindings(model);   </span><br><span class="line"> <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/14/web/2016-03-14-14option/">knockoutjs十四  option绑定</a>
+        </h1>
+    
 
-<p>上面的一个例子是省份和城市的联动选择，我使用了change事件来监听select的值的改变，然后在这个方法中获取到当前的选中值，这个方法中一般是进行一个ajax请求，回去下一级的数据，我就模仿了一个，然后给下一级的select的option设值，options就是select中的option选项，它一般是一个数组，optionsText是显示出来的值,value是被选中值，optionsCaption可以用来提醒这个select是用来选择什么的。这样一个联动的select就实现了，很简单。</p>
-<p>有误请联系我qq1357197829，我准备过一段时间把这个系列搬到github pages上了，到时候希望大家赏脸。代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
 
-      
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/14/web/2016-03-14-14option/" data-id="cke8orhs7000m4909dqs54gcf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/14/web/2016-03-14-14option/" class="article-date">
+	  <time datetime="2016-03-13T16:00:00.000Z" itemprop="datePublished">3月 14</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/14/web/2016-03-14-14option/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-13-13focus_checked" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/13/web/2016-03-13-13focus_checked/" class="article-date">
-  <time datetime="2016-03-12T16:00:00.000Z" itemprop="datePublished">2016-03-13</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/13/web/2016-03-13-13focus_checked/">knockoutjs十三  focus checked绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs十三-focus-checked绑定"><a href="#knockoutjs十三-focus-checked绑定" class="headerlink" title="knockoutjs十三  focus checked绑定"></a>knockoutjs十三  focus checked绑定</h1><p>毕设加上班有点忙，不好意思，今天讲解的时focus和checked绑定，好久没去官网看看，发现他们已经更新了不少东西，这些我以前都没有用过，就找个官方的例子讲解一下。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">&quot;hasFocus: isSelected&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: setIsSelected&quot;</span>&gt;</span>Focus programmatically<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: isSelected&quot;</span>&gt;</span>The textbox has focus<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">           Name:</span><br><span class="line">           <span class="tag">&lt;<span class="name">b</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: !editing(), text: name, click: edit&quot;</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: editing, value: name, hasFocus: editing&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>Click the name to edit it; click elsewhere to apply changes.<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">           self.isSelected = ko.observable(<span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript">           self.setIsSelected = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                   <span class="built_in">this</span>.isSelected(<span class="literal">true</span>)</span></span><br><span class="line">               &#125;</span><br><span class="line"><span class="javascript">               <span class="comment">// Data</span></span></span><br><span class="line"><span class="javascript">           self.name = ko.observable(<span class="string">&quot;jamas&quot;</span>);</span></span><br><span class="line"><span class="javascript">           self.editing = ko.observable(<span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">           <span class="comment">// Behaviors</span></span></span><br><span class="line"><span class="javascript">           self.edit = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">               <span class="built_in">this</span>.editing(<span class="literal">true</span>)</span></span><br><span class="line">           &#125;;</span><br><span class="line">       &#125;</span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">   <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/13/web/2016-03-13-13focus_checked/">knockoutjs十三  focus checked绑定</a>
+        </h1>
+    
 
-<p>focus是很简单的，他只是检测一个元素是否选中，yes返回true，no返回false，就这这么简单，你设置true就选中，设置false就不选中。官方的例子是告诉我们可以作为点击编辑，原本是一个文本，点击之后选中他，让他变为input框，这确实是不错的一个用法。我以前没有使用过所以我也想不出还有其他的什么作用。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Send me spam:</span><br><span class="line">          	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;checked: wantsSpam&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: wantsSpam&quot;</span>&gt;</span></span><br><span class="line">           Preferred flavors of spam:</span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">               	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;cherry&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;checked: spamFlavors&quot;</span> /&gt;</span> Cherry</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">              	 <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;almond&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;checked: spamFlavors&quot;</span> /&gt;</span> Almond<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">               	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;msg&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;checked: spamFlavors&quot;</span> /&gt;</span> Monosodium Glutamate<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">           self.wantsSpam = ko.observable(<span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">           self.spamFlavors = ko.observableArray([<span class="string">&quot;cherry&quot;</span>, <span class="string">&quot;almond&quot;</span>]);</span></span><br><span class="line">       &#125;</span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">       <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>checked 比较有内涵啊 ，官方比较多，而且确实radio和checkbox时比较烦的东西，表单中反选是很恶心的一件事。但是我看到ko的这个很厉害，checkbox设置你需要选中的只需要把他的值放入一个数组，那么他就会帮你选中，简单了我们反选的过程，而且选中的值直接放入一个数组，操作简单。如果是radio只要checked的值是true就会选中，false就不会选中。当然你也可以设施一个非boolean值，那么radio中value和checked的值相等的，就会被选中，简单易懂。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- ko foreach: items --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;checkedValue: $data, checked: $root.chosenItems&quot;</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: itemName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /ko --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line">           self.items = ko.observableArray([&#123;</span><br><span class="line"><span class="javascript">               itemName: <span class="string">&#x27;Choice 1&#x27;</span></span></span><br><span class="line">           &#125;, &#123;</span><br><span class="line"><span class="javascript">               itemName: <span class="string">&#x27;Choice 2&#x27;</span></span></span><br><span class="line">           &#125;]);</span><br><span class="line">           self.chosenItems = ko.observableArray();</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">       <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>checked绑定还提供了另一个参数checkedValue,这个参数就和checkbox或是radio中的value是一样的，但是这个checkedValue可以设置一个非string的值，可以是一个对象，那么你选中时chosenItems就是一个数组，你可以获取对象中想要的值，但是我发现反选却不容易，因为其中的对象都是引用，想比较他们不是那么容易，在使用时建议使用value设置值。</p>
-<p>最后几篇可能有点急躁，有误请联系我qq1357197829，我准备过一段时间把这个系列搬到github pages上了，到时候希望大家赏脸。代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
-
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/" data-id="cke8orhs6000h49098op5cr7j" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/13/web/2016-03-13-13focus_checked/" class="article-date">
+	  <time datetime="2016-03-12T16:00:00.000Z" itemprop="datePublished">3月 13</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/13/web/2016-03-13-13focus_checked/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-12-12textInput" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/12/web/2016-03-12-12textInput/" class="article-date">
-  <time datetime="2016-03-11T16:00:00.000Z" itemprop="datePublished">2016-03-12</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/12/web/2016-03-12-12textInput/">knockoutjs十二  textInput绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs十二-textInput绑定"><a href="#knockoutjs十二-textInput绑定" class="headerlink" title="knockoutjs十二  textInput绑定"></a>knockoutjs十二  textInput绑定</h1><p>今天讲解的是textInput绑定，这其实和value绑定是一样的，但是比value的双向绑定强一点</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>Login name:</span><br><span class="line">           <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">&quot;textInput: userName&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>Password:</span><br><span class="line">           <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;textInput: userPassword&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       ViewModel:</span><br><span class="line">       <span class="tag">&lt;<span class="name">pre</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: ko.toJSON($root, null, 2)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">       <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">           self.userName = ko.observable(<span class="string">&quot;&quot;</span>); <span class="comment">// Initially blank</span></span></span><br><span class="line"><span class="javascript">           self.userPassword = ko.observable(<span class="string">&quot;abc&quot;</span>); <span class="comment">// Prepopulate</span></span></span><br><span class="line">       &#125;</span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">   <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/12/web/2016-03-12-12textInput/">knockoutjs十二  textInput绑定</a>
+        </h1>
+    
 
-<p>可以从这个例子看到，textinput是view改变后，model是立即改变的，官方推荐在绑定<code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code>的时候大家使用textinput，因为他不仅可以即时更新，而且可以解决很多浏览器兼容问题，很多浏览器对于剪切，拖拽，或者是接受自动补全这些机制有很大的不同，即时使用了valueUpdate来控制更新时期，还是有可能会不一致，textinput就是专门设计来解决各浏览器之间的不同和即时更新的。<br>这是官网的话，如果对于事件操作的一致性有很高的要求，确实应该用这个，不然在每个浏览器都有可能反应不一样。听官网的话没有错奥！！！！<br>其他的属性和value完全一至，就不再赘诉，但是要记住，不要value和textinput在同一个元素使用，那么两个都不会起作用。</p>
-<p>今天的就讲解完了，代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%88%91%E5%89%8D%E5%87%A0%E5%A4%A9%E7%9C%8B%E4%BA%86%E4%B8%8B%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%8F%91%E7%8E%B0%E8%BF%98%E6%98%AF%E6%9C%89%E5%BE%88%E5%A4%9A%E5%B0%8F%E9%94%99%E8%AF%AF%E7%9A%84%EF%BC%8C%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E5%8F%91%E7%8E%B0%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%E5%91%8A%E8%AF%89%E6%88%91%EF%BC%8C%E6%88%91%E4%BC%9A%E7%AB%8B%E5%8D%B3%E6%94%B9%E6%AD%A3%EF%BC%8C%E9%98%B2%E6%AD%A2%E6%8A%8A%E9%94%99%E8%AF%AF%E4%B8%9C%E8%A5%BF%E4%BC%A0%E6%92%AD%E5%87%BA%E5%8E%BB%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，我前几天看了下我的博客，发现还是有很多小错误的，希望大家发现错误可以留言告诉我，我会立即改正，防止把错误东西传播出去，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
 
-      
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/12/web/2016-03-12-12textInput/" data-id="cke8orhsf000x4909humq78tn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/12/web/2016-03-12-12textInput/" class="article-date">
+	  <time datetime="2016-03-11T16:00:00.000Z" itemprop="datePublished">3月 12</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/12/web/2016-03-12-12textInput/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-11-11value" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/11/web/2016-03-11-11value/" class="article-date">
-  <time datetime="2016-03-10T16:00:00.000Z" itemprop="datePublished">2016-03-11</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/11/web/2016-03-11-11value/">knockoutjs十一  value绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs十一-value绑定"><a href="#knockoutjs十一-value绑定" class="headerlink" title="knockoutjs十一  value绑定"></a>knockoutjs十一  value绑定</h1><p>我自己都没有想到自己会写一个博客写到第十一篇，而且看过我博客的人也越来越多，我在这期间也学会了更多，这个系列的博客估计在十五篇左右就结束了，我准备把经常用到的都写完，还又一些更高级的就不写了，毕竟我因为离开了之前的公司，不再用这个框架了，以后可能会写一些小的demo，希望大家到时候还能捧场。</p>
-<p>废话不多说：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Login name:</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">&quot;value: userName&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Password:</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;value:userPassword,valueUpdate:&#x27;keyup&#x27;&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click:getInputValues&quot;</span>&gt;</span>获取输入框的值<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">            self.userName = ko.observable(<span class="string">&quot;&quot;</span>);</span></span><br><span class="line"><span class="javascript">            self.userPassword = ko.observable(<span class="string">&quot;&quot;</span>);</span></span><br><span class="line"></span><br><span class="line">          </span><br><span class="line"><span class="javascript">            self.getInputValues = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line">               </span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;firstValue--&quot;</span> + self.firstValue());</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;secondValue--&quot;</span> + self.secondValue);</span></span><br><span class="line"></span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">        ko.applyBindings(model);</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>今天的value绑定确实使用的比较多的，因为表单中基本都是，所以需要详细介绍，这是一个简单的例子，value绑定主要用于 <code>&lt;input&gt;, &lt;select&gt; 和&lt;textarea&gt;</code>这几个元素，而radio button 和checkbox使用checked，将会在下一次讲解。</p>
-<p>1）value绑定的主要参数将会被设置为元素的value属性，这个值可以用jquery的val（）方法获取，而且这个值会覆盖你原有的value属性，如果你这样使用</p>
-<p>   <code> &lt;input value=&quot;1&quot; data-bind=&quot;value:number&quot;/&gt;</code></p>
-<p>这样你的value=1会被绑定覆盖。<br>2）valueUpdate是第二个参数，ko实在change事件的时候检测input属性的改变，但是你可以通过valueUpdate来改变检测的时机，</p>
-<ol>
-<li><p>“input” - 这是当input的值改变的时候触发，但是只支持一些现代浏览器比如ie9+；</p>
-</li>
-<li><p>“keyup” - 在你松开一个按键的时候触发改变你的viewmodel</p>
-</li>
-<li><p>“keypress” -  这是当你按下一个键的时候触发，但是和keyup不同的是，如果一直按着键，他会不断重复的触发。</p>
-</li>
-<li><p>“afterkeydown” 在你按一个键同时触发（官方用的时as soon as），他在你输入的同时，异步的改变viewmodel，但是在一些手机浏览器中不支持。</p>
-</li>
-</ol>
-<p>3）valueAllowUnset这个只适合在select元素中使用。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">Select a country:</span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">data-bind</span>=<span class="string">&quot;options: countries,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   optionsCaption: &#x27;Choose one...&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   value: selectedCountry,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   valueAllowUnset: true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> viewModel = &#123;</span></span><br><span class="line"><span class="javascript">    countries: [<span class="string">&#x27;Japan&#x27;</span>, <span class="string">&#x27;Bolivia&#x27;</span>, <span class="string">&#x27;New Zealand&#x27;</span>],</span></span><br><span class="line"><span class="javascript">    selectedCountry: ko.observable(<span class="string">&#x27;Latvia&#x27;</span>)</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/11/web/2016-03-11-11value/">knockoutjs十一  value绑定</a>
+        </h1>
+    
 
 
-<p>这个例子中，使用selectedCountry设置了一个原始选中值’Latvia’，可是在下拉选项中并没有这个值，所以ko把他重置为undefinded，那么就与’Choose one…’相匹配，就会默认选中’Choose one…’。这回在selectOption中详细讲解。</p>
-<p>以下有几点注意</p>
-<ul>
-<li>在使用<code>&lt;input type=&quot;text&quot; /&gt;</code> or<br><code>&lt;textarea&gt;</code>时候，官方建议使用textInput绑定，这是一个新的绑定，在我之前使用的时候还没有。</li>
-<li>使用observable和non-observable绑定的区别：</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Two-way binding. Populates textbox; syncs both ways. --&gt;</span> </span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>First value: <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">&quot;value: firstValue&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">       <span class="comment">&lt;!--One-way binding. Populates textbox; syncs only from textbox to model.--&gt;</span> </span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>Second value: <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">&quot;value: secondValue&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">       <span class="comment">&lt;!-- No binding. Populates textbox, but doesn&#x27;t react to any changes.--&gt;</span> </span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>Third value: <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">&quot;value: secondValue.length &gt; 8&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">       <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> viewModel = &#123;</span></span><br><span class="line"><span class="javascript">              firstValue: ko.observable(<span class="string">&quot;hello&quot;</span>), <span class="comment">// Observable</span></span></span><br><span class="line"><span class="javascript">              secondValue: <span class="string">&quot;hello, again&quot;</span>         <span class="comment">// Not observable</span></span></span><br><span class="line">          &#125;;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-<ul>
-<li>使用双向绑定，那么value和model中一个改变，另一个也会改变。但是使用的单向绑定，那么只会在初始化的时候给元素value赋值，在编辑的时候，会更新这个元素的value属性，但是当你的value属性改变的时候，model是不能检测到的，因为是一个单向绑定。如果绑定的不是一个简单的值，而是一个方法调用的结果，ko会用这个结果初始化元素的value属性，但是当在编辑表单的时候，不会改变元素的value属性，这种情况是一个一次性赋值，而不是一个能反映出改变的绑定。</li>
-</ul>
-<p>今天的就讲解完了，代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
-
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/" data-id="cke8orhs9000o49097prs36ib" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/11/web/2016-03-11-11value/" class="article-date">
+	  <time datetime="2016-03-10T16:00:00.000Z" itemprop="datePublished">3月 11</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/11/web/2016-03-11-11value/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-10-10enable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/10/web/2016-03-10-10enable/" class="article-date">
-  <time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">2016-03-10</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/10/web/2016-03-10-10enable/">knockoutjs十  enable绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs十-enable绑定"><a href="#knockoutjs十-enable绑定" class="headerlink" title="knockoutjs十  enable绑定"></a>knockoutjs十  enable绑定</h1><p>enable绑定用在 input, select, and textarea这些form元素上，当enable绑定的值是非空类的值时，那么这些元素就是enable的，否则就是disable的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;checkbox&#x27;</span> <span class="attr">data-bind</span>=<span class="string">&quot;checked: hasCellphone&quot;</span> /&gt;</span> I have a cellphone</span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">           Your cellphone number:</span><br><span class="line">           <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;text&#x27;</span> <span class="attr">data-bind</span>=<span class="string">&quot;value: cellphoneNumber, enable: hasCellphone&quot;</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">       <span class="function"><span class="keyword">function</span> <span class="title">parseAreaCode</span>(<span class="params">number</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">return</span> number;</span></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">       <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">           self.hasCellphone = ko.observable(<span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript">           self.cellphoneNumber = ko.observable(<span class="string">&quot;&quot;</span>);</span></span><br><span class="line">       &#125;</span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/10/web/2016-03-10-10enable/">knockoutjs十  enable绑定</a>
+        </h1>
+    
 
-<p>其实enable的绑定很简单，disable的用法正好和他相反，所以就不再重复介绍。<br>但是其实enable绑定的值不仅仅可以是一个值，还可以时一个表达式。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">data-bind</span>=<span class="string">&quot;enable: parseAreaCode(viewModel.cellphoneNumber()) != &#x27;555&#x27;&quot;</span>&gt;</span></span><br><span class="line">    Do something</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>这个例子中就是parseAreaCode(viewModel.cellphoneNumber()) != ‘555’这个表达式的值是true的时候button才会enable，不然就是disable的。<br>代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/10/web/2016-03-10-10enable/" data-id="cke8orhs2000a49092qld7okr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/10/web/2016-03-10-10enable/" class="article-date">
+	  <time datetime="2016-03-09T16:00:00.000Z" itemprop="datePublished">3月 10</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/10/web/2016-03-10-10enable/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-9-9submit" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/09/web/2016-03-9-9submit/" class="article-date">
-  <time datetime="2016-03-08T16:00:00.000Z" itemprop="datePublished">2016-03-09</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/09/web/2016-03-9-9submit/">knockoutjs九  submit绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs九-submit绑定"><a href="#knockoutjs九-submit绑定" class="headerlink" title="knockoutjs九  submit绑定"></a>knockoutjs九  submit绑定</h1><p>submit绑定我没有用过，这是ko的新特性，我用ko的时候那时候还是2.x版本，现在已经时3.4版本了，由于我没有在项目中使用过，我就不过多的讲解，因为我了解的也不是恨深入，就把官方的东西讲解下。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">data-bind</span>=<span class="string">&quot;submit: doSomething&quot;</span>&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">label</span>&gt;</span>name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;name&quot;</span>/&gt;</span></span><br><span class="line">		    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	   <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	   <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		    <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">		    self.doSomething = <span class="function"><span class="keyword">function</span>(<span class="params">formElement</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		        <span class="built_in">console</span>.log(formElement);</span></span><br><span class="line">		    &#125;;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="javascript">	     <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">	     ko.applyBindings(model);</span><br><span class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/09/web/2016-03-9-9submit/">knockoutjs九  submit绑定</a>
+        </h1>
+    
 
-<p>submit绑定是会禁用原来的提交方法的，而是调用submit中的方法，会把form表单作为参数传进来，可以在方法中添加数据或者是修改数据，也可以使用jqueryValidate来进行验证,使用比如 if ($(formElement).valid()) { /* do something */ }.这样的验证。</p>
-<p>讲解的很粗略，有什么问题可以和我交流，代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
 
-      
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/09/web/2016-03-9-9submit/" data-id="cke8orhti003e49097s230tru" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/09/web/2016-03-9-9submit/" class="article-date">
+	  <time datetime="2016-03-08T16:00:00.000Z" itemprop="datePublished">3月 9</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/09/web/2016-03-9-9submit/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-8-8event" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/08/web/2016-03-8-8event/" class="article-date">
-  <time datetime="2016-03-07T16:00:00.000Z" itemprop="datePublished">2016-03-08</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/08/web/2016-03-8-8event/">knockoutjs八  event绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs八-event绑定"><a href="#knockoutjs八-event绑定" class="headerlink" title="knockoutjs八  event绑定"></a>knockoutjs八  event绑定</h1><p>今天讲的很简单，是事件绑定，因为click绑定本来就是事件绑定，所以基本上所有的内容相似，就不在多说。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">&quot;event: &#123; mouseover: enableDetails, mouseout: disableDetails &#125;&quot;</span>&gt;</span></span><br><span class="line">            Mouse over me</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;visible: detailsEnabled&quot;</span>&gt;</span></span><br><span class="line">            Details</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">Model</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> self=<span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">            self.detailsEnabled = ko.observable(<span class="literal">false</span>),</span></span><br><span class="line"><span class="javascript">                self.enableDetails = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    self.detailsEnabled(<span class="literal">true</span>);</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                self.disableDetails = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    self.detailsEnabled(<span class="literal">false</span>);</span></span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">        ko.applyBindings(model);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/08/web/2016-03-8-8event/">knockoutjs八  event绑定</a>
+        </h1>
+    
 
-<p>基本上有 ‘keyup’, ‘keydown’, ‘keypress’,<br>   ‘click’, ‘dblclick’, ‘mousedown’, ‘mouseup’, ‘mousemove’, ‘mouseover’, ‘mouseout’, ‘mouseenter’, ‘mouseleave’这些事件绑定，这是ko源码里提及的绑定，应该都是支持的。因为我基本就用过click，dbclick，mouseover，mouseout这些，其他的没有使用，如果大家使用时有什么问题，可以和我一起交流。代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
 
-      
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/08/web/2016-03-8-8event/" data-id="cke8orhsk0018490983o90yom" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/08/web/2016-03-8-8event/" class="article-date">
+	  <time datetime="2016-03-07T16:00:00.000Z" itemprop="datePublished">3月 8</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/08/web/2016-03-8-8event/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-    <article id="post-web/2016-03-7-7click" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/07/web/2016-03-7-7click/" class="article-date">
-  <time datetime="2016-03-06T16:00:00.000Z" itemprop="datePublished">2016-03-07</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <article class="article border-b border-solid border-gray-200">
+    <div class="article-header mb-4 mt-5">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/07/web/2016-03-7-7click/">knockoutjs七  click 绑定</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="knockoutjs七-click-绑定"><a href="#knockoutjs七-click-绑定" class="headerlink" title="knockoutjs七  click 绑定"></a>knockoutjs七  click 绑定</h1><p>今天要讲的是click绑定。<br>先看一个例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    You&#x27;ve clicked <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: numberOfClicks&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> times</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: incrementClickCounter&quot;</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    self.numberOfClicks = ko.observable(0);</span><br><span class="line"><span class="javascript">    self.incrementClickCounter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> previousCount = self.numberOfClicks();</span></span><br><span class="line">            self.numberOfClicks(previousCount + 1);</span><br><span class="line">        &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 itemprop="name">
+            <a class="article-title text-lg" href="/2016/03/07/web/2016-03-7-7click/">knockoutjs七  click 绑定</a>
+        </h1>
+    
 
-<p>点击绑定就是这么简单，在点击事件中可以修改model中的值，这样view也会随之改变。</p>
-<p>点击绑定可以绑定任何一个方法，不仅仅是viewmodel中的方法，看看下面的这个例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click:clicked&quot;</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"> <span class="function"><span class="keyword">function</span> <span class="title">clicked</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            alert(<span class="string">&quot;已经被点击&quot;</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>这个直接是调用了一个全局方法。<br>下面的例子演示怎么调用一个对象中的方法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click:person.showNameAndAge.apply(person);&quot;</span>&gt;</span>显示信息<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> person = &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        name: <span class="string">&quot;lu&quot;</span>,</span></span><br><span class="line">        age: 12,</span><br><span class="line"><span class="javascript">        showNameAndAge: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> self = <span class="built_in">this</span>;</span></span><br><span class="line"><span class="javascript">            alert(<span class="string">&quot;name:&quot;</span> + self.name + <span class="string">&quot;-------age&quot;</span> + self.age);</span></span><br><span class="line"><span class="javascript">            <span class="comment">// alert(&quot;this is person&#x27;s function &quot;);</span></span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>这个例子调用了person对象的方法显示这个人的信息，但是要记得调用的时候showNameAndAge中的this指向的是当前被点击的对象，所以我是用了apply来切换了调用的对象为person，这样才能获取到对象中的name和age属性。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">data-bind</span>=<span class="string">&quot;foreach: places&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">&quot;text: $data&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: $parent.removePlace&quot;</span>&gt;</span>Remove<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="javascript">    self.places = ko.observableArray([<span class="string">&#x27;London&#x27;</span>, <span class="string">&#x27;Paris&#x27;</span>, <span class="string">&#x27;Tokyo&#x27;</span>]);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">          <span class="comment">// The current item will be passed as the first parameter, so we know which place to remove</span></span></span><br><span class="line"><span class="javascript">          self.removePlace = <span class="function"><span class="keyword">function</span> (<span class="params">place</span>) </span>&#123;</span></span><br><span class="line">              self.places.remove(place)</span><br><span class="line"><span class="javascript">              <span class="built_in">console</span>.log(place);</span></span><br><span class="line">          &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这例子显告诉我们click绑定第一个参数是当前绑定的上下文。<br>当然其实有两个参数，一个是data，一个是event。看下面的例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: myFunction&quot;</span>&gt;</span></span><br><span class="line">        Click me</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="javascript">self.myFunction = <span class="function"><span class="keyword">function</span> (<span class="params">data, event</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;-------------------------------------------&quot;</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;data:&quot;</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;event:&quot;</span> + event);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>用event.currentTarget可以获取到当前被点击到的节点。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: function(data, event) &#123; myFunction2(&#x27;param1&#x27;, &#x27;param2&#x27;, data, event) &#125;&quot;</span>&gt;</span></span><br><span class="line">        Click me2</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: myFunction3.bind($data, &#x27;param1&#x27;, &#x27;param2&#x27;)&quot;</span>&gt;</span></span><br><span class="line">        Click me3</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      self.myFunction2 = <span class="function"><span class="keyword">function</span> (<span class="params">param1, param2, data, event</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;-------------------------------------------&quot;</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;param1:&quot;</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param1);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;param2:&quot;</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param2);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;data:&quot;</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">&quot;event:&quot;</span> + event);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="javascript">            <span class="comment">// 最后两个参数是data和event参数，前面的是自己传入的参数</span></span></span><br><span class="line"><span class="javascript">            self.myFunction3 = <span class="function"><span class="keyword">function</span> (<span class="params">param, param1, data, event</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param1);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>第一个例子可以用这种方法传入自己的参数，当然你不喜欢在绑定的时候出现function这个字段，可以用bind来绑定。最后俩个参数是data和event，前面的参数是自己的参数。<br>click绑定是会屏蔽原来的点击事件的，比如一个a标签，他的超链接就会被屏蔽：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-link&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://www.baidu.com&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click:aclick&quot;</span>&gt;</span>baidu.com<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  self.aclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                alert(<span class="string">&quot;你点击了一个链接，但是没有跳转到超链接&quot;</span>);</span></span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这个超链接只会响应点击事件，而不会跳转到百度首页。</p>
-<p>点击事件会有冒泡反应，要是想禁用冒泡就在后面加上clickBubble：false，这样就不会有冒泡。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--    有冒泡--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: myDivHandler&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: myButtonHandler&quot;</span>&gt;</span></span><br><span class="line">            Click me</span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--    禁用冒泡--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: myDivHandler&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-danger&quot;</span> <span class="attr">data-bind</span>=<span class="string">&quot;click: myButtonHandler, clickBubble: false&quot;</span>&gt;</span></span><br><span class="line">            Click me</span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"> self.myDivHandler = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                alert(<span class="string">&quot;div click&quot;</span>);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="javascript">            self.myButtonHandler = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                alert(<span class="string">&quot;button click&quot;</span>);</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>最后一个要注意的是在调用applyBindings前调用 ko.options.useOnlyNativeEvents = true;这样就是用原生的onclick，而ko默认是使用的jquery的click事件，但是我不知道这两者之间有什么差别，希望有懂的人可以和我交流。<br>今天的东西比较多，代码托管在<a target="_blank" rel="noopener" href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
-
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/" data-id="cke8orhth003d4909fhxbdm3x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+    
+    <p class="article-meta mb-3 text-xs">
+        <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2016/03/07/web/2016-03-7-7click/" class="article-date">
+	  <time datetime="2016-03-06T16:00:00.000Z" itemprop="datePublished">3月 7</time>
+	</a>
+</span>
 
-    </footer>
-  </div>
-  
+        
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </span>
+
+
+        
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="article-tag-none-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a>
+  </span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2016/03/07/web/2016-03-7-7click/#comments" class="article-comment-link">评论</a></span>
+        
+
+    </p>
+
 </article>
 
-
-  
-
-
-  <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">下一页 &amp;raquo;</a>
-  </nav>
+</div>
 
-</section>
-        
-          <aside id="sidebar">
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/util/">util</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
+<nav class="pagination bottom-0 px-5 mb-3 absolute w-full inset-x-0" data-stick-bottom>
+    <div class="flex justify-between leading-tight">
+        <span class="pager">
+            
+                <button class="prev">
+                    <a href="/page/3/">
+                        <i class="iconfont icon-angle-left"></i>
+                        上一页
+                    </a>
+                </button>
+            
+            
+                <button class="next">
+                    <a href="/page/5/">
+                        下一页
+                        <i class="iconfont icon-angle-right"></i>
+                    </a>
+                </button>
+            
+        </span>
+        <div class="total-article bar-right">Page 4 of 5</div>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMq/" rel="tag">ActiveMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/designPattern/" rel="tag">designPattern</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javamelody/" rel="tag">javamelody</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%A7%A3%E6%9E%90/" rel="tag">json解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%BD%AC%E6%8D%A2/" rel="tag">json转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflection/" rel="tag">reflection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E7%9B%91%E6%8E%A7/" rel="tag">sql监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tocmat/" rel="tag">tocmat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">web性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix-agent/" rel="tag">zabbix agent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" rel="tag">关于自己</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%91%8A/" rel="tag">广告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">性能监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/ActiveMq/" style="font-size: 10px;">ActiveMq</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/annoation/" style="font-size: 11.25px;">annoation</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/designPattern/" style="font-size: 10px;">designPattern</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/javamelody/" style="font-size: 11.25px;">javamelody</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/json%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">json解析</a> <a href="/tags/json%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">json转换</a> <a href="/tags/knockoutjs/" style="font-size: 18.75px;">knockoutjs</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/reflection/" style="font-size: 10px;">reflection</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/sql%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">sql监控</a> <a href="/tags/summary/" style="font-size: 10px;">summary</a> <a href="/tags/tocmat/" style="font-size: 10px;">tocmat</a> <a href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">web性能监控</a> <a href="/tags/windows/" style="font-size: 13.75px;">windows</a> <a href="/tags/zabbix/" style="font-size: 15px;">zabbix</a> <a href="/tags/zabbix-agent/" style="font-size: 10px;">zabbix agent</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" style="font-size: 10px;">关于自己</a> <a href="/tags/%E5%B9%BF%E5%91%8A/" style="font-size: 10px;">广告</a> <a href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">性能监控</a> <a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 10px;">闲聊</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/11/24/web/2019-11-24-jackson%E7%9A%84%E4%BD%BF%E7%94%A8/">jackson 的使用</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/14/web/2019-09-14-javamelody%E4%BD%BF%E7%94%A8/">javamelody使用</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/13/web/2019-09-13-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/">记一次线上问题（监控的重要性）</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/">oracle分页时排序问题</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/">git子项目clone问题</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 machine<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
 </nav>
+
+
+</main>
+<aside style="" id="sidebar" class="aside aside-fixture">
+    <div class="widgets">
+        
+            
+    <div class="widget">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget-body">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/util/">util</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+        
+            
+    <div class="widget">
+        <h3 class="widget-title">
+            标签
+        </h3>
+        <div class="widget-body">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActiveMq/" rel="tag">ActiveMq</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/annoation/" rel="tag">annoation</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/designPattern/" rel="tag">designPattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javamelody/" rel="tag">javamelody</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%A7%A3%E6%9E%90/" rel="tag">json解析</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json%E8%BD%AC%E6%8D%A2/" rel="tag">json转换</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflection/" rel="tag">reflection</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E7%9B%91%E6%8E%A7/" rel="tag">sql监控</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">summary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tocmat/" rel="tag">tocmat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">web性能监控</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zabbix-agent/" rel="tag">zabbix agent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" rel="tag">关于自己</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%91%8A/" rel="tag">广告</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" rel="tag">性能监控</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+            
+    <div class="widget">
+        
+        <h3 class="widget-title">标签云</h3>
+        
+        <div class="widget-body tagcloud">
+            <a href="/tags/ActiveMq/" style="font-size: 13px;">ActiveMq</a> <a href="/tags/Mybatis/" style="font-size: 13px;">Mybatis</a> <a href="/tags/Mysql/" style="font-size: 13px;">Mysql</a> <a href="/tags/Oracle/" style="font-size: 13px;">Oracle</a> <a href="/tags/Spring/" style="font-size: 13.25px;">Spring</a> <a href="/tags/ajax/" style="font-size: 13px;">ajax</a> <a href="/tags/annoation/" style="font-size: 13.13px;">annoation</a> <a href="/tags/blog/" style="font-size: 13px;">blog</a> <a href="/tags/designPattern/" style="font-size: 13px;">designPattern</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/html/" style="font-size: 13px;">html</a> <a href="/tags/java/" style="font-size: 13.75px;">java</a> <a href="/tags/javamelody/" style="font-size: 13.13px;">javamelody</a> <a href="/tags/javascript/" style="font-size: 14px;">javascript</a> <a href="/tags/json%E8%A7%A3%E6%9E%90/" style="font-size: 13px;">json解析</a> <a href="/tags/json%E8%BD%AC%E6%8D%A2/" style="font-size: 13px;">json转换</a> <a href="/tags/knockoutjs/" style="font-size: 13.88px;">knockoutjs</a> <a href="/tags/linux/" style="font-size: 13.63px;">linux</a> <a href="/tags/mongodb/" style="font-size: 13px;">mongodb</a> <a href="/tags/oracle/" style="font-size: 13px;">oracle</a> <a href="/tags/redis/" style="font-size: 13px;">redis</a> <a href="/tags/reflection/" style="font-size: 13px;">reflection</a> <a href="/tags/shadowsocks/" style="font-size: 13px;">shadowsocks</a> <a href="/tags/sql/" style="font-size: 13px;">sql</a> <a href="/tags/sql%E7%9B%91%E6%8E%A7/" style="font-size: 13px;">sql监控</a> <a href="/tags/summary/" style="font-size: 13px;">summary</a> <a href="/tags/tocmat/" style="font-size: 13px;">tocmat</a> <a href="/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 13px;">web性能监控</a> <a href="/tags/windows/" style="font-size: 13.38px;">windows</a> <a href="/tags/zabbix/" style="font-size: 13.5px;">zabbix</a> <a href="/tags/zabbix-agent/" style="font-size: 13px;">zabbix agent</a> <a href="/tags/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/" style="font-size: 13px;">关于自己</a> <a href="/tags/%E5%B9%BF%E5%91%8A/" style="font-size: 13px;">广告</a> <a href="/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/" style="font-size: 13px;">性能监控</a> <a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 13px;">闲聊</a>
+        </div>
+    </div>
+
+
+        
+            
+    <div class="widget">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget-body">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+            
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled">
+            
+                <li>
+                    <div class="recent-post">
+                        <p class="item-category">
+                            <a class="category-link" href="/categories/web/">web</a>
+                        </p>
+                        <p class="item-title">
+                            <a href="/2019/11/24/web/2019-11-24-jackson%E7%9A%84%E4%BD%BF%E7%94%A8/" class="title">jackson 的使用</a>
+                        </p>
+                        <p class="item-date">
+                            <time datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished">2019-11-24</time>
+                        </p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="recent-post">
+                        <p class="item-category">
+                            <a class="category-link" href="/categories/web/">web</a>
+                        </p>
+                        <p class="item-title">
+                            <a href="/2019/09/14/web/2019-09-14-javamelody%E4%BD%BF%E7%94%A8/" class="title">javamelody使用</a>
+                        </p>
+                        <p class="item-date">
+                            <time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished">2019-09-14</time>
+                        </p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="recent-post">
+                        <p class="item-category">
+                            <a class="category-link" href="/categories/web/">web</a>
+                        </p>
+                        <p class="item-title">
+                            <a href="/2019/09/13/web/2019-09-13-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/" class="title">记一次线上问题（监控的重要性）</a>
+                        </p>
+                        <p class="item-date">
+                            <time datetime="2019-09-12T16:00:00.000Z" itemprop="datePublished">2019-09-13</time>
+                        </p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="recent-post">
+                        <p class="item-category">
+                            <a class="category-link" href="/categories/database/">database</a>
+                        </p>
+                        <p class="item-title">
+                            <a href="/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/" class="title">oracle分页时排序问题</a>
+                        </p>
+                        <p class="item-date">
+                            <time datetime="2019-03-09T16:00:00.000Z" itemprop="datePublished">2019-03-10</time>
+                        </p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="recent-post">
+                        <p class="item-category">
+                            <a class="category-link" href="/categories/util/">util</a>
+                        </p>
+                        <p class="item-title">
+                            <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/" class="title">git子项目clone问题</a>
+                        </p>
+                        <p class="item-date">
+                            <time datetime="2018-01-27T16:00:00.000Z" itemprop="datePublished">2018-01-28</time>
+                        </p>
+                    </div>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+        
+    </div>
+</aside>
+
+
+        </section>
+        <footer class="hidden lg:block fixed bottom-0 left-0 sm:w-1/12 lg:w-1/6 bg-gray-100 z-40">
     
+    <div class="footer-social-links">
+        
+            <a target="_blank" rel="noopener" href="https://github.com/lushunming">
+                <i class="iconfont icon-github"></i>
+            </a>
+        
+            <a href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
+            </a>
+        
+    </div>
+    
+    
+</footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <div id="mask" class="hidden mask fixed inset-0 bg-gray-900 opacity-75 z-40"></div>
+        <div id="search-view-container" class="hidden shadow-xl"></div>
+        
+<script src="/js/dom-event.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/yox@1.0.0-alpha.121/dist/standard/prod/yox.min.js"></script>
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+<script src="/js/search.min.js"></script>
 
 
 
+    <script src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/js/lightgallery.min.js"></script>
+    
+<script src="/js/light-gallery.min.js"></script>
 
-  </div>
-</body>
+
+
+
+
+    </body>
 </html>

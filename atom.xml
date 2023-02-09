@@ -58,9 +58,9 @@
       <category term="web" scheme="http://www.lushunming.com.cn/categories/web/"/>
     
     
-      <category term="web性能监控" scheme="http://www.lushunming.com.cn/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/"/>
-    
       <category term="javamelody" scheme="http://www.lushunming.com.cn/tags/javamelody/"/>
+    
+      <category term="web性能监控" scheme="http://www.lushunming.com.cn/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/"/>
     
       <category term="sql监控" scheme="http://www.lushunming.com.cn/tags/sql%E7%9B%91%E6%8E%A7/"/>
     
@@ -84,11 +84,11 @@
       <category term="web" scheme="http://www.lushunming.com.cn/categories/web/"/>
     
     
-      <category term="javamelody" scheme="http://www.lushunming.com.cn/tags/javamelody/"/>
-    
       <category term="sql" scheme="http://www.lushunming.com.cn/tags/sql/"/>
     
       <category term="性能监控" scheme="http://www.lushunming.com.cn/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/"/>
+    
+      <category term="javamelody" scheme="http://www.lushunming.com.cn/tags/javamelody/"/>
     
   </entry>
   
@@ -133,34 +133,6 @@
     
     
       <category term="git" scheme="http://www.lushunming.com.cn/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Zabbix 通过jmx监控windows 下ActiveMq</title>
-    <link href="http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/"/>
-    <id>http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix 监控ActiveMq/</id>
-    <published>2017-04-15T16:00:00.000Z</published>
-    <updated>2023-02-09T03:07:35.485Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Zabbix-通过jmx监控windows-下ActiveMq"><a href="#Zabbix-通过jmx监控windows-下ActiveMq" class="headerlink" title="Zabbix 通过jmx监控windows 下ActiveMq"></a>Zabbix 通过jmx监控windows 下ActiveMq</h1><p>Zabbix 通过jmx监控windows 下ActiveMq</p><ol><li>   开启ActiveMq的jmx</li></ol><pre><code>打开对应版本的wrapper.conf配置文件，修改配置，使jmx可用<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Uncomment <span class="keyword">to</span> <span class="keyword">enable</span> remote jmx</span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.port=<span class="number">12346</span></span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.authenticate=<span class="keyword">false</span></span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.ssl=<span class="keyword">false</span></span><br></pre></td></tr></table></figure>修改conf目录下的activemq.xml，在broker上增加useJmx=&quot;true&quot;并且修改 managementContext节点<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">managementContext</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">managementContext</span> <span class="attr">createConnector</span>=<span class="string">"true"</span> <span class="attr">connectorPort</span>=<span class="string">"12346"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">managementContext</span>&gt;</span></span><br></pre></td></tr></table></figure>虽然在wrapper.conf中已经配置了端口，但是在这里不配置connectPort就不能用jmx连接。</code></pre><ol start="2"><li>   新建主机的时候,需要设置jmx 端口为上面设置的端口,模板选择Template JMX Generic。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      Zabbix 通过jmx监控windows 下ActiveMq
-    
-    </summary>
-    
-      <category term="linux" scheme="http://www.lushunming.com.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://www.lushunming.com.cn/tags/linux/"/>
-    
-      <category term="zabbix" scheme="http://www.lushunming.com.cn/tags/zabbix/"/>
-    
-      <category term="ActiveMq" scheme="http://www.lushunming.com.cn/tags/ActiveMq/"/>
-    
-      <category term="windows" scheme="http://www.lushunming.com.cn/tags/windows/"/>
     
   </entry>
   
@@ -214,9 +186,37 @@
     
       <category term="zabbix" scheme="http://www.lushunming.com.cn/tags/zabbix/"/>
     
+      <category term="windows" scheme="http://www.lushunming.com.cn/tags/windows/"/>
+    
       <category term="tocmat" scheme="http://www.lushunming.com.cn/tags/tocmat/"/>
     
+  </entry>
+  
+  <entry>
+    <title>Zabbix 通过jmx监控windows 下ActiveMq</title>
+    <link href="http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/"/>
+    <id>http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix 监控ActiveMq/</id>
+    <published>2017-04-15T16:00:00.000Z</published>
+    <updated>2023-02-09T03:07:35.485Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Zabbix-通过jmx监控windows-下ActiveMq"><a href="#Zabbix-通过jmx监控windows-下ActiveMq" class="headerlink" title="Zabbix 通过jmx监控windows 下ActiveMq"></a>Zabbix 通过jmx监控windows 下ActiveMq</h1><p>Zabbix 通过jmx监控windows 下ActiveMq</p><ol><li>   开启ActiveMq的jmx</li></ol><pre><code>打开对应版本的wrapper.conf配置文件，修改配置，使jmx可用<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Uncomment <span class="keyword">to</span> <span class="keyword">enable</span> remote jmx</span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.port=<span class="number">12346</span></span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.authenticate=<span class="keyword">false</span></span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.ssl=<span class="keyword">false</span></span><br></pre></td></tr></table></figure>修改conf目录下的activemq.xml，在broker上增加useJmx=&quot;true&quot;并且修改 managementContext节点<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">managementContext</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">managementContext</span> <span class="attr">createConnector</span>=<span class="string">"true"</span> <span class="attr">connectorPort</span>=<span class="string">"12346"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">managementContext</span>&gt;</span></span><br></pre></td></tr></table></figure>虽然在wrapper.conf中已经配置了端口，但是在这里不配置connectPort就不能用jmx连接。</code></pre><ol start="2"><li>   新建主机的时候,需要设置jmx 端口为上面设置的端口,模板选择Template JMX Generic。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      Zabbix 通过jmx监控windows 下ActiveMq
+    
+    </summary>
+    
+      <category term="linux" scheme="http://www.lushunming.com.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://www.lushunming.com.cn/tags/linux/"/>
+    
+      <category term="zabbix" scheme="http://www.lushunming.com.cn/tags/zabbix/"/>
+    
       <category term="windows" scheme="http://www.lushunming.com.cn/tags/windows/"/>
+    
+      <category term="ActiveMq" scheme="http://www.lushunming.com.cn/tags/ActiveMq/"/>
     
   </entry>
   

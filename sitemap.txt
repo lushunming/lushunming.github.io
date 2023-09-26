@@ -1,3 +1,4 @@
+http://www.lushunming.com.cn/2023/09/26/web/2023-09-26-Java%20Native%E5%B0%9D%E8%AF%95/
 http://www.lushunming.com.cn/2023/02/15/linux/2023-02-15-docker%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85shadowsocks%E5%92%8Ckcptun/
 http://www.lushunming.com.cn/tags/index.html
 http://www.lushunming.com.cn/categories/index.html
@@ -86,6 +87,8 @@ http://www.lushunming.com.cn/tags/%E5%B9%BF%E5%91%8A/
 http://www.lushunming.com.cn/tags/summary/
 http://www.lushunming.com.cn/tags/kcptun/
 http://www.lushunming.com.cn/tags/docker/
+http://www.lushunming.com.cn/tags/Java/
+http://www.lushunming.com.cn/tags/Java-Native/
 http://www.lushunming.com.cn/categories/linux/
 http://www.lushunming.com.cn/categories/web/
 http://www.lushunming.com.cn/categories/util/

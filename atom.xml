@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.lushunming.com.cn/"/>
-  <updated>2026-01-04T08:16:26.237Z</updated>
+  <updated>2026-01-04T23:57:45.477Z</updated>
   <id>http://www.lushunming.com.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.lushunming.com.cn/2026/01/04/tvbox/2026-01-04-FreeBox%E6%BA%90%E4%BD%BF%E7%94%A8/"/>
     <id>http://www.lushunming.com.cn/2026/01/04/tvbox/2026-01-04-FreeBox源使用/</id>
     <published>2026-01-03T16:00:00.000Z</published>
-    <updated>2026-01-04T08:16:26.237Z</updated>
+    <updated>2026-01-04T23:57:45.477Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="FreeBox源使用"><a href="#FreeBox源使用" class="headerlink" title="FreeBox源使用"></a>FreeBox源使用</h1><h2 id="地址-任意选一个"><a href="#地址-任意选一个" class="headerlink" title="地址(任意选一个)"></a>地址(任意选一个)</h2><ol><li><code>https://pc.lushunming.qzz.io/json/index.json</code></li></ol><h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><ol><li><p>清除源缓存，更新到最新的源</p></li><li><p>站源切换到<code>Cookie设置</code></p></li><li><p>UC设置:选择分类<code>UC</code>,然后点击设置Token，弹出二维码后，用手机端扫码即可。如果以前使用过UC，那么就可以直接享受UC原画高清视频。如果是本源的新用户，需要找一个UC资源观看，他会自动弹出窗口，然后选择扫二维码扫码即可观看。</p></li><li><p>天翼云盘设置：在用户目录（一般是<code>C:\Users\Administrator</code>）里找到<code>TV</code>文件夹，然后创建<code>.tianyi</code>,内容是</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"user"</span>:&#123;<span class="attr">"cookie"</span>:<span class="string">"&#123;\"username\":\"用户名\",\"password\":\"密码\"&#125;"</span>&#125;&#125;</span><br></pre></td></tr></table></figure></li><li><p>其他网盘在打开资源的时候会弹出二维码提示扫码</p></li></ol><h2 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h2><ol><li>有的新用户一直提示扫码，可能是TVBOX的文件权限没开，无法在本地生成文件，打开文件权限就行。</li><li>有的旧用户设置了Cookie还是无法观看，可以到文件管理里面找到TV文件夹，删除里面的<code>.uc</code> 和<code>.uctoken</code>文件（可能被隐藏，设置里打开显示隐藏文件，或者将文件夹删除）,再重新按照操作走一遍。</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="FreeBox源使用"><a href="#FreeBox源使用" class="headerlink" title="FreeBox源使用"></a>FreeBox源使用</h1><h2 id="地址-任意选一个"><a href="#地址-任意选一个" class="headerlink" title="地址(任意选一个)"></a>地址(任意选一个)</h2><ol><li><code>https://pc.lushunming.qzz.io/json/index.json</code></li></ol><h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><ol><li><p>下载FreeBox <code>https://github.com/kknifer7/FreeBox</code></p></li><li><p>清除源缓存，更新到最新的源</p></li><li><p>站源切换到<code>Cookie设置</code></p></li><li><p>UC设置:选择分类<code>UC</code>,然后点击设置Token，弹出二维码后，用手机端扫码即可。如果以前使用过UC，那么就可以直接享受UC原画高清视频。如果是本源的新用户，需要找一个UC资源观看，他会自动弹出窗口，然后选择扫二维码扫码即可观看。</p></li><li><p>天翼云盘设置：在用户目录（一般是<code>C:\Users\Administrator</code>）里找到<code>TV</code>文件夹，然后创建<code>.tianyi</code>,内容是</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"user"</span>:&#123;<span class="attr">"cookie"</span>:<span class="string">"&#123;\"username\":\"用户名\",\"password\":\"密码\"&#125;"</span>&#125;&#125;</span><br></pre></td></tr></table></figure></li><li><p>其他网盘在打开资源的时候会弹出二维码提示扫码</p></li></ol><h2 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h2><ol><li>有的旧用户设置了Cookie还是无法观看，可以到用户目录（一般是<code>C:\Users\Administrator</code>）里面找到TV文件夹，删除里面的<code>.uc</code> 和<code>.uctoken</code>文件（可能被隐藏，设置里打开显示隐藏文件，或者将文件夹删除）,再重新按照操作走一遍。</li></ol>]]></content>
     
     <summary type="html">
     
@@ -142,9 +142,9 @@
       <category term="web" scheme="http://www.lushunming.com.cn/categories/web/"/>
     
     
-      <category term="javamelody" scheme="http://www.lushunming.com.cn/tags/javamelody/"/>
-    
       <category term="web性能监控" scheme="http://www.lushunming.com.cn/tags/web%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/"/>
+    
+      <category term="javamelody" scheme="http://www.lushunming.com.cn/tags/javamelody/"/>
     
       <category term="sql监控" scheme="http://www.lushunming.com.cn/tags/sql%E7%9B%91%E6%8E%A7/"/>
     
@@ -168,11 +168,11 @@
       <category term="web" scheme="http://www.lushunming.com.cn/categories/web/"/>
     
     
+      <category term="javamelody" scheme="http://www.lushunming.com.cn/tags/javamelody/"/>
+    
       <category term="sql" scheme="http://www.lushunming.com.cn/tags/sql/"/>
     
       <category term="性能监控" scheme="http://www.lushunming.com.cn/tags/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7/"/>
-    
-      <category term="javamelody" scheme="http://www.lushunming.com.cn/tags/javamelody/"/>
     
   </entry>
   
@@ -217,34 +217,6 @@
     
     
       <category term="git" scheme="http://www.lushunming.com.cn/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zabbix 监控windows下tomcat</title>
-    <link href="http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/"/>
-    <id>http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix 监控windows下tomcat/</id>
-    <published>2017-04-15T16:00:00.000Z</published>
-    <updated>2026-01-04T07:00:33.748Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="zabbix-监控windows下tomcat"><a href="#zabbix-监控windows下tomcat" class="headerlink" title="zabbix 监控windows下tomcat"></a>zabbix 监控windows下tomcat</h1><p>zabbix 监控tomcat主要使用的是zabbix的java gateway。</p><ol><li><p>安装zabbix gateway。使用ubuntu，可以直接使用命令安装java gateway。</p> <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install zabbix-java-gateway</span><br></pre></td></tr></table></figure><p> 修改zabbix_server的配置文件，告知zabbix server java gateway在哪个端口，并且设置poller的个数。</p> <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">JavaGateway</span>=安装ip</span><br><span class="line"><span class="attr">JavaGatewayPort</span>=<span class="number">10052</span> <span class="comment">#监听端口</span></span><br><span class="line"><span class="attr">StartJavaPollers</span>=<span class="number">5</span></span><br></pre></td></tr></table></figure><p> 开启java gateway，重启zabbix server</p> <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service zabbix-java-gateway start</span><br><span class="line">service zabbix-server restart</span><br></pre></td></tr></table></figure></li><li><p>设置tomcat，开启jmx。</p><p> 在<code>tomcat/bin</code>下找到catalina.bat文件，在<code>set &quot;CURRENT_DIR=%cd%&quot;</code>下加上</p> <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set JAVA_OPTS=-Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.port=<span class="number">12345</span> -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.ssl=false -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.authenticate=false  -Djava<span class="selector-class">.rmi</span><span class="selector-class">.server</span>.hostname=tomcat部署的服务器ip -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span><span class="selector-class">.rmi</span>.port=<span class="number">12345</span></span><br></pre></td></tr></table></figure></li><li><p>下载支持<code>jmx</code> 的jar包<code>catalina-jmx-remote.jar</code>,把他放到tocmat目录下的<code>lib</code>包中。</p></li><li><p>配置主机<br> <img src="http://img.blog.csdn.net/20170324115028226?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamhmc2Rmcw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="jmx端口配置"><br> jmx的端口一定要与在<code>catalina.bat</code>下配置的<code>jmxremote.port</code>一样。<br> 链接<code>Template JMX Generic</code>和<code>Template JMX Tomcat</code>这两个模板。</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      zabbix 监控windows下tomcat
-    
-    </summary>
-    
-      <category term="linux" scheme="http://www.lushunming.com.cn/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://www.lushunming.com.cn/tags/linux/"/>
-    
-      <category term="zabbix" scheme="http://www.lushunming.com.cn/tags/zabbix/"/>
-    
-      <category term="tocmat" scheme="http://www.lushunming.com.cn/tags/tocmat/"/>
-    
-      <category term="windows" scheme="http://www.lushunming.com.cn/tags/windows/"/>
     
   </entry>
   
@@ -299,6 +271,34 @@
       <category term="zabbix" scheme="http://www.lushunming.com.cn/tags/zabbix/"/>
     
       <category term="Mysql" scheme="http://www.lushunming.com.cn/tags/Mysql/"/>
+    
+      <category term="windows" scheme="http://www.lushunming.com.cn/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zabbix 监控windows下tomcat</title>
+    <link href="http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/"/>
+    <id>http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix 监控windows下tomcat/</id>
+    <published>2017-04-15T16:00:00.000Z</published>
+    <updated>2026-01-04T07:00:33.748Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="zabbix-监控windows下tomcat"><a href="#zabbix-监控windows下tomcat" class="headerlink" title="zabbix 监控windows下tomcat"></a>zabbix 监控windows下tomcat</h1><p>zabbix 监控tomcat主要使用的是zabbix的java gateway。</p><ol><li><p>安装zabbix gateway。使用ubuntu，可以直接使用命令安装java gateway。</p> <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install zabbix-java-gateway</span><br></pre></td></tr></table></figure><p> 修改zabbix_server的配置文件，告知zabbix server java gateway在哪个端口，并且设置poller的个数。</p> <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">JavaGateway</span>=安装ip</span><br><span class="line"><span class="attr">JavaGatewayPort</span>=<span class="number">10052</span> <span class="comment">#监听端口</span></span><br><span class="line"><span class="attr">StartJavaPollers</span>=<span class="number">5</span></span><br></pre></td></tr></table></figure><p> 开启java gateway，重启zabbix server</p> <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service zabbix-java-gateway start</span><br><span class="line">service zabbix-server restart</span><br></pre></td></tr></table></figure></li><li><p>设置tomcat，开启jmx。</p><p> 在<code>tomcat/bin</code>下找到catalina.bat文件，在<code>set &quot;CURRENT_DIR=%cd%&quot;</code>下加上</p> <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set JAVA_OPTS=-Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.port=<span class="number">12345</span> -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.ssl=false -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.authenticate=false  -Djava<span class="selector-class">.rmi</span><span class="selector-class">.server</span>.hostname=tomcat部署的服务器ip -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span><span class="selector-class">.rmi</span>.port=<span class="number">12345</span></span><br></pre></td></tr></table></figure></li><li><p>下载支持<code>jmx</code> 的jar包<code>catalina-jmx-remote.jar</code>,把他放到tocmat目录下的<code>lib</code>包中。</p></li><li><p>配置主机<br> <img src="http://img.blog.csdn.net/20170324115028226?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamhmc2Rmcw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="jmx端口配置"><br> jmx的端口一定要与在<code>catalina.bat</code>下配置的<code>jmxremote.port</code>一样。<br> 链接<code>Template JMX Generic</code>和<code>Template JMX Tomcat</code>这两个模板。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      zabbix 监控windows下tomcat
+    
+    </summary>
+    
+      <category term="linux" scheme="http://www.lushunming.com.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://www.lushunming.com.cn/tags/linux/"/>
+    
+      <category term="zabbix" scheme="http://www.lushunming.com.cn/tags/zabbix/"/>
+    
+      <category term="tocmat" scheme="http://www.lushunming.com.cn/tags/tocmat/"/>
     
       <category term="windows" scheme="http://www.lushunming.com.cn/tags/windows/"/>
     

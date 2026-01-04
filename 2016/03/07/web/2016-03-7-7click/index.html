@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>knockoutjs七  click 绑定 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,knockoutjs">
+    <meta name="description" content="knockoutjs  click 绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs七  click 绑定">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs  click 绑定">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-03-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.751Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">knockoutjs七  click 绑定</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">knockoutjs七  click 绑定</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-06T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-03-07
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#knockoutjs七-click-绑定"><span class="post-toc-number">1.</span> <span class="post-toc-text">knockoutjs七  click 绑定</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-03-7-7click"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">knockoutjs七  click 绑定</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-03-07 00:00:00" datetime="2016-03-06T16:00:00.000Z"  itemprop="datePublished">2016-03-07</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="knockoutjs七-click-绑定"><a href="#knockoutjs七-click-绑定" class="headerlink" title="knockoutjs七  click 绑定"></a>knockoutjs七  click 绑定</h1><p>今天要讲的是click绑定。<br>先看一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    You've clicked <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text: numberOfClicks"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> times</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">data-bind</span>=<span class="string">"click: incrementClickCounter"</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    self.numberOfClicks = ko.observable(0);</span><br><span class="line"><span class="actionscript">    self.incrementClickCounter = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> previousCount = self.numberOfClicks();</span></span><br><span class="line">            self.numberOfClicks(previousCount + 1);</span><br><span class="line">        &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>点击绑定就是这么简单，在点击事件中可以修改model中的值，这样view也会随之改变。</p>
+<p>点击绑定可以绑定任何一个方法，不仅仅是viewmodel中的方法，看看下面的这个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">data-bind</span>=<span class="string">"click:clicked"</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"> <span class="function"><span class="keyword">function</span> <span class="title">clicked</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">"已经被点击"</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个直接是调用了一个全局方法。<br>下面的例子演示怎么调用一个对象中的方法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">data-bind</span>=<span class="string">"click:person.showNameAndAge.apply(person);"</span>&gt;</span>显示信息<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">var</span> person = &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">        name: <span class="string">"lu"</span>,</span></span><br><span class="line">        age: 12,</span><br><span class="line"><span class="actionscript">        showNameAndAge: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">"name:"</span> + self.name + <span class="string">"-------age"</span> + self.age);</span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert("this is person's function ");</span></span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子调用了person对象的方法显示这个人的信息，但是要记得调用的时候showNameAndAge中的this指向的是当前被点击的对象，所以我是用了apply来切换了调用的对象为person，这样才能获取到对象中的name和age属性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">data-bind</span>=<span class="string">"foreach: places"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text: $data"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">data-bind</span>=<span class="string">"click: $parent.removePlace"</span>&gt;</span>Remove<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="actionscript">    self.places = ko.observableArray([<span class="string">'London'</span>, <span class="string">'Paris'</span>, <span class="string">'Tokyo'</span>]);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">          <span class="comment">// The current item will be passed as the first parameter, so we know which place to remove</span></span></span><br><span class="line"><span class="actionscript">          self.removePlace = <span class="function"><span class="keyword">function</span> <span class="params">(place)</span> </span>&#123;</span></span><br><span class="line">              self.places.remove(place)</span><br><span class="line"><span class="javascript">              <span class="built_in">console</span>.log(place);</span></span><br><span class="line">          &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这例子显告诉我们click绑定第一个参数是当前绑定的上下文。<br>当然其实有两个参数，一个是data，一个是event。看下面的例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">data-bind</span>=<span class="string">"click: myFunction"</span>&gt;</span></span><br><span class="line">        Click me</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="actionscript">self.myFunction = <span class="function"><span class="keyword">function</span> <span class="params">(data, event)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"-------------------------------------------"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"data:"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"event:"</span> + event);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>用event.currentTarget可以获取到当前被点击到的节点。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">data-bind</span>=<span class="string">"click: function(data, event) &#123; myFunction2('param1', 'param2', data, event) &#125;"</span>&gt;</span></span><br><span class="line">        Click me2</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">data-bind</span>=<span class="string">"click: myFunction3.bind($data, 'param1', 'param2')"</span>&gt;</span></span><br><span class="line">        Click me3</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">      self.myFunction2 = <span class="function"><span class="keyword">function</span> <span class="params">(param1, param2, data, event)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"-------------------------------------------"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"param1:"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param1);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"param2:"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param2);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"data:"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"event:"</span> + event);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="actionscript">            <span class="comment">// 最后两个参数是data和event参数，前面的是自己传入的参数</span></span></span><br><span class="line"><span class="actionscript">            self.myFunction3 = <span class="function"><span class="keyword">function</span> <span class="params">(param, param1, data, event)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(param1);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(event);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>第一个例子可以用这种方法传入自己的参数，当然你不喜欢在绑定的时候出现function这个字段，可以用bind来绑定。最后俩个参数是data和event，前面的参数是自己的参数。<br>click绑定是会屏蔽原来的点击事件的，比如一个a标签，他的超链接就会被屏蔽：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-link"</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">data-bind</span>=<span class="string">"click:aclick"</span>&gt;</span>baidu.com<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  self.aclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                alert(<span class="string">"你点击了一个链接，但是没有跳转到超链接"</span>);</span></span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个超链接只会响应点击事件，而不会跳转到百度首页。</p>
+<p>点击事件会有冒泡反应，要是想禁用冒泡就在后面加上clickBubble：false，这样就不会有冒泡。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--    有冒泡--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">data-bind</span>=<span class="string">"click: myDivHandler"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">data-bind</span>=<span class="string">"click: myButtonHandler"</span>&gt;</span></span><br><span class="line">            Click me</span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--    禁用冒泡--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">data-bind</span>=<span class="string">"click: myDivHandler"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">data-bind</span>=<span class="string">"click: myButtonHandler, clickBubble: false"</span>&gt;</span></span><br><span class="line">            Click me</span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"> self.myDivHandler = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                alert(<span class="string">"div click"</span>);</span></span><br><span class="line">            &#125;;</span><br><span class="line"><span class="actionscript">            self.myButtonHandler = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                alert(<span class="string">"button click"</span>);</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后一个要注意的是在调用applyBindings前调用 ko.options.useOnlyNativeEvents = true;这样就是用原生的onclick，而ko默认是使用的jquery的click事件，但是我不知道这两者之间有什么差别，希望有懂的人可以和我交流。<br>今天的东西比较多，代码托管在<a href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82" target="_blank" rel="noopener">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.751Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/03/07/web/2016-03-7-7click/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/&title=《knockoutjs七  click 绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/&title=《knockoutjs七  click 绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs七  click 绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/08/web/2016-03-8-8event/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">knockoutjs八  event绑定</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/06/web/2016-03-6-6with/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">knockoutjs六  with 绑定</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/&title=《knockoutjs七  click 绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/&title=《knockoutjs七  click 绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs七  click 绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/07/web/2016-03-7-7click/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3a26rCMBCF4b7/S1fwSlDTtWalYiZ/rkR2Tb5uGDKH45DX+Vzvn8ffvK7x378/ddyxYMCAsSzjHK5vjPERlWeVl6KcDQYMGPswlCCrHNol6Z8vzgwDBgwYQohUwqIbTGHAgAFjbsBNUlkYMGDAUBhK4BsXwqRU0yzn3ZKLw4ABY0FGvs19n3/U34ABA8YfM05zKW1LN2V1g+yHX4ABA0Zrhn6gWvPSbRXUWp4wYMDYh+GGwlkDXnrLoVhugwEDxuIMZVSitoHbDNDT16+XQhgwYGzAcFsC+uhqXm67oMKAAWMDhhIo9UajHspnhWwYMGD0ZigXMr24n7dIo+YEDBgwWjP0cYdaKps0OO1yHgwYMJoy5jYs9cQ4KbHBgAFjH4YbWGsb68/q+8KAAWMfhjsKVts4aTnYw2cwYMBoynAHI5Jg6r5dI+DCgAGjKUNPX5Wf0wcy3AGLCddBGDBgLMtQSG7i6rYWktTX+M/AgAGjESMv4icvRU+kL3JxGDBgNGK4hTD96lYbqS++IBgwYGzAqA06JC1Pt2x3UeyDAQNGa0YyGFELu8leE+62MGDAWJBxmit5W247wRjFgAEDRmtGlDqa3+fDskmYhgEDxuqMWSNf4830sTB3yAMGDBj7MNzD1Y44qy1qz7jBgAFjG4Z+ODdxrVXPYMCAAaM2Xp+0Kt2rZ/FqCAMGjGUZypb5nKzbctCvmzBgwOjNyEOeO17mlv5rI7YwYMBowXgAB5UsurxUOEgAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

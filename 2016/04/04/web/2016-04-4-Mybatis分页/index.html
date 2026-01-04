@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>关于MyBatis分页 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="java,Mybatis">
+    <meta name="description" content="Mybatis分页">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于MyBatis分页">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="Mybatis分页">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-04-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.762Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="Mybatis">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">关于MyBatis分页</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">关于MyBatis分页</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-04-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-04-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Mybatis分页"><span class="post-toc-number">1.</span> <span class="post-toc-text">Mybatis分页</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-04-4-Mybatis分页"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">关于MyBatis分页</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-04-04 00:00:00" datetime="2016-04-03T16:00:00.000Z"  itemprop="datePublished">2016-04-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Mybatis分页"><a href="#Mybatis分页" class="headerlink" title="Mybatis分页"></a>Mybatis分页</h1><p>身为一个java程序员，我的前十几篇的blog居然都是关于js的，所以我决定聊聊java。最近在做毕业设计，由于我的<br>毕设导师他们的实验室一直是使用PostgreSQL的，那个和mysql一样也是免费的数据库，而且还自带管理端，用起来很方便<br>。但是我在实习工作的时候一直是使用mysql的，关于分页的事就麻烦了。<br>每个数据库关于sql的语法都有点不同。刚开始在网上找到 <a href="https://github.com/miemiedev/mybatis-paginator" target="_blank" rel="noopener">paginator项目 </a><br>大家都很推荐这个，我觉得他应该是很不错的，但是在整合的时候，运行出现sql语法错误，说明他不适合PostgreSQL，但是可以修改源码解决。<br>但是我只是想找个解决办法，终于<a href="http://git.oschina.net/free/Mybatis_PageHelper" target="_blank" rel="noopener"> Mybatis_PageHelper</a>解决了问题。</p>
+<p> Mybatis_PageHelper很好用，而且他的兼容性好，Oracle、Mysql、MariaDB、SQLite、Hsqldb、PostgreSQL、DB2、SqlServer(2005,2008)、Informix、H2、SqlServer2012。<br> 这基本就包括了所有的数据库了。下面说说配置。<br> 他的maven坐标：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>他还使用了jsqlparser.jar这个jar包也要引进来。</p>
+<p>重要的是配置一个Mybatis插件，在Mybatis的xml配置文件中，或者是通过spring的属性配置都可以，但是不要一起使用，<br>会发生错误。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlSessionFactory"</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"mapperLocations"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">value</span>&gt;</span>classpath:mapper/*.xml<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"typeAliasesPackage"</span> <span class="attr">value</span>=<span class="string">"com.isea533.ssm.model"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"plugins"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.github.pagehelper.PageHelper"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"properties"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">value</span>&gt;</span></span><br><span class="line">            dialect=hsqldb</span><br><span class="line">          <span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我没有细看到底配置是有什么用，但是记住修改dialect为你使用的数据库，官方说在也可以不指定，他会自动识别。<br>我觉得还是配置为好。<br>使用时有两种调用方法，我使用的第二种：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PageHelper.startPage(<span class="number">1</span>, <span class="number">10</span>);</span><br><span class="line">List&lt;Country&gt; list = countryMapper.selectIf(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在你需要进行分页的Mybatis方法前调用PageHelper.startPage静态方法即可，紧跟在这个方法后的第一个Mybatis查询方法会被进行分页。但是我觉得已经足够使用了。</p>
+<p>我的java代码是这么写的  service中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Task&gt; <span class="title">findList</span><span class="params">(<span class="keyword">int</span> pageNumber,<span class="keyword">int</span> pageSize)</span> </span>&#123;</span><br><span class="line">	TaskExample example = <span class="keyword">new</span> TaskExample();</span><br><span class="line">	PageHelper.startPage(pageNumber, pageSize);</span><br><span class="line">	List&lt;Task&gt; tasks = taskMapper.selectByExample(example);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> tasks;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>controller</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">queryTaskList</span><span class="params">(<span class="keyword">int</span> page, <span class="keyword">int</span> rows)</span> </span>&#123;</span><br><span class="line">		List&lt;Task&gt; tasks = taskService.findList(page, rows);</span><br><span class="line">		PageInfo&lt;Task&gt; taskPage = <span class="keyword">new</span> PageInfo&lt;Task&gt;(tasks);</span><br><span class="line">		Map&lt;String, Object&gt; result = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">		result.put(<span class="string">"total"</span>, taskPage.getTotal());</span><br><span class="line">		result.put(<span class="string">"rows"</span>, tasks);</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分页中一般需要知道total，就可以使用<code>PageInfo page = new PageInfo(list);</code>pageinfo可以获取他的一些分页信息，很是方便。<br>有什么问题可以和加qq1357197829我一起讨论，共同进步。也可以到我的<a href="http://github.lushunming.top/" target="_blank" rel="noopener">个人博客</a>查看。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.762Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/&title=《关于MyBatis分页》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/&title=《关于MyBatis分页》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关于MyBatis分页》 — 在路上&url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/04/18/web/2016-04-18-spring%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Spring请求参数为一个数组</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/15/web/2016-03-15-15template/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">knockoutjs十五  template</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/&title=《关于MyBatis分页》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/&title=《关于MyBatis分页》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关于MyBatis分页》 — 在路上&url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/04/04/web/2016-04-4-Mybatis%E5%88%86%E9%A1%B5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACo0lEQVR42u3awW4CUQgFUP//p+22iXHmAg9rkzMr07GW80wGCjwe8fV8c717z++fJJ/2evf69eELDw8P71Dorx+d330X3DU4OZQ8Zjw8PLxtXv4nr4N+xlfOq6YcPDw8vG/jJY/pSWl+/bt4eHh4/5d3HXq11M4Ldzw8PLzv4VU/ev7+amN3vdeCh4eHF/Mm5exfvV6Z7+Hh4eGNp+q90rbXpEhK8HK0eHh4eAu8XqMhGWJVg05GX72GCB4eHt5Z3qSQTXh5c6HXFL6JGQ8PD2+N11uKqmImjYbeAeHh4eFt8KrB9cZmk5/01g7w8PDw9nj5mlS18M2bvNXxW+EuHh4e3hqvWhD3FrCSQ5zEE/Va8PDw8NZ41QZrb3mrt3ialPijLQY8PDy8OKr5Q7/3uO+1jPMEg4eHh3eWtzGOqi5R5cmgvMSAh4eHt8CbN3Pz9axeId47Sjw8PLw9Xr4uUB2GnSrHe4O38jYEHh4eXpHXo1bXoSbJIx96RV1qPDw8vAGvmgYmDYsJu/qet98hHh4e3jIvb57mA7AEWV3euokZDw8P7yivOlKar0P1jiBv+N58b3h4eHiHeNUR1zV+kjZ6x3eTGPDw8PCWeZNW7CRJlFepkoYFHh4e3gIvf4j3iuDJGla+alDoteDh4eEd5VWHW2fXpHoJI4oBDw8P7+O8vLBOmr/Vx/1Noza5i4eHh7fMywvoaptgUljnjQ88PDy8bd6zeOWth16yuWaXkwceHh7eAm+y0jRfIMhJvSEcHh4e3h5vUlLP2WcPCA8PD++TvGoP4xS+MMqa5DQ8PDy8L+DljYC8gJ4c7uHEgIeHh3eUlzcUqs2FnFFIIXh4eHhrvN5qVO9o8hgm5TseHh7eHq/6H31+ENXPORw0Hh4e3nneD5sqK/DDURZlAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

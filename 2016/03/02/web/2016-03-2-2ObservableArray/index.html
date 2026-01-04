@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>knockoutjs二   observableArray的使用 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,knockoutjs">
+    <meta name="description" content="knockoutjs  observableArray的使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs二   observableArray的使用">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs  observableArray的使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.blog.csdn.net/20151230192620973">
+<meta property="og:image" content="http://img.blog.csdn.net/20151230192639729">
+<meta property="og:image" content="http://img.blog.csdn.net/20151230192537253">
+<meta property="article:published_time" content="2016-03-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.750Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20151230192620973">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">knockoutjs二   observableArray的使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">knockoutjs二   observableArray的使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-03-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#knockoutjs二-observableArray的使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">knockoutjs二   observableArray的使用</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-03-2-2ObservableArray"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">knockoutjs二   observableArray的使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-03-02 00:00:00" datetime="2016-03-01T16:00:00.000Z"  itemprop="datePublished">2016-03-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="knockoutjs二-observableArray的使用"><a href="#knockoutjs二-observableArray的使用" class="headerlink" title="knockoutjs二   observableArray的使用"></a>knockoutjs二   observableArray的使用</h1><p> 上次忘记讲了，viewmodel可以有好几仲形式。<br>1.<code>var viewModel={}</code> 这样写对应的绑定为    <code>ko.applyBindings(viewModel);</code><br>2. <code>function ViewModel(){}</code>这样写的把绑定方式是 <code> var viewMode=new ViewModel(); ko.applyBindings(viewModel);</code></p>
+<p>obervableArray的用法如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">"foreach:&#123;data:myObservableArray, as :'item'&#125; "</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">"text:item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">			<span class="function"><span class="keyword">function</span> <span class="title">Model</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">				<span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">				self.myObservableArray = ko.observableArray(<span class="string">''</span>);</span></span><br><span class="line"><span class="actionscript">				self.myObservableArray.push(<span class="string">'Some value'</span>);</span></span><br><span class="line"><span class="actionscript">				self.myObservableArray.push(<span class="string">'Some '</span>);</span></span><br><span class="line">			&#125;</span><br><span class="line"><span class="actionscript">			<span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">			ko.applyBindings(model);</span><br><span class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在使用时我们在model的内部可以使用this.myObservableArray 来获取这个操作进行操作，在model的外部则可以使用model.myObservableArray来获取这个方法进行操作。其实model.myObservableArray这是一个方法，所以其实dom中绑定是可以这样<code>&lt;div data-bind=&quot;foreach:{data:myObservableArray(), as :&#39;item&#39;} &quot;&gt;</code><br>如下图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://img.blog.csdn.net/20151230192620973" alt="这里写图片描述" title="">
+                </div>
+                <div class="image-caption">这里写图片描述</div>
+            </figure>
+<p>这证明了他是一个方法。<br>而我用console给他添加了一个元素。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://img.blog.csdn.net/20151230192639729" alt="这里写图片描述" title="">
+                </div>
+                <div class="image-caption">这里写图片描述</div>
+            </figure>
+<p>就立即在view中显示了。如下：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://img.blog.csdn.net/20151230192537253" alt="改变后的值" title="">
+                </div>
+                <div class="image-caption">改变后的值</div>
+            </figure>
+<p>这次的例子中用到了foreach绑定，先不介绍，只要把它当做一个循环就可以了。<br>可以在obervableArray中初始化数据的，不一定要push进去</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var anotherObservableArray = ko.observableArray([</span><br><span class="line">    &#123; name: "Bungle", type: "Bear" &#125;,</span><br><span class="line">    &#123; name: "George", type: "Hippo" &#125;,</span><br><span class="line">    &#123; name: "Zippy", type: "Unknown" &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<p>可以用操作数组的方式操作它,比如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model.myObservableArray.push("1");</span><br><span class="line">	alert('The length of the array is ' + model.myObservableArray().length);</span><br><span class="line">	alert('The first element is ' + model.myObservableArray()[0]);</span><br><span class="line">	model.myObservableArray.splice(0, 1);</span><br><span class="line">	alert('The length of the array is ' + model.myObservableArray().length);</span><br><span class="line">	alert('The first element is ' + model.myObservableArray()[0]);</span><br></pre></td></tr></table></figure>
+
+<p>官网说model.myObservableArray.push(“1”);这个方法比这样调用原生js 的myObservableArray().push(‘1’)的array的潜在push要好，但是我发现调用myObservableArray().push(‘1’)这个方法调用后view不会改变，也即是说根本没有通知到view进行改变（不知道是不是一个bug）。</p>
+<ul>
+<li>knockoutjs给出了对于observableArray的这些操作：pop, push, shift, unshift, reverse, sort, splice。就个原生js中数组的操作一样。</li>
+<li>knockoutjs还增加了一些有用的方法如：remove and removeAll，</li>
+<li><code>remove（）</code>中传入一个方法如：<code>remove( function (item) { return item.age &lt; 18; } )</code> 就是去除所有item的age小于18的，并返回一个剩余元素的数组。</li>
+<li><code>removeAll( [&#39;Chad&#39;, 132, undefined] )</code>：就是去除所有传入的数组中的元素，并返回一个包含剩余元素的数组。</li>
+</ul>
+<p>代码托管在<a href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82" target="_blank" rel="noopener">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.750Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/03/02/web/2016-03-2-2ObservableArray/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/&title=《knockoutjs二   observableArray的使用》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/&title=《knockoutjs二   observableArray的使用》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs二   observableArray的使用》 — 在路上&url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/03/web/2016-03-3-3textAndApperance/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">knockoutjs三  text和apperance的绑定</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/01/web/2016-03-1-1Observable/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">knockoutjs一 关于knockoutjs</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/&title=《knockoutjs二   observableArray的使用》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/&title=《knockoutjs二   observableArray的使用》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs二   observableArray的使用》 — 在路上&url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/02/web/2016-03-2-2ObservableArray/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aMXIjMQwEQP//077kMsnSDEjYCpqRq7zishkQXABfX/H4/mE8PvP4/Otn8rc8Pn9t4OHh4V1a+q3lnjyZbN/rTcfDw8Pb4yXT5a/8aRH5Sf56hmQ9eHh4eJ/DSy7WrzHRgX683Xh4eHifzEuoyfU6T0bg4eHhfQJvlkK9BWiDzUquBQ8PDy/mzRIEf/v3Sn0PDw8P77iqnjcK5LO1ieDZOv/PgIeHh7fAyw/clvr6Kpw0EMwCAx4eHt42b1biytltwMhbYKONw8PDw1vgJZfj9uCeLSK/dh/lUfDw8PCOefkiEnA7W1vcSt7yJCTg4eHhXeXNmpnaq3NbSGsDw5uwgYeHh7fGy1udZq88ack6CUV4eHh4d3m32kZzcNIWkIeoqLKHh4eHd5U3O3AXFxGHh3pr8PDw8K7yZoX8tiWrbRrIN+XNOvHw8PAWeLNkQd6c2qaA87aG4nKPh4eHt8abHe5tU9T5bG1owcPDw7vFm33wz5pQ2wTELDBE3wp4eHh4l3jtBXeWVthr9nqycjw8PLxlXpsOaDeiPdzb1MaTX+Hh4eGt8drrb7LofDtO3hj1lOHh4eEt89rE7uzIPm9BiH6Lh4eHt8DLmwbawzpP+M7KXUXCAg8PD2+ZN2sG3S6ktamKHwMDHh4e3gIvp54nHfKAcdSagIeHh7fGO2lRzWF3/xttPR4eHt4ar00x5Ji27aAdb2bAw8PDu8r7LsdJsardgnbjinZVPDw8vANee/ielMdmV+eT4hweHh7eHu9k6jaczK7s7WUdDw8P73d4eWI0L1a1IeFrY+Dh4eF9AC8vTc1KZSdtCk8seHh4eB/AS16WFNiS5MKsjQAPDw/vd3htmjVvQWivy7Okw5vAgIeHh3eV137R36q55Uf8YqoCDw8Prxv/ABczc6jZUZg6AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

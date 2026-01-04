@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>knockoutjs一 关于knockoutjs | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,knockoutjs">
+    <meta name="description" content="knockoutjs 关于knockoutjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs一 关于knockoutjs">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs 关于knockoutjs">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.blog.csdn.net/20151229232558678?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="article:published_time" content="2016-02-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.749Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20151229232558678?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">knockoutjs一 关于knockoutjs</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">knockoutjs一 关于knockoutjs</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-02-29T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-03-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#knockoutjs一-关于knockoutjs"><span class="post-toc-number">1.</span> <span class="post-toc-text">knockoutjs一 关于knockoutjs</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-03-1-1Observable"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">knockoutjs一 关于knockoutjs</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-03-01 00:00:00" datetime="2016-02-29T16:00:00.000Z"  itemprop="datePublished">2016-03-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="knockoutjs一-关于knockoutjs"><a href="#knockoutjs一-关于knockoutjs" class="headerlink" title="knockoutjs一 关于knockoutjs"></a>knockoutjs一 关于knockoutjs</h1><p>=============<br> 实习期间，我们公司用的前端框架是knockoutjs，这是一种MVVM的框架。在使用的时候，发现中国关于它的资料很少。所以想写点关于它的文章。</p>
+<p>knockoutjs的主页：<a href="http://knockoutjs.com/" target="_blank" rel="noopener">http://knockoutjs.com</a> 。使用方法详见官网。</p>
+<p>首先是入门，关于如何用observables创建viewModels。</p>
+<p>Model-View-View Model (MVVM) 是一种用来建立用户界面的设计模式。    </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"firstModel"</span>&gt;</span></span><br><span class="line">	div&gt;The name is <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text: personName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>His age is<span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text:personAge"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这就是一个绑定的例子。<br>而它对应的model是</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">&lt;!--第一个model--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">var</span> firstViewModel = &#123;</span></span><br><span class="line"><span class="actionscript">			personName: <span class="string">'Bob'</span>,</span></span><br><span class="line">			personAge: 123</span><br><span class="line">		&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>最后在script的末尾加上ko.applyBindings(firstViewModel);进行绑定。<br>ko.applyBindings(firstViewModel)这是用来激活knockout的，当然ko.applyBindings()可以传入第二个参数，代表你要将模板绑定到哪一块dom上<br>，如ko.applyBindings(firstViewModel, $(“#firstModel”)[0]);就是把这个模板绑定到id为firstModel的dom上，注意用jquery选择器的时候需要加上<code>[0]</code>(因为用$(“#firstModel”)返回的是一个dom数组);<br>如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://img.blog.csdn.net/20151229232558678?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="1" title="">
+                </div>
+                <div class="image-caption">1</div>
+            </figure>
+
+<p>如果你想设置一个双向绑定model可以设置成这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> var secondViewModel = &#123;</span><br><span class="line">		personName: ko.observable('Bob'),</span><br><span class="line">		personAge: ko.observable('123'),</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样只要你的model里的personName，personAge改变，那么view也会改变。而使用第一种viewmodel即使personName，personAge改变，view也不会改变。<br>还有一些高级的应用，暂时先不介绍，在我的demo里有，github地址 <a href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%EF%BC%8C%E6%88%91%E4%BD%BF%E7%94%A8%E7%9A%84hbuild%E7%BC%96%E5%86%99%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8hubild%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%E8%BF%90%E8%A1%8C%E3%80%82" target="_blank" rel="noopener">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆，我使用的hbuild编写，可以用hubild直接打开运行。</a><br>第一次写写博客写的有点烂，有宝贵意见请提出。以后会不定期更新。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.749Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/03/01/web/2016-03-1-1Observable/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/&title=《knockoutjs一 关于knockoutjs》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/&title=《knockoutjs一 关于knockoutjs》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs一 关于knockoutjs》 — 在路上&url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/02/web/2016-03-2-2ObservableArray/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">knockoutjs二   observableArray的使用</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/02/09/%E7%94%9F%E6%B4%BB/2016-02-9-welcome/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">博客搭建好的第一天</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/&title=《knockoutjs一 关于knockoutjs》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/&title=《knockoutjs一 关于knockoutjs》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs一 关于knockoutjs》 — 在路上&url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/01/web/2016-03-1-1Observable/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3aS3IbMQwFQN//0vYBVBo+fGhp0bNKJSnONBck9ICfn/j5LT7zFV5Xe7fywoOHh4e3+umv/+fdy57/5hn/vM7zaofNxcPDw7vGS5bLX1P+iMdNzC8JPDw8vO/k5Vvw7qpIqPPvwcPDw/seXlJqPx/lk2sGDw8P73t4vQi1GjHkZXe11F7IWvDw8PBqOUCznP3Un6/09/Dw8PCuDQQkxW5vp6sRxuFr8fDw8C7w8gO3yu5FDL3o9rBBeHh4eNd4kxZXNUSYNNjKIS8eHh7eKi8vhZNPr46xTt7eTFDw8PDwxrzkgK6GEdX2WLWtlUckeHh4eP/Dy+PU3iXRO+5H6+Dh4eGt8pKDdWsgdR74JhdJOYzAw8PDG/MmDbD5wFY12C109vDw8PBWefOgoXp8522zJN49XAx4eHh413i9dlQO6x33k+YcHh4e3g3e5BPz0HZrXLUXheDh4eHt8qoRavUFk1I7CTgO24SHh4d3gddrR20xqls2GrrCw8PDW+JNit3eMR3V+HHwcbiQ8PDw8K7xejFEIe0oIvOj/zCAhYeHh3eB12trFZpPk0p/tUmGh4eHt8vLQ9scVl0tOtzjsv4wtIqHh4e3xOvFDdWAoBd5TIbA8PDw8G7w8h/2vdbX7r/m7To8PDy8e7xqLDsppquBbO+Eb86I4eHh4Q141TGpvGGWv70aUhQuBjw8PLwl3iTSrTbDqq2vvDFW+K2Ah4eH1+L9Fp/eyFT1wmimKa9bhoeHh3eBN2/MV4el8k+fjMM27xY8PDy8mNdbOm+G5Ud8/t5C+Y6Hh4d3jdcbZqoWuHmQsXyn4eHh4X2Ul4+i9kKK3rBCNE2Gh4eH9yFePigwAfS2cu3ew8PDw1vKOatHf3U0YRI6HC4GPDw8vFVe7xd9HsU2S+H/iSrw8PDwas8fxSUDJ6yuo/QAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

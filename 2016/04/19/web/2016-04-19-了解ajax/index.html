@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>ajax的了解 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,ajax">
+    <meta name="description" content="了解ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax的了解">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="了解ajax">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-04-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.752Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="ajax">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ajax的了解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ajax的了解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-04-18T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-04-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ajax的了解"><span class="post-toc-number">1.</span> <span class="post-toc-text">ajax的了解</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-04-19-了解ajax"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ajax的了解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-04-19 00:00:00" datetime="2016-04-18T16:00:00.000Z"  itemprop="datePublished">2016-04-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="ajax的了解"><a href="#ajax的了解" class="headerlink" title="ajax的了解"></a>ajax的了解</h1><p>虽然每天都在使用ajax，但是我发现我好像对于ajax一点都不了解，他到底是什么？我们每天都在用的jquery的封装，他就是一个黑盒子，方便但是我们却不知道他的本身。我们每天也人云亦云，然而其实我们连ajax到底是什么都不知道。今天我们就来揭开他的神秘面纱。</p>
+<p>记得我刚学习web时，觉得很神奇，一个ajax请求就能返回一串json数据。原来我到今天才发现我错了。ajax英文叫做 <code>asynchronous JavaScript and XML</code>，用中文翻译就是异步的javascript和xml技术，那么我们发现我们现在用的貌似和xml没有半毛钱关系。确实，以前xml是前后台之间的数据交互形式，但是现在都是以json来传输数据，所以ajax中的xml技术不是必须的，现在基本被json取代，所以其实我们现在用的是<a href="https://en.wikipedia.org/wiki/AJAJ" target="_blank" rel="noopener">ajaj</a>,这就是ajax的由来。</p>
+<p>我们在使用时都知道ajax最厉害的是异步操作，当你发送一个请求时，当没有返回时，浏览器会继续执行其他的任务，而不会挂起等待，这就是异步的好处，当然也带来一些问题。比如我之前写一个东西（忘记是什么了），要做几个ajax请求，他们之间是有先后顺序的，当时我想javascript是按顺序执行的，于是我就把它们按照顺序写下来，发现每次请求的顺序都不一样。。。现在我终于找到了答案。</p>
+<p>原生的ajax是依赖于XMLHttpRequest 对象，在比较老的IE5 、6中是依赖于 ActiveXObject对象，所以要兼容性就这么写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">  &#123;<span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">  xhr=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  &#123;<span class="comment">// code for IE6, IE5</span></span><br><span class="line">  xhr=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>  下面便是发送请求：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  xhr.open(<span class="string">'get'</span>, <span class="string">'send-ajax-data.php'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检测ajax的请求状态</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> DONE = <span class="number">4</span>; <span class="comment">// readyState 4 means the request is done.</span></span><br><span class="line">    <span class="keyword">var</span> OK = <span class="number">200</span>; <span class="comment">// status 200 is a successful return.</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState === DONE) &#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.status === OK) &#123;</span><br><span class="line">            alert(xhr.responseText); <span class="comment">// 'This is the returned text.'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            alert(<span class="string">'Error: '</span> + xhr.status); <span class="comment">// An error occurred during the request.</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送请求</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+
+<p>在ajax中onreadystatechange会被调用五次，因为<code>xhr.readyState</code>会有五个值，</p>
+<ul>
+<li>0: 请求未初始化</li>
+<li>1: 服务器连接已建立</li>
+<li>2: 请求已接收</li>
+<li>3: 请求处理中</li>
+<li>4: 请求已完成，且响应已就绪</li>
+</ul>
+<p>每一次值变化的时候，onreadystatechange就会被触发，我们也就是在其中穿插回调方法。</p>
+<p>请求的回应可以通过<code>xhr.responseText</code>和<code>xhr.responseXML</code>获取，responseText是获取string类型的响应，responseXML是获取xml类型的响应。</p>
+<p>到此我们对ajax也有了一个简单的认识，有种豁然开朗的感觉。在这里不得不说有时候有不明白的地方需要自己去查找答案，一切便豁然开朗。这里我推荐使用维基百科，维基百科的解释更加权威，详细。大家也可以去我的个人博客查看（ <a href="http://coding.lushunming.top/" target="_blank" rel="noopener">http://coding.lushunming.top/</a> 或者是  <a href="http://github.lushunming.top/" target="_blank" rel="noopener">http://github.lushunming.top/</a>  ），个人博客的排版字体更加优美。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.752Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/&title=《ajax的了解》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/&title=《ajax的了解》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ajax的了解》 — 在路上&url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/04/24/web/2016-04-24-%E5%85%B3%E4%BA%8E%E6%88%91%E7%9A%84%E6%AF%95%E8%AE%BE/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">聊聊毕业设计</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/04/18/web/2016-04-18-spring%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Spring请求参数为一个数组</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/&title=《ajax的了解》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/&title=《ajax的了解》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ajax的了解》 — 在路上&url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/04/19/web/2016-04-19-%E4%BA%86%E8%A7%A3ajax/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aQW7CQAwFUO5/aSp1V7WEb3sMVHqzQmmUzKOSx9i+3eJ1/17Jld/Xq/ffL9dtY+Hh4eG1tn79uGve9edHV6qw6+c8/Arw8PDw1njXoTwJ0PkrJ3fme8bDw8P7BF4S+nv5bTWtx8PDw/svvOsAfR3cE2rv68bDw8N7Fy//8Z9vOi9J9A6nw7UWPDw8vIUu0ud8Xuzv4eHh4Q266kmBNb+SHzP3QwsPDw9vg5dvdCPE50nwJMXHw8PD2+P1RqDyokP+3snb/6Di4eHhLfAmUbT3hGolYd6Ew8PDwzvFmxQd8tBcDetJ2h0dTnh4eHjLvF5HqTcaNbmz8Fc8PDy8BV5vqLSQoa+Nq5b/VXh4eHiHeL12fq9BVW2n5Yn+k5QaDw8Pb5nXa1NVy695iK82yX7sCg8PD2+BVx2x2jgqJgXfaFwMDw8P7+W8alrcG9LqHSRRGRoPDw/vKK9afp0kxDkjaWhFxV88PDy8ZV6+rV7zvtro6g11Pam14OHh4Y15haGlQUH21GhCPsBan8nCw8PDS3mTBPfUgGlehsiHG8rnHh4eHt6YVy3XJpvujZxWG2bRLwY8PDy8MS9PUvMUuXoAVMHRrvDw8PAWeL2gPxnP6qXs1Tvx8PDw9nj5YdA7HvLkuzpcFeHx8PDwXsibt8F641M5Ozoq8PDw8BZ41QdNAnpvfKpKejhAgIeHh3eIN2nST0oP81ZZNLKAh4eH9xJetdiajFtVE+WkUBI9Ew8PD2+B1wy4cZs/T5pfc2zg4eHhneL1Et95mK6WJPI3Fk4/PDw8vAGvN0qVHB4bBeJ8sAAPDw/vvbxetn4K0Ctw4OHh4X0mr1qGqL5xlI7j4eHhrfEmJYZ5WaFaYsDDw8N7L+9UA6yXx/ZS6sMLDw8PL11fiSoiFhdfOucAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

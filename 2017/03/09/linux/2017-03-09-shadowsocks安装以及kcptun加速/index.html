@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>shadowsocks安装以及kcptun加速 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux,shadowsocks">
+    <meta name="description" content="shadowsocks安装以及kcptun加速">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shadowsocks安装以及kcptun加速">
+<meta property="og:url" content="http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="shadowsocks安装以及kcptun加速">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/xtaci/kcptun/master/kcptun.png">
+<meta property="article:published_time" content="2017-03-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.736Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="shadowsocks">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xtaci/kcptun/master/kcptun.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">shadowsocks安装以及kcptun加速</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">shadowsocks安装以及kcptun加速</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-03-08T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-03-09
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#shadowsocks安装以及kcptun加速"><span class="post-toc-number">1.</span> <span class="post-toc-text">shadowsocks安装以及kcptun加速</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-linux/2017-03-09-shadowsocks安装以及kcptun加速"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">shadowsocks安装以及kcptun加速</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-03-09 00:00:00" datetime="2017-03-08T16:00:00.000Z"  itemprop="datePublished">2017-03-09</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="shadowsocks安装以及kcptun加速"><a href="#shadowsocks安装以及kcptun加速" class="headerlink" title="shadowsocks安装以及kcptun加速"></a>shadowsocks安装以及kcptun加速</h1><p>最近买了搬瓦工的vps，因为搬瓦工很便宜而且可以一键安装，所以选了他，但是缺点是速度不快。经过研究发现可以很快搭建一个快速的梯子。</p>
+<p>为了方便所以我都是选择一键安装的脚本。</p>
+<ol>
+<li><p>一键安装shadowsocks</p>
+  <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/teddysun/shadowsocks_install/master/shadowsocks-<span class="keyword">go</span>.<span class="keyword">sh</span></span><br><span class="line">chmod +<span class="keyword">x</span> shadowsocks-<span class="keyword">go</span>.<span class="keyword">sh</span></span><br><span class="line">./shadowsocks-<span class="keyword">go</span>.<span class="keyword">sh</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks-<span class="keyword">go</span>.<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p> 输入下面命令就会显示</p>
+ <figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Congratulations, shadowsocks-go install completed!</span><br><span class="line">Your Server IP:your_server_ip</span><br><span class="line">Your Server Port:<span class="number">8989</span></span><br><span class="line">Your Password:your_password</span><br><span class="line">Your Local Port:<span class="number">1080</span></span><br><span class="line">Your Encryption <span class="function"><span class="keyword">Method</span>:</span>aes-<span class="number">256</span>-cfb</span><br><span class="line">Welcome <span class="keyword">to</span> visit:http:<span class="comment">//teddysun.com/392.html</span></span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure>
+<p> 就是安装完了。<br> 这个脚本默认已经安装开机自启动，</p>
+ <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">启动：<span class="meta-keyword">/etc/</span>init.d/shadowsocks start</span><br><span class="line">停止：<span class="meta-keyword">/etc/</span>init.d/shadowsocks stop</span><br><span class="line">重启：<span class="meta-keyword">/etc/</span>init.d/shadowsocks restart</span><br><span class="line">状态：<span class="meta-keyword">/etc/</span>init.d/shadowsocks status</span><br></pre></td></tr></table></figure>
+<p> 以上是对shadowsocks的操作。</p>
+</li>
+<li><p>安装kcptun server</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/kuoruan/kcptun_installer/master/kcptun.<span class="keyword">sh</span></span><br><span class="line">chmod +<span class="keyword">x</span> ./kcptun.<span class="keyword">sh</span></span><br><span class="line">./kcptun.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<p> 比较重要的是设置加速端口，一定是你的shadowsocks端口才行。设置错误也没有什么关系，可以修改配置文件。</p>
+</li>
+<li><p>修改配置文件</p>
+<p> 首先是修改shadowsocks配置文件</p>
+ <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks/<span class="built_in">config</span>.json</span><br></pre></td></tr></table></figure>
+<p> 显示是：</p>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">        <span class="attr">"server_port"</span>:<span class="number">65534</span>, <span class="comment">//服务端的端口，将来要用来配置kcptun。</span></span><br><span class="line">        <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">        <span class="attr">"password"</span>:<span class="string">"你的密码"</span>,</span><br><span class="line">        <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">        <span class="attr">"timeout"</span>:<span class="number">600</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 然后重启shadowsocks服务。</p>
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/shadowsocks restart</span></span><br></pre></td></tr></table></figure>
+<p> 然后修改kcptun的配置文件。</p>
+ <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="keyword">local</span>/kcp-<span class="keyword">server</span>/<span class="keyword">server</span>-kcptun.json</span><br></pre></td></tr></table></figure>
+<p> 显示是：</p>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="attr">"listen"</span>: <span class="string">":45678"</span>, <span class="comment">//监听端口随意选一个</span></span><br><span class="line">        <span class="attr">"target"</span>: <span class="string">"127.0.0.1:65534"</span>,<span class="comment">//加速的端口就是你的shadowsocks的服务端口</span></span><br><span class="line">        <span class="attr">"key"</span>: <span class="string">"你的kcptun密码"</span>,</span><br><span class="line">        <span class="attr">"mode"</span>: <span class="string">"fast2"</span>,</span><br><span class="line">        <span class="attr">"mtu"</span>: <span class="number">1350</span>,</span><br><span class="line">        <span class="attr">"sndwnd"</span>: <span class="number">1024</span>,</span><br><span class="line">        <span class="attr">"rcvwnd"</span>: <span class="number">1024</span>,</span><br><span class="line">        <span class="attr">"nocomp"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 重新启动kcptun</p>
+ <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">supervisorctl restart kcptun</span></span><br></pre></td></tr></table></figure>
+<p> 服务端的配置就结束了</p>
+</li>
+<li><p>本地配置</p>
+<p> 在你的电脑上你需要先下载shadowsocks的客户端和kcptun的客户端。<br> 在kcptun客户端的目录中新建一个json文件<code>conf.json</code>,内容是：</p>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="attr">"localaddr"</span>: <span class="string">":12948"</span>, <span class="comment">//本地端口，在shadowsocks客户端配置要用</span></span><br><span class="line">        <span class="attr">"remoteaddr"</span>: <span class="string">"162.211.225.21:45678"</span>,<span class="comment">//要和服务端监听的端口一致（vps ip+listen）。</span></span><br><span class="line">        <span class="attr">"key"</span>: <span class="string">"kcptun的密码"</span>,</span><br><span class="line">        <span class="attr">"mode"</span>: <span class="string">"fast2"</span>,</span><br><span class="line">        <span class="attr">"conn"</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="attr">"autoexpire"</span>: <span class="number">60</span>,</span><br><span class="line">        <span class="attr">"mtu"</span>: <span class="number">1350</span>,</span><br><span class="line">        <span class="attr">"sndwnd"</span>: <span class="number">1024</span>,</span><br><span class="line">        <span class="attr">"rcvwnd"</span>: <span class="number">1024</span>,</span><br><span class="line">        <span class="attr">"datashard"</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="attr">"parityshard"</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="attr">"dscp"</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">"nocomp"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"acknodelay"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"nodelay"</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">"interval"</span>: <span class="number">20</span>,</span><br><span class="line">        <span class="attr">"resend"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">"nc"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">"sockbuf"</span>: <span class="number">4194304</span>,</span><br><span class="line">        <span class="attr">"keepalive"</span>: <span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 我不需要加密，所以kcptun的加密被我删了。<br> 在kcptun客户端目录下：</p>
+ <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client_linux_amd64 -c <span class="built_in">config</span>.json</span><br></pre></td></tr></table></figure>
+<p> 然后开启shadowsocks客户端，</p>
+ <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">serverAddress：<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">port：kcptun 客户端的localaddr</span><br><span class="line">加密和密码和服务端shadowdocks的加密和密码一样</span><br></pre></td></tr></table></figure>
+<p> 这样启动就可以了。<br> 其实就相当于shadowsocks服务端和kcptun服务端连接，shadowsocks客户端和kcptun客户端相连。kcptun服务端和客户端相互通信，而不是shadowsocks的服务端和客户端通信。如下图<br>   <img src="https://raw.githubusercontent.com/xtaci/kcptun/master/kcptun.png" alt="加速原理"><br> 到此就结束了。</p>
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.736Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/" target="_blank" rel="external">http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/&title=《shadowsocks安装以及kcptun加速》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/&title=《shadowsocks安装以及kcptun加速》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《shadowsocks安装以及kcptun加速》 — 在路上&url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/03/10/linux/2017-03-10-zabbix%20agent%E5%AE%89%E8%A3%85/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">zabbix agent 安装</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/03/06/linux/2017-03-06-zabbix%E5%AE%89%E8%A3%85/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">zabbix安装</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/&title=《shadowsocks安装以及kcptun加速》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/&title=《shadowsocks安装以及kcptun加速》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《shadowsocks安装以及kcptun加速》 — 在路上&url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/03/09/linux/2017-03-09-shadowsocks%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8Akcptun%E5%8A%A0%E9%80%9F/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEjElEQVR42u3bS27bQBAFwNz/0g6QrU3pvW460EjFlSFbJKcmwPQvf/7E19e/6+qT77+9+pur6/u3Hv/28Vs9fsrV295wYcKECROml2TKb50su0XJX3329Ls2DxMmTJgwnc5072vl98yxcuJNSHH5OSZMmDBh+gCm9sBOuPPvJhC/sZ2YMGHChOnTmDYHc5IGX91h/yxMmDBhwvTJTO3t2oO2LRnvg4lNAIEJEyZMmN6JqR3ceaeff3G+CRMmTJgwvQDTJl3Mj9VZu3QWTOyDgB++hQkTJkyYjmXKU8q8KHxXczQp6eZPn53+RfaMCRMmTJhenqk9pJMHbMqvm4XliMnaMWHChAnTuUyzYzVJNTcHfJ7W5kx54v3D32DChAkTpmOZ8s5dnna25dfZWE87JrspEGPChAkTptOZZsntrFC7T6HbovMmUceECRMmTKcz1aJlApkc3rM26mxIaBaIYMKECROm05lmyWc7jnNDXl4OA7X3idqZmDBhwoTpcKa2gNumxO2xnTc+26Jz0fLEhAkTJkyHM7U3mi0jT3Tb9HsWTBQDQ5gwYcKE6XCmtoTajvW0n9816NMGIk/6vZgwYcKE6UCmWdFzM76Tb0P7rbzse1t4gQkTJkyYXp4pGbXZj9S0rccEIsdq/ynURV5MmDBhwvTyTHnRM09QN8lqO/aaDwzNQhZMmDBhwvQeTJtBnJxylovnm9QWi6NABxMmTJgwHcs0Oz5/o904O87bhHmfDGPChAkTprOY8uXdxZe3S/OkelZuvqEWjgkTJkyYXp4pTx2TV2/bn5uBm9my80L25WZgwoQJE6ZjmR4vJh+1ydPXffBxb6CQbzMmTJgwYTqFafPfKjYom5GaWUl3k7pjwoQJE6ZzmdojNjl07wod7mpVtuOwmDBhwoTpE5jaNLgdiNmUgGef5JRP1ogJEyZMmN6CKR95aQ/a/Lst1r1DsU+6vpgwYcKE6RCmWYp7V6vya3Rt/kW0W44JEyZMmN6PKXm5fFCmHehJEtQ2Wd0EH5gwYcKE6XSmNlFMbjdLOPPm4j79HqJjwoQJE6ZjmW4YZxkNyuQcM8pZ8PFkmzFhwoQJ01FMs3ZgXhRuS8BtoXY/fhQl55gwYcKE6XCmvN04GyG9izXftlnGWtfCMWHChAnTUUx5iTaH2xzkbUCQt07bd8OECRMmTOcytYfxZpRndhi3Qz85aDsqhAkTJkyYTmRqX25zYrZLmqEnG9mGPpgwYcKE6T2YZm2/9rU2jdJZI3M2BvRDkRcTJkyYMB3IlAANxzrLRmYeZOw3ZhPKYMKECROms5i+yqs92vMxnc2SWvo6RMCECRMmTMcybY7kpLmYJ9Ltz5shpPz+mDBhwoTpPZjaIGA2gnNXKTZPwjcp8eVkEyZMmDBhOpapDQLaEZxZJJIEEL/x3MuAABMmTJgwvTVTW67NCTYos2HWdkQJEyZMmDB9DlOypP/z3cdLbVuhT7YWEyZMmDAdzrQf1kmO5+QO+4S2fc+o1IsJEyZMmI5lqsudi8S4PcJnQ6ttk/W2CxMmTJgwvRbTX3KdTW5zEX39AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

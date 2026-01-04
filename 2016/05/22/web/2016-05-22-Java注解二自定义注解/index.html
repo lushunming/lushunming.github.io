@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java注解二 自定义注解 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="java,annoation">
+    <meta name="description" content="Java自定义注解以及一个简单的注解实例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java注解二 自定义注解">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="Java自定义注解以及一个简单的注解实例">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-05-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.764Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="annoation">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java注解二 自定义注解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java注解二 自定义注解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-05-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-05-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java注解二-自定义注解"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java注解二 自定义注解</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-05-22-Java注解二自定义注解"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java注解二 自定义注解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-05-22 00:00:00" datetime="2016-05-21T16:00:00.000Z"  itemprop="datePublished">2016-05-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Java注解二-自定义注解"><a href="#Java注解二-自定义注解" class="headerlink" title="Java注解二 自定义注解"></a>Java注解二 自定义注解</h1><p>首先今天想先聊聊怎么自定义一个注解。<br>　定义注解格式：<br>　　public @interface 注解名 {定义体}</p>
+<p>　　注解参数的可支持数据类型：</p>
+<p>　　　　1. 所有基本数据类型（int,float,boolean,byte,double,char,long,short)<br>　　　　2. String类型<br>　　　　3. Class类型<br>　　　　4. enum类型<br>　　　　5. Annotation类型<br>　　　　6. 以上所有类型的数组</p>
+<p>　　Annotation类型里面的参数该怎么设定:<br>　　第一,只能用public或默认(default)这两个访问权修饰.例如,String value();这里把方法设为defaul默认类型；　 　<br>　　第二,参数成员只能用基本类型byte,short,char,int,long,float,double,boolean八种基本数据类型和 String,Enum,Class,annotations等数据类型,以及这一些类型的数组.例如,String value();这里的参数成员就为String;　　<br>　　第三,如果只有一个参数成员,最好把参数名称设为”value”,后加小括号。（引用自<a href="http://www.cnblogs.com/ITtangtang/p/3974531.html%EF%BC%89%E3%80%82" target="_blank" rel="noopener">http://www.cnblogs.com/ITtangtang/p/3974531.html）。</a></p>
+<p>知道了自定义注解的方法，我们使用一个简单的例子作为讲解。<br>首先自定义一个注解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lu.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义注解</span></span><br><span class="line"><span class="comment"> * 保留时间一直到Runtime</span></span><br><span class="line"><span class="comment"> * 只能在类、接口、或者是枚举</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> lusm</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(value=ElementType.TYPE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnoation &#123;</span><br><span class="line">	<span class="function">String <span class="title">time</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">String <span class="title">author</span><span class="params">()</span> <span class="keyword">default</span> "lusm"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">String <span class="title">description</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个自定义的注解，我们把他的目标身为Type，那就只能在类、接口、或者是枚举。他的被保留时间一直到Runtime。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lu.beannoated;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lu.annotation.MyAnnoation;</span><br><span class="line"></span><br><span class="line"><span class="meta">@MyAnnoation</span>(author = <span class="string">"lushunming"</span>, description = <span class="string">"这是一个被注解的类"</span>, time = <span class="string">"2016-5-21"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Annoated</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String author;</span><br><span class="line">	<span class="keyword">private</span> String description;</span><br><span class="line">	<span class="keyword">private</span> String time;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getAuthor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> author;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthor</span><span class="params">(String author)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.author = author;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> description;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String description)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.description = description;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> time;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTime</span><span class="params">(String time)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.time = time;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是被注解的类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lu.parser;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lu.annotation.MyAnnoation;</span><br><span class="line"><span class="keyword">import</span> com.lu.beannoated.Annoated;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 注解解析器</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> lusm</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAnnoationParser</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">parse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Class&lt;Annoated&gt; clazz = Annoated<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line">		<span class="comment">//获取被注解类上的所有注解</span></span><br><span class="line">		Annotation[] ans=clazz.getAnnotations();</span><br><span class="line">		System.out.println(<span class="string">"所有的注解开始"</span>);</span><br><span class="line">		<span class="keyword">for</span> (Annotation annotation : ans) &#123;</span><br><span class="line">			System.out.println(annotation);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"所有的注解结束"</span>);</span><br><span class="line">	<span class="comment">//获取特定的注解</span></span><br><span class="line">		MyAnnoation myAnnoation=clazz.getAnnotation(MyAnnoation<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">		System.out.println(<span class="string">"获取MyAnnoation"</span>);</span><br><span class="line">		System.out.println(myAnnoation);</span><br><span class="line">		System.out.println(<span class="string">"获取MyAnnoation的详细信息"</span>);</span><br><span class="line">		<span class="comment">//获取注解中的信息</span></span><br><span class="line">		System.out.println(<span class="string">"author---"</span>+myAnnoation.author());</span><br><span class="line">		System.out.println(<span class="string">"description---"</span>+myAnnoation.description());</span><br><span class="line">		System.out.println(<span class="string">"time---"</span>+myAnnoation.time());</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是注解解析器，用来解析注解。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lu.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lu.parser.MyAnnoationParser;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 运行主方法</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> lusm</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAnnoationMain</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		MyAnnoationParser parser = <span class="keyword">new</span> MyAnnoationParser();</span><br><span class="line">		parser.parse();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在main方法中调用，获取到的结果如下。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">所有的注解开始</span><br><span class="line"><span class="variable">@com</span>.lu.annotation.MyAnnoation(author=lushunming, description=这是一个被注解的类, time=<span class="number">2016</span>-<span class="number">5</span>-<span class="number">21</span>)</span><br><span class="line">所有的注解结束</span><br><span class="line">获取MyAnnoation</span><br><span class="line"><span class="variable">@com</span>.lu.annotation.MyAnnoation(author=lushunming, description=这是一个被注解的类, time=<span class="number">2016</span>-<span class="number">5</span>-<span class="number">21</span>)</span><br><span class="line">获取MyAnnoation的详细信息</span><br><span class="line">author---lushunming</span><br><span class="line">description---这是一个被注解的类</span><br><span class="line">time---<span class="number">2016</span>-<span class="number">5</span>-<span class="number">21</span></span><br></pre></td></tr></table></figure>
+<p>这便是一个简单的注解的使用。样例代码托管在<a href="https://git.oschina.net/shunming/Annoation.git" target="_blank" rel="noopener">https://git.oschina.net/shunming/Annoation.git</a> ，可以用git拷贝</p>
+<p>由于jekyll的环境非常难维护，所以转转阵营了，blog换为Hexo的了，而且换了主题。博客的地址是<a href="http://www.lushunming.com.cn/">http://www.lushunming.com.cn</a> ，我的博客中的排版更为美观，欢迎大家去看我的博客，也可以用邮箱订阅。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.764Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/&title=《Java注解二 自定义注解》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/&title=《Java注解二 自定义注解》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java注解二 自定义注解》 — 在路上&url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/05/31/web/2016-05-31-java%E5%8F%8D%E5%B0%84%E4%B8%80%E7%B1%BB/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java反射一 类</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java注解一 注解的含义</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/&title=《Java注解二 自定义注解》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/&title=《Java注解二 自定义注解》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java注解二 自定义注解》 — 在路上&url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEmUlEQVR42u3bW27jSBAEQN//0p4D7FDKrKIGbG3wy7CFJjtooOuln5/4+r24rv7arpzc6+qTV+v8d7XXn7zhwoQJEyZMj2RKHus1Qb6l1+vnBPk6r19M/kowYcKECdPpTMly7WfuCiDyuyTrt/vChAkTJkz/T6ZZgtoGB7+jK+HDhAkTJkyYZof961S5LQT/+5QbEyZMmDB9K9PskE5KtLMW5qwx2SbbH6mFY8KECROmhzG14zXf9PNH5pswYcKECdNjmGbF03Yk9NMNzgRlc2HChAkTpnOZ2rHO9uH246T5sM69AQEmTJgwYfoOpnaTe4JZAzJPyPfNy8u4CRMmTJgwHcjUHpz7sdTZME0ybDoLSorRVUyYMGHCdCBTu+F8wGWWEucJahKyJOtHv8eECRMmTMcy7VPNvCw7O9r36fEm9PmZ3RITJkyYMD2MaZOgzkrAbZqdv5g2LBg2XDFhwoQJ0yFM+VGaD6FutppvOC9Dr/5r2gkjTJgwYcL0YKbNOM4smfzEqNAmgIhmeDFhwoQJ04FMbdrZlnfzxud+WOeuMvFl1xcTJkyYMB3L1A7o5MXc1w83Y80Djlmo8ZciLyZMmDBhOpCpHWfZXPvxoPZ52jHWNy8JEyZMmDAdy5QvPRvZmZV6Z2XoWTrdtmkxYcKECdOJTMnR2ybAeYtxg9V+Mh9dxYQJEyZMpzO1X5Noh1M3gUJb8N00Nd+gY8KECROmY5nyB9oc4ZuS8Sy8mBWIo89jwoQJE6ajmGZDnO3ATbK9z6XKeYH4Tb8XEyZMmDAdyPSJIz8fkVmloEG4kLcwV0NCmDBhwoTp8Uzt9tqvT2yCj33heBPoRAkwJkyYMGE6hGmW680Ku3cVlO/9GsmbV4UJEyZMmI5lmpVTZyluu067Qh6+tOtgwoQJE6YTmWatyrvKqe2A6ewIn42lXtYGMGHChAnTUUxtszA/1F9z7FPWvDjblp4vd40JEyZMmA5kmg1l5nCbh8vHVWfBTRF8YMKECROmY5mSFHGWphbxSPkMLU0+ljRsZ2LChAkTpsczbZLbGWjemGz59sf/m/8jTJgwYcJ0LFObxN7bntw0UGfjqsOAABMmTJgwHcWUDNa0B20eQOSjM3d9Ji8N/+RvAxMmTJgwPZgpP6pnA6CzRLptprYjRHnKjQkTJkyYTmfaE7TDqTlcvqWkYdneBRMmTJgwfQfT5nE3zcVZkTcv1M7apUUtHBMmTJgwHcI0y5JnJdfZ9tre7F3PX88WYcKECROmxzPlB/x++KZNlfNycHvHosiLCRMmTJgOZMqBZsd/W0RuQ4e2cHzbhQkTJkyYDmH6La+icrwOCPIQ5K41L18DJkyYMGE6lmkzGDprECZH+2xMJ3n+9l6r0AETJkyYMD2GabaNtpA64062mm++LVX/ZXwHEyZMmDAdy9Q+Vkt813G+wW3vggkTJkyYMCUbzv/aguZF3vZ56iknTJgwYcL0dUxt6tse23khuB0DalNxTJgwYcL0HUx5+poHBJuxnrbE3DZZ899gwoQJE6bTmfZl1n3LMw8I2jQ7D2WGNJgwYcKE6blMfwD9H1ip01hxfgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

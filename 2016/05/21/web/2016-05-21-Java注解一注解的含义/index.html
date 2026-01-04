@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java注解一 注解的含义 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="java,annoation">
+    <meta name="description" content="Java注解的用法和原理等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java注解一 注解的含义">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="Java注解的用法和原理等">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-05-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.764Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="annoation">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java注解一 注解的含义</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java注解一 注解的含义</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-05-20T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-05-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java注解一-注解的含义"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java注解一 注解的含义</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-05-21-Java注解一注解的含义"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java注解一 注解的含义</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-05-21 00:00:00" datetime="2016-05-20T16:00:00.000Z"  itemprop="datePublished">2016-05-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Java注解一-注解的含义"><a href="#Java注解一-注解的含义" class="headerlink" title="Java注解一 注解的含义"></a>Java注解一 注解的含义</h1><p>在学习Spring框架的时候就觉得注解很神奇，为什么简单的注解有这么神奇的功能，一直想去了解其中的奥秘，可惜的是到今天才实践。在Spring框架中一个<code>@Controller</code> 就可以把一个简单的类变得神奇，我一直以为这个注解干了所有的事。然而并非我想的那样。<br>找了不少资料，感觉讲的都不是很好，终于看到了《java核心技术2》这本书才了解了一些。 在本书中提及:    <em>注解是插入到源代码中使用其他工具可以对其进行处理的标签。</em> 注解并不会改变代码，而是这些工具产生了这些所用，所以没有工具处理的注解也不会发挥效用。这些工具可以在源代码的层次上进行操作，或者是可以处理在其中放置了注解的类文件。<br>注解可以使用在</p>
+<ul>
+<li>附属文件的自动生成。例如部署描述符或者bean信息类。</li>
+<li>测试、日志、事务语义等代码的自动生成。</li>
+</ul>
+<p>在Java中自带了几个注解，这些注解是为了注解别的注解，所以称为meta注解。<br>其中包括了</p>
+<ul>
+<li>@Retention：这个注解注在其他注解上，并用来说明如何存储已被标记的注解。可能的值是：<ul>
+<li>SOURCE：表明这个注解会被编译器忽略，并只会保留在源代码中。</li>
+<li>CLASS:表明这个注解会通过编译驻留在CLASS文件，但会被JVM在运行时忽略,正因为如此,其在运行时不可见。</li>
+<li>RUNTIME：表示这个注解会被JVM获取，并在运行时通过反射获取</li>
+</ul>
+</li>
+<li>@Target：这个注解用于限制某个元素可以被注解的类型。例如：<ul>
+<li>ANNOTATION_TYPE 表示该注解可以应用到其他注解上</li>
+<li>CONSTRUCTOR 表示可以使用到构造器上</li>
+<li>FIELD 表示可以使用到域或属性上</li>
+<li>LOCAL_VARIABLE表示可以使用到局部变量上。</li>
+<li>METHOD可以使用到方法级别的注解上。</li>
+<li>PACKAGE可以使用到包声明上。</li>
+<li>PARAMETER可以使用到方法的参数上</li>
+<li>TYPE可以使用到一个类的任何元素上。</li>
+</ul>
+</li>
+<li>@Documented：被注解的元素将会作为Javadoc产生的文档中的内容。注解都默认不会成为成为文档中的内容。这个注解可以对其它注解使用。</li>
+<li>@Inherited：在默认情况下，注解不会被子类继承。被此注解标记的注解会被所有子类继承。这个注解可以对类使用。</li>
+<li>@Deprecated：说明被标记的元素不应该再度使用。这个注解会让编译器产生警告消息。可以使用到方法，类和域上。相应的解释和原因，包括另一个可取代的方法应该同时和这个注解使用。</li>
+<li>@SuppressWarnings：说明编译器不会针对指定的一个或多个原因产生警告。</li>
+<li>@Override：向编译器说明被注解元素是重写的父类的一个元素。在重写父类元素的时候此注解并非强制性的，不过可以在重写错误时帮助编译器产生错误以提醒我们。比如子类方法的参数和父类不匹配，或返回值类型不同。</li>
+<li>@SafeVarargs：断言方法或者构造器的代码不会对参数进行不安全的操作。在Java的后续版本中，使用这个注解时将会令编译器产生一个错误在编译期间防止潜在的不安全操作。</li>
+</ul>
+<p>本次只是简单的介绍了注解，后续会讲解怎么自定义注解和一些例子。</p>
+<p>由于jekyll的环境非常难维护，所以转转阵营了，blog换为Hexo的了，而且换了主题。博客的地址是<a href="http://www.lushunming.com.cn/">http://www.lushunming.com.cn</a> ，我的博客中的排版更为美观，欢迎大家去看我的博客，也可以用邮箱订阅。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.764Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/annoation/" rel="tag">annoation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/&title=《Java注解一 注解的含义》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/&title=《Java注解一 注解的含义》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java注解一 注解的含义》 — 在路上&url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/05/22/web/2016-05-22-Java%E6%B3%A8%E8%A7%A3%E4%BA%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java注解二 自定义注解</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/05/14/%E7%94%9F%E6%B4%BB/2016-05-14-%E5%85%B3%E4%BA%8E%E5%B9%BF%E5%91%8A/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">关于广告的感想</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/&title=《Java注解一 注解的含义》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/&title=《Java注解一 注解的含义》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java注解一 注解的含义》 — 在路上&url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/05/21/web/2016-05-21-Java%E6%B3%A8%E8%A7%A3%E4%B8%80%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%90%AB%E4%B9%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEkElEQVR42u3aS27jMBAFwNz/0hlgthN73uuWANEprQzFpshSALI/X1/x9f33enXn/V//vf/vlTz91RNfjfb+/tcdFyZMmDBheiTT99vr1UTfj5BAJ+g55WwmydoxYcKECdNnMLXD5ZN7//33HLNlJ2Pma8eECRMmTL+HKf+cB6Xv+WYbf/5cTJgwYcKE6b40bhvQ5oeM5MKECRMmTL+NKR8uD3STcdqSZD5me0S4LBeOCRMmTJgextRuyZ/0+cb+JkyYMGHC9ACmWbiYlCRnIWietM1D1v08MWHChAnTuUxJWNjumLMU7Wzk5Jvt9l9kCDBhwoQJ0+OZ8s0y52inO4vX8znniNG5CRMmTJgwfRxTsmUmLT6bxbTHl+RwkxdTMWHChAnTuUx50rMNRNuG12sbZDegUQCMCRMmTJgOZNo09CSbcbLN5yXJq1qRiuYeTJgwYcJ0INOmNWezzedBdZuQbRPQSUiMCRMmTJjOZUpSsbPmmPa3+YL34fHsWIMJEyZMmE5kmh0I8hafJCGbF1NnAXZb5vzht5gwYcKE6VimfLvdFCzzcuns6DBLBLegmDBhwoTpRKZZGrdNlW5exqy1NE/yJi8YEyZMmDB9ElNbhsyD3mQjb19be1xoz0eYMGHChOl0pnYD3jf01BOKOfYtREUgjQkTJkyYjmLaLOO+bT5fwCx4blPYmDBhwoTpXKbNtNpA9yqIO9pko38OTJgwYcJ0FNOs8eWqltNri503BsOYMGHChOlYprxUOdtc20afPITeHz6GSV5MmDBhwnQ4U16GbDf4TTi9KbJeltTGhAkTJkzHMuUtMkkDzaZguXlVmyB5NiYmTJgwYTqFadjCsmiLmaV9ZyXMy8bHhAkTJkyHM+Xb8+x+niCeNbxeG3IX1U5MmDBhwvRgpn37aRI07nH3LaptMTU6CmDChAkTpsczJUFjPkTxsP10yxeZh8T/eTomTJgwYTqKaRN8XjXpWaF09h/xHVw/zBkTJkyYMB3OdEfImhwa8uPIrAVnllD+4VmYMGHChOkjmPK06X6R+Wbftvjc0d6KCRMmTJhOZ8qbePYp1H25cV9ezZPamDBhwoTpM5iuKvu123xbyJwVO/Mk78vfYsKECROmw5nyIe5LB7eJ2uRA0B4OoqovJkyYMGE6iilPd0YNLqMmnnb8tmw5S2fX0pgwYcKE6cFM+wbTTfBcFxfLUHwV9GLChAkTpsOZ8nbPtszZFkTbgHbVchqsvcgQYMKECROmQ5j2hcN9C04eHm/aYVe5cEyYMGHCdBTTLJmbN+W0ZctNWJukgPNQvJ4QJkyYMGF6JNN3ebWp2zbJ227Ym+cWhVhMmDBhwnQsU7sl54eDWYPOrJFos/ir6DFhwoQJ05OZkkNAeziYLePuMues8IkJEyZMmD6DaVak3IO23PkZ56q2V0yYMGHC9HuY9mXOvDCZJ3lnrUX1TDBhwoQJ069huioRPFtM+81ZM1BRp8WECRMmTIcw5UneDVz+evbNry1uFPpiwoQJE6YDmWaNO3lqNQmY2wD42pD7sgsTJkyYMD2L6Q86DUOUaXm1JAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

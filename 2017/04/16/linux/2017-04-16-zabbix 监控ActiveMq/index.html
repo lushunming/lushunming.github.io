@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Zabbix 通过jmx监控windows 下ActiveMq | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux,zabbix,ActiveMq,windows">
+    <meta name="description" content="Zabbix 通过jmx监控windows 下ActiveMq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zabbix 通过jmx监控windows 下ActiveMq">
+<meta property="og:url" content="http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="Zabbix 通过jmx监控windows 下ActiveMq">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-04-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.737Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="zabbix">
+<meta property="article:tag" content="ActiveMq">
+<meta property="article:tag" content="windows">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Zabbix 通过jmx监控windows 下ActiveMq</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Zabbix 通过jmx监控windows 下ActiveMq</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-04-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-04-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Zabbix-通过jmx监控windows-下ActiveMq"><span class="post-toc-number">1.</span> <span class="post-toc-text">Zabbix 通过jmx监控windows 下ActiveMq</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-linux/2017-04-16-zabbix 监控ActiveMq"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Zabbix 通过jmx监控windows 下ActiveMq</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-04-16 00:00:00" datetime="2017-04-15T16:00:00.000Z"  itemprop="datePublished">2017-04-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Zabbix-通过jmx监控windows-下ActiveMq"><a href="#Zabbix-通过jmx监控windows-下ActiveMq" class="headerlink" title="Zabbix 通过jmx监控windows 下ActiveMq"></a>Zabbix 通过jmx监控windows 下ActiveMq</h1><p>Zabbix 通过jmx监控windows 下ActiveMq</p>
+<ol>
+<li>   开启ActiveMq的jmx</li>
+</ol>
+<pre><code>打开对应版本的wrapper.conf配置文件，修改配置，使jmx可用
+
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Uncomment <span class="keyword">to</span> <span class="keyword">enable</span> remote jmx</span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.port=<span class="number">12346</span></span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.authenticate=<span class="keyword">false</span></span><br><span class="line"><span class="keyword">wrapper</span>.java.additional.n=-Dcom.sun.management.jmxremote.ssl=<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+
+修改conf目录下的activemq.xml，在broker上增加useJmx=&quot;true&quot;
+并且修改 managementContext节点
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">managementContext</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">managementContext</span> <span class="attr">createConnector</span>=<span class="string">"true"</span> <span class="attr">connectorPort</span>=<span class="string">"12346"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">managementContext</span>&gt;</span></span><br></pre></td></tr></table></figure>
+虽然在wrapper.conf中已经配置了端口，但是在这里不配置connectPort就不能用jmx连接。
+</code></pre>
+<ol start="2">
+<li>   新建主机的时候,需要设置jmx 端口为上面设置的端口,模板选择Template JMX Generic。</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.737Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/" target="_blank" rel="external">http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ActiveMq/" rel="tag">ActiveMq</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/&title=《Zabbix 通过jmx监控windows 下ActiveMq》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/&title=《Zabbix 通过jmx监控windows 下ActiveMq》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Zabbix 通过jmx监控windows 下ActiveMq》 — 在路上&url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">zabbix 监控windows下tomcat</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7%20windows%E4%B8%8BMysql/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">zabbix 监控 windows下Mysql</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/&title=《Zabbix 通过jmx监控windows 下ActiveMq》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/&title=《Zabbix 通过jmx监控windows 下ActiveMq》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Zabbix 通过jmx监控windows 下ActiveMq》 — 在路上&url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADL0lEQVR42u3aS3LrOBAEQN//0prtW4ykqm46goQTK4XFAJHQot2fn594vf5Zn59593zy+d1un8/w+VSrhY2Njf0Q9uvjyl+ZXEqOyfd5d853FmxsbOxT2UlA+nxZ7Z4JLwmQs3CIjY2NjZ2/vg2NbZjExsbGxm7ZVx1ic5X5lWFjY2P/HXYSZmZpw6yolF/Kr9fSsLGxsW/Pbks8d/78K/1tbGxs7BuzX+VK0oBZCMl5+4WNjY19EjsPAO2mSWM4f++skPQl4cHGxsY+gj37p7/9S/4LXLXzl+vAxsbGPoi9abLORiTzNCM/2wVNDmxsbOzHsjcJQ/vifaJyVesXGxsb+1T25sVtcWeWtOT7fClFYWNjYx/Evna08aq28awB0KZM2NjY2CexN8nGqsO8OPrsmai/jY2Njf1Y9rVjl7P0I2khfN6nSK6wsbGxj2DnISoPD0nhad/WnY0W1ZEZGxsb+/bsduQxDy2bgNSO8gzbD9jY2NhHsPPCUH41bZjZtyWS5ORLfxsbGxv7sez20Pvn29DY7lAEP2xsbOwj2G3xPcG3pag9rz0zNjY29nnszahlW+K5KnTV1GsnTLGxsbFvw27HZdriTvJk/gO0wzrDPAwbGxv7gexki1lb99owOQtj2NjY2Gez241mwSkvG/2MVl2EwsbGxj6IPRusSULdZhioKAnFl1IM02NjY2M/it0GoSRF2RSn2vJWOyqEjY2NfR47H51sS/N5SzgfFdoPCWFjY2Ofx25vJW8VXFVamnU8ojEdbGxs7CPYScG9TQw2Izuzoc+r2gzY2NjYz2W3x2rL8W2Zqf0x2mQGGxsb+1T2JtmYFfTbdu8mEGJjY2P/BfZVw5RJQNq8cZZpfZk8xcbGxn4s+1WuvPk67DPHoTFPZv7nXdjY2NgHsTcNg7wBnAzczBq6+eUm6RA2Njb2c9n7puwqExo1jGehbpUPYWNjY9+e3SYSbRKSHzpv97YtZ2xsbGzsTSEpf+NsKKcOftjY2Nh/np0nErMRn1l5q3geGxsb+zj2Jmy04a39Nh/u/JXhS2xsbOzbs/OyfnLQ/HCb8tAmjGFjY2MfxP4PVceH87+luFkAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

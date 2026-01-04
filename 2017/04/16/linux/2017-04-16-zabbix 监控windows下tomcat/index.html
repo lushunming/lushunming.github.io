@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>zabbix 监控windows下tomcat | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux,zabbix,tocmat,windows">
+    <meta name="description" content="zabbix 监控windows下tomcat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zabbix 监控windows下tomcat">
+<meta property="og:url" content="http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="zabbix 监控windows下tomcat">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.blog.csdn.net/20170324115028226?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamhmc2Rmcw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="article:published_time" content="2017-04-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.748Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="zabbix">
+<meta property="article:tag" content="tocmat">
+<meta property="article:tag" content="windows">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170324115028226?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamhmc2Rmcw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">zabbix 监控windows下tomcat</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">zabbix 监控windows下tomcat</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-04-15T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-04-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#zabbix-监控windows下tomcat"><span class="post-toc-number">1.</span> <span class="post-toc-text">zabbix 监控windows下tomcat</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-linux/2017-04-16-zabbix 监控windows下tomcat"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">zabbix 监控windows下tomcat</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-04-16 00:00:00" datetime="2017-04-15T16:00:00.000Z"  itemprop="datePublished">2017-04-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="zabbix-监控windows下tomcat"><a href="#zabbix-监控windows下tomcat" class="headerlink" title="zabbix 监控windows下tomcat"></a>zabbix 监控windows下tomcat</h1><p>zabbix 监控tomcat主要使用的是zabbix的java gateway。</p>
+<ol>
+<li><p>安装zabbix gateway。使用ubuntu，可以直接使用命令安装java gateway。</p>
+ <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install zabbix-java-gateway</span><br></pre></td></tr></table></figure>
+
+<p> 修改zabbix_server的配置文件，告知zabbix server java gateway在哪个端口，并且设置poller的个数。</p>
+ <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">JavaGateway</span>=安装ip</span><br><span class="line"><span class="attr">JavaGatewayPort</span>=<span class="number">10052</span> <span class="comment">#监听端口</span></span><br><span class="line"><span class="attr">StartJavaPollers</span>=<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p> 开启java gateway，重启zabbix server</p>
+ <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service zabbix-java-gateway start</span><br><span class="line">service zabbix-server restart</span><br></pre></td></tr></table></figure></li>
+<li><p>设置tomcat，开启jmx。</p>
+<p> 在<code>tomcat/bin</code>下找到catalina.bat文件，在<code>set &quot;CURRENT_DIR=%cd%&quot;</code>下加上</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set JAVA_OPTS=-Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.port=<span class="number">12345</span> -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.ssl=false -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span>.authenticate=false  -Djava<span class="selector-class">.rmi</span><span class="selector-class">.server</span>.hostname=tomcat部署的服务器ip -Dcom<span class="selector-class">.sun</span><span class="selector-class">.management</span><span class="selector-class">.jmxremote</span><span class="selector-class">.rmi</span>.port=<span class="number">12345</span></span><br></pre></td></tr></table></figure></li>
+<li><p>下载支持<code>jmx</code> 的jar包<code>catalina-jmx-remote.jar</code>,把他放到tocmat目录下的<code>lib</code>包中。</p>
+</li>
+<li><p>配置主机<br> <img src="http://img.blog.csdn.net/20170324115028226?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamhmc2Rmcw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="jmx端口配置"><br> jmx的端口一定要与在<code>catalina.bat</code>下配置的<code>jmxremote.port</code>一样。<br> 链接<code>Template JMX Generic</code>和<code>Template JMX Tomcat</code>这两个模板。</p>
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.748Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/" target="_blank" rel="external">http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tocmat/" rel="tag">tocmat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zabbix/" rel="tag">zabbix</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/&title=《zabbix 监控windows下tomcat》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/&title=《zabbix 监控windows下tomcat》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《zabbix 监控windows下tomcat》 — 在路上&url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">git子项目clone问题</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7ActiveMq/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Zabbix 通过jmx监控windows 下ActiveMq</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/&title=《zabbix 监控windows下tomcat》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/&title=《zabbix 监控windows下tomcat》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《zabbix 监控windows下tomcat》 — 在路上&url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/04/16/linux/2017-04-16-zabbix%20%E7%9B%91%E6%8E%A7windows%E4%B8%8Btomcat/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD4ElEQVR42u3by27bAAwEwPz/T6fXAontXZJOU2B8MvyQpdGBIbn5+Igfnw8eX9/9+5X23eeP/Ay//srxAwcOHDhwjC41OelH7z4/oeeX2mLlNyCCxoEDBw4cRxyPTrp9viF7XhpniPk14sCBAweO38Zx9W7yelIyceDAgQPH/8Vx+63nxTUp6vl3ceDAgQPHz3Dko7ekTM5avquB4A/NSnHgwIEDx6TSrQaFv+f5W/IdOHDgwIGjTIXlo7fk9Vkb1h5ndXU4cODAgWPNkRekZAzXwt1ean62Lz6JAwcOHDgWHO3ypi1gM4J2sZQMBKPbgwMHDhw41hxtK9UW2nbx0wYU2hsZXRcOHDhw4FhwbE5uE2tIyuSjc2gL5/PPR7NSHDhw4MDxWf1P5cHGfxaGuIpNtIG5AwgcOHDgwPGUow1At+Wzbf/aUEX+h0J0I3HgwIEDx5qjbdg2LdNZCmO9rIrKLQ4cOHDgKDnyL+wvY9ae1QVydHtw4MCBA8cVR9LqXA342kI7a+FmrDhw4MCB44ojGavdxtraqMEsoje7PThw4MCBY8+xD67NaPKbsQk95Ed+MSvFgQMHDhwxRx56no3t2iFge8xZo4gDBw4cON7H0a6R9j+W/0pbUGfnPEx24MCBAweOBxybyHK7fGqXRpu10zAGgQMHDhw41hz5BDF5Nw8ozI7fXuSwVOPAgQMHjiOO2eDvHUG3WbPX/qGAAwcOHDjewZGcdN7jJMuhzSAvJxgi4sCBAweOm3pUjAjb4d3+FGeBiVkjigMHDhw49hwH2e2yCWxZ94HvIq6HAwcOHDiOOGaXlxfUttHaLKhWzScOHDhw4Djl2Bw0B2qDEW3hzJu9Yv+GAwcOHDhGHLOVz76tmpXznKlYhuHAgQMHjjVHGztrD9oeZ99VtaPGF0fGgQMHDhwjjja+3K6pZtGENlqXt4tFrAEHDhw4cCw4Zs9n0bQ2YLdvyYqYHQ4cOHDgWHC8L7jWFst8+TQbUEbFGAcOHDhwHHHkA8G2SZs1h7PCPPv8N4UWBw4cOHCsOdpDtyVtNuzbtJTD6B4OHDhw4FhztPG1zZhv1s4lMYurdhEHDhw4cOw5PstHW+SumPLjbG4DDhw4cODYc7St1GxN1UYW8jHlLFrRLqtw4MCBA0fLsYky5EGH9xXCTSF/MRzEgQMHDhwLjrxQ7Xuf2fBuNgrM21ccOHDgwPFvOWYx6P2iq119ta/jwIEDB46f55jF19r4Qjs03I8IceDAgQPHLcdsgTSLYufv5sPKfMN2tnbCgQMHDhzrQEM7yJu1Z+3Ft3Hwg9EnDhw4cOD4/vkftW9c/8UCC7oAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

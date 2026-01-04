@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>knockoutjs十一  value绑定 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,knockoutjs">
+    <meta name="description" content="knockoutjs  value绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs十一  value绑定">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs  value绑定">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-03-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.749Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">knockoutjs十一  value绑定</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">knockoutjs十一  value绑定</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-03-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#knockoutjs十一-value绑定"><span class="post-toc-number">1.</span> <span class="post-toc-text">knockoutjs十一  value绑定</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-03-11-11value"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">knockoutjs十一  value绑定</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-03-11 00:00:00" datetime="2016-03-10T16:00:00.000Z"  itemprop="datePublished">2016-03-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="knockoutjs十一-value绑定"><a href="#knockoutjs十一-value绑定" class="headerlink" title="knockoutjs十一  value绑定"></a>knockoutjs十一  value绑定</h1><p>我自己都没有想到自己会写一个博客写到第十一篇，而且看过我博客的人也越来越多，我在这期间也学会了更多，这个系列的博客估计在十五篇左右就结束了，我准备把经常用到的都写完，还又一些更高级的就不写了，毕竟我因为离开了之前的公司，不再用这个框架了，以后可能会写一些小的demo，希望大家到时候还能捧场。</p>
+<p>废话不多说：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Login name:</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value: userName"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>Password:</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">data-bind</span>=<span class="string">"value:userPassword,valueUpdate:'keyup'"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> <span class="attr">data-bind</span>=<span class="string">"click:getInputValues"</span>&gt;</span>获取输入框的值<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="function"><span class="keyword">function</span> <span class="title">Model</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">            self.userName = ko.observable(<span class="string">""</span>);</span></span><br><span class="line"><span class="actionscript">            self.userPassword = ko.observable(<span class="string">""</span>);</span></span><br><span class="line"></span><br><span class="line">          </span><br><span class="line"><span class="actionscript">            self.getInputValues = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line">               </span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"firstValue--"</span> + self.firstValue());</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"secondValue--"</span> + self.secondValue);</span></span><br><span class="line"></span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">        ko.applyBindings(model);</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>今天的value绑定确实使用的比较多的，因为表单中基本都是，所以需要详细介绍，这是一个简单的例子，value绑定主要用于 <code>&lt;input&gt;, &lt;select&gt; 和&lt;textarea&gt;</code>这几个元素，而radio button 和checkbox使用checked，将会在下一次讲解。</p>
+<p>1）value绑定的主要参数将会被设置为元素的value属性，这个值可以用jquery的val（）方法获取，而且这个值会覆盖你原有的value属性，如果你这样使用</p>
+<p>   <code> &lt;input value=&quot;1&quot; data-bind=&quot;value:number&quot;/&gt;</code></p>
+<p>这样你的value=1会被绑定覆盖。<br>2）valueUpdate是第二个参数，ko实在change事件的时候检测input属性的改变，但是你可以通过valueUpdate来改变检测的时机，</p>
+<ol>
+<li><p>“input” - 这是当input的值改变的时候触发，但是只支持一些现代浏览器比如ie9+；</p>
+</li>
+<li><p>“keyup” - 在你松开一个按键的时候触发改变你的viewmodel</p>
+</li>
+<li><p>“keypress” -  这是当你按下一个键的时候触发，但是和keyup不同的是，如果一直按着键，他会不断重复的触发。</p>
+</li>
+<li><p>“afterkeydown” 在你按一个键同时触发（官方用的时as soon as），他在你输入的同时，异步的改变viewmodel，但是在一些手机浏览器中不支持。</p>
+</li>
+</ol>
+<p>3）valueAllowUnset这个只适合在select元素中使用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">Select a country:</span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">data-bind</span>=<span class="string">"options: countries,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   optionsCaption: 'Choose one...',</span></span></span><br><span class="line"><span class="tag"><span class="string">                   value: selectedCountry,</span></span></span><br><span class="line"><span class="tag"><span class="string">                   valueAllowUnset: true"</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">var</span> viewModel = &#123;</span></span><br><span class="line"><span class="actionscript">    countries: [<span class="string">'Japan'</span>, <span class="string">'Bolivia'</span>, <span class="string">'New Zealand'</span>],</span></span><br><span class="line"><span class="actionscript">    selectedCountry: ko.observable(<span class="string">'Latvia'</span>)</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>这个例子中，使用selectedCountry设置了一个原始选中值’Latvia’，可是在下拉选项中并没有这个值，所以ko把他重置为undefinded，那么就与’Choose one…’相匹配，就会默认选中’Choose one…’。这回在selectOption中详细讲解。</p>
+<p>以下有几点注意</p>
+<ul>
+<li>在使用<code>&lt;input type=&quot;text&quot; /&gt;</code> or<br><code>&lt;textarea&gt;</code>时候，官方建议使用textInput绑定，这是一个新的绑定，在我之前使用的时候还没有。</li>
+<li>使用observable和non-observable绑定的区别：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Two-way binding. Populates textbox; syncs both ways. --&gt;</span> </span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>First value: <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value: firstValue"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">       <span class="comment">&lt;!--One-way binding. Populates textbox; syncs only from textbox to model.--&gt;</span> </span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>Second value: <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value: secondValue"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">       <span class="comment">&lt;!-- No binding. Populates textbox, but doesn't react to any changes.--&gt;</span> </span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span>Third value: <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"value: secondValue.length &gt; 8"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">       <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">var</span> viewModel = &#123;</span></span><br><span class="line"><span class="actionscript">              firstValue: ko.observable(<span class="string">"hello"</span>), <span class="comment">// Observable</span></span></span><br><span class="line"><span class="actionscript">              secondValue: <span class="string">"hello, again"</span>         <span class="comment">// Not observable</span></span></span><br><span class="line">          &#125;;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>使用双向绑定，那么value和model中一个改变，另一个也会改变。但是使用的单向绑定，那么只会在初始化的时候给元素value赋值，在编辑的时候，会更新这个元素的value属性，但是当你的value属性改变的时候，model是不能检测到的，因为是一个单向绑定。如果绑定的不是一个简单的值，而是一个方法调用的结果，ko会用这个结果初始化元素的value属性，但是当在编辑表单的时候，不会改变元素的value属性，这种情况是一个一次性赋值，而不是一个能反映出改变的绑定。</li>
+</ul>
+<p>今天的就讲解完了，代码托管在<a href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82%E5%B8%8C%E6%9C%9B%E5%A4%A7%E5%AE%B6%E6%9C%89%E6%84%8F%E8%A7%81%E5%8F%AF%E4%BB%A5%E7%95%99%E8%A8%80%EF%BC%8C%E6%9C%89%E7%96%91%E9%97%AE%E6%88%96%E8%80%85%E9%94%99%E8%AF%AF%E5%8F%AF%E4%BB%A5%E5%8A%A0%E6%88%91%E7%9A%84qq1357197829%E5%92%8C%E6%88%91%E4%BA%A4%E6%B5%81%E3%80%82" target="_blank" rel="noopener">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。希望大家有意见可以留言，有疑问或者错误可以加我的qq1357197829和我交流。</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.749Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/03/11/web/2016-03-11-11value/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/&title=《knockoutjs十一  value绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/&title=《knockoutjs十一  value绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs十一  value绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/12/web/2016-03-12-12textInput/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">knockoutjs十二  textInput绑定</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/10/web/2016-03-10-10enable/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">knockoutjs十  enable绑定</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/&title=《knockoutjs十一  value绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/&title=《knockoutjs十一  value绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs十一  value绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/11/web/2016-03-11-11value/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3awW4iMRAEUP7/p8llDxuxjqpdNmSlNycEg/GbSLZT3Y9HfD1frr/ff73z53GS18lvHbvw8PDw6qmvhm54ybdex3/9NJ8zHh4e3m3edELNOtxsGPmc8fDw8H4nLwckjyD5Fh4eHt7/y1sdcBNA/v7HNgY8PDy8gNcPvceePo6LWQseHh7eTiYwPs5+6vWV+h4eHh5eHbn2IexqWU+W+2aef0bAw8PDu8DLF9yzcUO/IeXzxMPDw7vB65sApp9O27xOhbx4eHh4Pa8JQKeYt2YnTV8DHh4eXnFgvVfyTz7du2f5vwIeHh7eG3l7DaY/bxvTjSEPkQ90jeHh4eENo4fpAp0s902jwPShL8F4eHh4R3l5sb9ZxPfCi358PDw8vLO8s8fo5NFMj+P5aMsCGB4eHt7beX1T1F571nRL+Mc7eHh4eBd4p8pX08ap5qA8bkrAw8PDu8ybhhHNt/J22Jz9mD4hPDw8vC3eqTJYHhacbWIYPFw8PDy8mjcNBfa2gSbImIYR32aFh4eHd4HXx6/TO/PFfRptLP88eHh4eEd503JUPtEbx/T8+D7OgPHw8PAKXn507otkTXwcBR94eHh4F3h7B+hkKvk4e+HFONTAw8PDu8CbUqeF/2d8TQOLabENDw8Pr+fl20D+zjSEnW45g78YHh4e3mVec3TOJ5EHGQ0bDw8P7zYv2Sry8lhzT170ijYtPDw8vKO85/Dqw4UkeG3SlGV9Dw8PD+8Q71Rhfi/G3Ttw94U0PDw8vJ7XL+vTRoF8Wc83hnFPBB4eHl7NmzYz5Z0IeYvANIa42KuFh4eHd5SX/3AfSTRtCnh4eHi/jTdF5gW2vRaEpQUPDw/vGq85+DYlq2lYnG9CeHh4ePd4txf3fkKHq3l4eHh4+7wvenk1ytriiesAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

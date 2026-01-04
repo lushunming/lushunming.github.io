@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>oracle分页时排序问题 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="oracle">
+    <meta name="description" content="oracle分页时排序问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle分页时排序问题">
+<meta property="og:url" content="http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="oracle分页时排序问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.933Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="oracle">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">oracle分页时排序问题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">oracle分页时排序问题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-09T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-03-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/database/">database</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#oracle分页时排序问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">oracle分页时排序问题</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-数据库/2019-03-10-oracle分页时排序的问题"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">oracle分页时排序问题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-10 00:00:00" datetime="2019-03-09T16:00:00.000Z"  itemprop="datePublished">2019-03-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/database/">database</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="oracle分页时排序问题"><a href="#oracle分页时排序问题" class="headerlink" title="oracle分页时排序问题"></a>oracle分页时排序问题</h1><p>最近在做项目的时候发现了一个bug,mybatis+oracle分页的时候，第一页出现的数据在第二页又出现了，让我很是费解，但是又没有发现什么问题。于是我百度了下oracle 分页排序数据重复，<a href="https://www.cnblogs.com/lwlxqlccc/p/8676045.html" target="_blank" rel="noopener">这个博客</a>的有很详细的分析，大体是由于oracle是根据<code>rownum</code>排序的，但是如果排序的字段不是唯一键，比如一群人按照性别排序，那么同一性别的每个人的rownum每次都是随机的。所以出现了在第一页出现的数据在第二页又出现的问题。</p>
+<p>那么这个问题如何解决呢？其实有一个简单的办法解决，就是在排序的后面再加一个唯一键排序，比如主键id。这样的解决办法虽然效率会慢一点，但是也还可以接受的。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.933Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/" target="_blank" rel="external">http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/&title=《oracle分页时排序问题》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/&title=《oracle分页时排序问题》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《oracle分页时排序问题》 — 在路上&url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/13/web/2019-09-13-%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">记一次线上问题（监控的重要性）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/01/28/web/2018-01-28-git%20%E5%AD%90%E9%A1%B9%E7%9B%AEclone%E9%97%AE%E9%A2%98/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">git子项目clone问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/&title=《oracle分页时排序问题》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/&title=《oracle分页时排序问题》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《oracle分页时排序问题》 — 在路上&url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2019/03/10/%E6%95%B0%E6%8D%AE%E5%BA%93/2019-03-10-oracle%E5%88%86%E9%A1%B5%E6%97%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFOElEQVR42u3c0W7bVhAEUP//T6evDQpJMztUULSHT0ZskZeHBLx3Z+Ofn/j49eJ4/92//8z7M//z6/c/+eq6yXffr/znGwc+fPjw4cMX0ORAyeJe/UsOkXDfHuT0QuDDhw8fPnwnvrykuC2lLSkS7uRsyTmTlbz8d3z48OHDh+/LfM8u4tnzJD+ffAofPnz48OH79/DdyounAoO8Z/6NT+HDhw8fPnxP8S0t+HYz3zbK20eSf/aB4B8fPnz48OFbZ8Z+bkXMf+nrr8z34cOHDx++/z3fr/JYzvyNz+alyVMCv60KHz58+PDhO2ksm/CnmukL8bORQ+2ADx8+fPjwnfja/+CUU+axehuTtwPi7ZhdRIwPHz58+PCdUuZ8XLu9+T1+vt1eG/y3rxQ+fPjw4cPX8uW/yG+N9XY0Lb/tnONWrCQvEz58+PDhw3fjy0uHpFDIG/S3FnlbTt1eha/k+fjw4cOHD988vNWes716G3vnTYTba4QPHz58+PAtfHmbYGnl5ze80OwN+ttjw4cPHz58+Fq+PYpuOZZGQN5Sfyp+iMoafPjw4cOHL+Br4+28xKkj56GYyMP4PNSPon18+PDhw4fvxNcOeLWFzlOR9jca8VNhhA8fPnz48F321F+BaIfP8mZE0lzIj9to2od3EB8+fPjw4Qvu6zaIdruxNhLImwUJxK1Y+WCCDx8+fPjwBXexb9FvsfotPt+Hy9sX4sNV8OHDhw8fvoFvj7Fv8XneZF+gn4rb8eHDhw8fvoWvDZvbuLotWW7nbDna634QwIcPHz58+Aa+JSzPS6KkPNpD7rz8mqIFfPjw4cOHL+bLy4gbX9uSaI+WNR8CiFr8+PDhw4cPX8nXjmfdCpE2LF8aBDfiqdGADx8+fPjwxXx5KN5u79tG/36tvRBJrvvbd/Hhw4cPH74T3xJ4LwVHvrHPy5E9FC+aIPjw4cOHD9/Al//if3Zx7XXzYGB5qNEa8OHDhw8fvuGu25j5htJG1Hm4njcjbiHBh9Xiw4cPHz58Md+twb0UBPtg2W39t+D8wxrw4cOHDx++mK+98G1Bt1b4bbDs1kU/lln48OHDhw/fMzv0x/6AV1tGLA9jH4/L2xD48OHDhw/fwncbEbtF0XscvjTr21KsqP7w4cOHDx++uE2/j4jljfj2U7et/nKVIlzHhw8fPnz4Br59U53f8L7tz4uYJcj/8ELgw4cPHz58A19SLvyKj3zjnTfrbyHB7cFEJRE+fPjw4cN32a0Xf/rqdp79aBv3e4mTt/7x4cOHDx++nC8JjPPI+dmioY3h95G4OkTHhw8fPnz4LvNX17m2oLjZB9SWrf6zcfuHMTV8+PDhw4cvWE/b+G5j5nz7vdxwW7LkbYUPDwMfPnz48OE78e3B+a0RcBsX28uXtoiJKj58+PDhw4evu4ui2X3bZue47fDZUqw8Fgzgw4cPHz58AV9euOSLbgfHc+IlyG8H5iJWfPjw4cOH78TXlg7vb7iNz2+3d6vRbrH9y/Pjw4cPHz58M9/e4M5Ln30wLim22uChKIDw4cOHDx++km8vEfYLL2VHXgzlxVZ+Nnz48OHDh+/GlzfW97KjLWv28L4drUviAXz48OHDh2/ny8e8liZ+W460DfT8oR43//jw4cOHD98f58sXl2/j2+Jpeai3u3h5Nnz48OHDh++P8LVlRB5pL6F42xS4PfifZMYNHz58+PDhe8t3G/Nawuk8UL+FAflL0AYPx6wDHz58+PDhO7Wn20GxW5G0tOP38Lu9Cj58+PDhwxdc5S/hSXNCu3Nr3AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>knockoutjs十三  focus checked绑定 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,knockoutjs">
+    <meta name="description" content="knockoutjs focus checked绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs十三  focus checked绑定">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs focus checked绑定">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-03-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.750Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">knockoutjs十三  focus checked绑定</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">knockoutjs十三  focus checked绑定</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-12T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-03-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#knockoutjs十三-focus-checked绑定"><span class="post-toc-number">1.</span> <span class="post-toc-text">knockoutjs十三  focus checked绑定</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-03-13-13focus_checked"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">knockoutjs十三  focus checked绑定</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-03-13 00:00:00" datetime="2016-03-12T16:00:00.000Z"  itemprop="datePublished">2016-03-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="knockoutjs十三-focus-checked绑定"><a href="#knockoutjs十三-focus-checked绑定" class="headerlink" title="knockoutjs十三  focus checked绑定"></a>knockoutjs十三  focus checked绑定</h1><p>毕设加上班有点忙，不好意思，今天讲解的时focus和checked绑定，好久没去官网看看，发现他们已经更新了不少东西，这些我以前都没有用过，就找个官方的例子讲解一下。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"hasFocus: isSelected"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-bind</span>=<span class="string">"click: setIsSelected"</span>&gt;</span>Focus programmatically<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"visible: isSelected"</span>&gt;</span>The textbox has focus<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">           Name:</span><br><span class="line">           <span class="tag">&lt;<span class="name">b</span> <span class="attr">data-bind</span>=<span class="string">"visible: !editing(), text: name, click: edit"</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">input</span> <span class="attr">data-bind</span>=<span class="string">"visible: editing, value: name, hasFocus: editing"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>Click the name to edit it; click elsewhere to apply changes.<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Model</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">           <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">           self.isSelected = ko.observable(<span class="literal">false</span>);</span></span><br><span class="line"><span class="actionscript">           self.setIsSelected = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                   <span class="keyword">this</span>.isSelected(<span class="literal">true</span>)</span></span><br><span class="line">               &#125;</span><br><span class="line"><span class="actionscript">               <span class="comment">// Data</span></span></span><br><span class="line"><span class="actionscript">           self.name = ko.observable(<span class="string">"jamas"</span>);</span></span><br><span class="line"><span class="actionscript">           self.editing = ko.observable(<span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">           <span class="comment">// Behaviors</span></span></span><br><span class="line"><span class="actionscript">           self.edit = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">               <span class="keyword">this</span>.editing(<span class="literal">true</span>)</span></span><br><span class="line">           &#125;;</span><br><span class="line">       &#125;</span><br><span class="line"><span class="actionscript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">   <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>focus是很简单的，他只是检测一个元素是否选中，yes返回true，no返回false，就这这么简单，你设置true就选中，设置false就不选中。官方的例子是告诉我们可以作为点击编辑，原本是一个文本，点击之后选中他，让他变为input框，这确实是不错的一个用法。我以前没有使用过所以我也想不出还有其他的什么作用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Send me spam:</span><br><span class="line">          	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">data-bind</span>=<span class="string">"checked: wantsSpam"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">"visible: wantsSpam"</span>&gt;</span></span><br><span class="line">           Preferred flavors of spam:</span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">               	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"cherry"</span> <span class="attr">data-bind</span>=<span class="string">"checked: spamFlavors"</span> /&gt;</span> Cherry</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">              	 <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"almond"</span> <span class="attr">data-bind</span>=<span class="string">"checked: spamFlavors"</span> /&gt;</span> Almond<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">               	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"msg"</span> <span class="attr">data-bind</span>=<span class="string">"checked: spamFlavors"</span> /&gt;</span> Monosodium Glutamate<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Model</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">           <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">           self.wantsSpam = ko.observable(<span class="literal">true</span>);</span></span><br><span class="line"><span class="actionscript">           self.spamFlavors = ko.observableArray([<span class="string">"cherry"</span>, <span class="string">"almond"</span>]);</span></span><br><span class="line">       &#125;</span><br><span class="line"><span class="actionscript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">       <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>checked 比较有内涵啊 ，官方比较多，而且确实radio和checkbox时比较烦的东西，表单中反选是很恶心的一件事。但是我看到ko的这个很厉害，checkbox设置你需要选中的只需要把他的值放入一个数组，那么他就会帮你选中，简单了我们反选的过程，而且选中的值直接放入一个数组，操作简单。如果是radio只要checked的值是true就会选中，false就不会选中。当然你也可以设施一个非boolean值，那么radio中value和checked的值相等的，就会被选中，简单易懂。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- ko foreach: items --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">data-bind</span>=<span class="string">"checkedValue: $data, checked: $root.chosenItems"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text: itemName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /ko --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Model</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">           <span class="keyword">var</span> self = <span class="keyword">this</span>;</span></span><br><span class="line">           self.items = ko.observableArray([&#123;</span><br><span class="line"><span class="actionscript">               itemName: <span class="string">'Choice 1'</span></span></span><br><span class="line">           &#125;, &#123;</span><br><span class="line"><span class="actionscript">               itemName: <span class="string">'Choice 2'</span></span></span><br><span class="line">           &#125;]);</span><br><span class="line">           self.chosenItems = ko.observableArray();</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"><span class="actionscript">       <span class="keyword">var</span> model = <span class="keyword">new</span> Model();</span></span><br><span class="line">       ko.applyBindings(model);</span><br><span class="line">       <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>checked绑定还提供了另一个参数checkedValue,这个参数就和checkbox或是radio中的value是一样的，但是这个checkedValue可以设置一个非string的值，可以是一个对象，那么你选中时chosenItems就是一个数组，你可以获取对象中想要的值，但是我发现反选却不容易，因为其中的对象都是引用，想比较他们不是那么容易，在使用时建议使用value设置值。</p>
+<p>最后几篇可能有点急躁，有误请联系我qq1357197829，我准备过一段时间把这个系列搬到github pages上了，到时候希望大家赏脸。代码托管在<a href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82" target="_blank" rel="noopener">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.750Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/03/13/web/2016-03-13-13focus_checked/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/&title=《knockoutjs十三  focus checked绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/&title=《knockoutjs十三  focus checked绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs十三  focus checked绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/14/web/2016-03-14-14option/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">knockoutjs十四  option绑定</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/12/web/2016-03-12-12textInput/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">knockoutjs十二  textInput绑定</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/&title=《knockoutjs十三  focus checked绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/&title=《knockoutjs十三  focus checked绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs十三  focus checked绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/13/web/2016-03-13-13focus_checked/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aQW4bMQwF0Nz/0u42RTrqJyk6XrxZBXYi6U0AkSD59RU/r2/P07fnT35+/nPN18NzXvPCg4eHhzc4+nnpJ2Sy8fmgyfrJi/jHSfDw8PDWePmBzpd7NahM9k1CFB4eHt4n8JLLupflTkILHh4e3ifzkjBwTpSTckPyLR4eHt7v8vISau/qT/Y6H3q91oKHh4dXW+FygWD755X+Hh4eHt64qz5phk3KDdU1H/fCw8PDW+DdTZHzVHi+b+EF4eHh4S3zekXYSaiolnHL5RI8PDy8NV4yhJoME1RbXL3BrGZJAg8PD2+hOJtc6/NSbzXMVMMVHh4e3h6vekFPEuJbg1zVb/Hw8PA2eNXGVW/4qRo2eruPhlbx8PDwYl61KHAOG9WSR9Iqy3cfpdR4eHh4cVc9b1/lAwHld3wpxf9rBTw8PLxlXq+jVA0JhRx/EJDw8PDw9ni3WlDVoFIdR5gMJeDh4eHd5eWJcp7OVse8JkEiqkzj4eHhLfN6QwDzV3BrEPY/rS88PDy8S7zetX4rPMx//xGJh4eHt8arXrj5yFS1AJEXQaLd8fDw8BZ4zQu3GB6qCfrloS48PDy8NV7e7uq1pvLGVTXVjgIDHh4e3gIvGWOKiqfFBn9v5KsQVPDw8PDewksu9N4hqkMDk/CDh4eHt82btPY3irDVEsnj+fHw8PDWeHnpttfi6v1t/m94XBMPDw/vLby81ZSXIXrX+iSJx8PDw9vgvYrPXgJdLRlHwQMPDw9vgTdpzOep8OR1nF/Q160HDw8Pr8irtqaqbapek6wXTvDw8PDeyat2jqoBo5d8X4tpeHh4eL/Kywu7+UWfn6RcDsbDw8P7AF714p6k4L3BLDw8PLz38PLENzlu3rLqjR0UWl94eHh4C7zq5Z5sU+1M3dr9QsECDw8P7/T8AV4iNcrnnJJoAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>knockoutjs三  text和apperance的绑定 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,knockoutjs">
+    <meta name="description" content="knockoutjs  text和apperance的绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="knockoutjs三  text和apperance的绑定">
+<meta property="og:url" content="http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="knockoutjs  text和apperance的绑定">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-03-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.751Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="knockoutjs">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">knockoutjs三  text和apperance的绑定</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">knockoutjs三  text和apperance的绑定</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2016-03-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#knockoutjs三-text和apperance的绑定"><span class="post-toc-number">1.</span> <span class="post-toc-text">knockoutjs三  text和apperance的绑定</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2016-03-3-3textAndApperance"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">knockoutjs三  text和apperance的绑定</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-03-03 00:00:00" datetime="2016-03-02T16:00:00.000Z"  itemprop="datePublished">2016-03-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="knockoutjs三-text和apperance的绑定"><a href="#knockoutjs三-text和apperance的绑定" class="headerlink" title="knockoutjs三  text和apperance的绑定"></a>knockoutjs三  text和apperance的绑定</h1><p> 由于换了工作，要熟悉新的工作环境，所以没有什么时间做自己的事情，今天开始重新开始继续下面的文章，争取尽早写完</p>
+<pre><code>中间有一部分computed绑定没有写入文章，那是比较高级的用法，开发基本用不到，我在github中有例子，大家想了解
+可以自己去看看。
+</code></pre>
+<p>首先是visible绑定：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item-danger"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">"visible: shouldShowMessage"</span>&gt;</span></span><br><span class="line">                    你能看到</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        self.shouldShowMessage = ko.observable(true);</span><br><span class="line">        self.shouldShowMessage1 = ko.observable(false);</span><br><span class="line">        self.shouldShowMessage2 = ko.observable(0);</span><br><span class="line">        self.shouldShowMessage3 = ko.observable(undefined);</span><br><span class="line">        self.shouldShowMessage4 = ko.observable(null);</span><br><span class="line">        self.shouldShowMessage5 = ko.observable("");</span><br></pre></td></tr></table></figure>
+<p>visible后面的值是类false的值那么该元素就不会显示，比如false，0，undefined，null，“”都是类false的值<br>相反，是类true的值就会显示该元素。visible后面的不仅仅可以是一个observable的值，也可以是一个function，但是记得返回值，不然返回的是undefined，永远不会显示;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item-danger"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">"visible: shouldShowMessage5()"</span>&gt;</span></span><br><span class="line">               你能看到5</span><br><span class="line">           <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       self.shouldShowMessage5 = function()&#123;</span><br><span class="line">       	//return 1;</span><br><span class="line">       &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>方法绑定要加（），不然showShowMessage5返回的是一个function对象，永远是true。</p>
+<p>第二个是text绑定，text就是绑定一个值，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--绑定会覆盖你节点中的值--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"text-muted text-warning"</span>&gt;</span>这是第<span class="tag">&lt;<span class="name">span</span> <span class="attr">data-bind</span>=<span class="string">"text:index"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span>个例子<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--该处绑定的是一个对象，那么就会调用他的toString方法，返回一个字符串，进行绑定--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>切记绑定会覆盖你节点中的值，你要是想加入一点别的字段，可以在js中处理</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.index("6")//就像jQuery中的赋值一样改变这个值。</span><br></pre></td></tr></table></figure>
+
+<p>其他还有些简单的用法可以看我的例子，<br>第三介绍属性绑定;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--html绑定，需要确保是安全的html，而不是别人插入你数据库的，防止脚本注入攻击--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-bind</span>=<span class="string">"html: details"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--css绑定--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--可以添加几个class，当后面条件满足时就起作用--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--不符合JavaScript命名规范的css变量名需要加上''，不然会失效--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">"css: &#123;'text-danger text-center':price()&gt;50 &#125;"</span>&gt;</span>价格高于50就显示红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">id</span>=<span class="string">"upPrice"</span>&gt;</span>提高价格<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">id</span>=<span class="string">"downPrice"</span>&gt;</span>降低价格<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--style绑定--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">data-bind</span>=<span class="string">"style:&#123;color:price() &gt;50?'red ':'black',textDecoration: 'line-through' &#125;"</span>&gt;</span>价格高于50就显示红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--attr绑定--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">data-bind</span>=<span class="string">"attr:&#123;'id':attr().id,'title':attr().title,'href':attr().href&#125;"</span>&gt;</span>属性绑定,点击可直通百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  属性绑定最重要的是要记住不符合JavaScript命名规范的css变量名需要加上’’，不然会失效，比如background-color就需要加‘’，不然会绑定失败。</p>
+<p>  这次的东西很简单，很抱歉很久没有更新，新的一年希望大家进步不断，工作顺利！！！<br>  代码托管在<a href="https://github.com/lushunming/knockoutJSDemo.git%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%85%8B%E9%9A%86%E3%80%82" target="_blank" rel="noopener">https://github.com/lushunming/knockoutJSDemo.git可以直接克隆。</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.751Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/03/03/web/2016-03-3-3textAndApperance/" target="_blank" rel="external">http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/" rel="tag">knockoutjs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/&title=《knockoutjs三  text和apperance的绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/&title=《knockoutjs三  text和apperance的绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs三  text和apperance的绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/04/web/2016-03-4-4Foreach/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">knockoutjs四  foreach的绑定</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/02/web/2016-03-2-2ObservableArray/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">knockoutjs二   observableArray的使用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/&title=《knockoutjs三  text和apperance的绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/&title=《knockoutjs三  text和apperance的绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《knockoutjs三  text和apperance的绑定》 — 在路上&url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2016/03/03/web/2016-03-3-3textAndApperance/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQW4bMRAEQP3/08k1gCOne4ZcK0DtyYgVLosGSKpnXq/4+RU/sxG+fubPf/n68+EHDw8P7+jU88+8G/nd1L//5LsZ1vPBw8PDu8bLX/luoPz1+aIkB8Y/LHh4eHgfwGtvsO0hlC8xHh4e3v/Cm8UH7WizYAIPDw/vSV4+9PeX3Tw+SEiPZi14eHh4kxzglQeyP/vzlfoeHh4e3tGGgLaUNdumZ+W3t7PFw8PDu8DLN9y2oDW7/u6brvDw8PCe5yURbf7KZLqztxcLgYeHh/cgL2+ESppN81j2oRwFDw8Pbw3Lwadii00bVvQuPDw8vGu82dU5jwY2B9Lqt3h4eHjXeG3wmrdS3WvAit6Oh4eHd4E3K+rnr2kbqvIrdVT6wsPDw7vAayfUxrtt4So5VIooGQ8PD+8Crx00vxy3TVRtC0KyxHh4eHg3ePsoIZnErFkqH+3tOHh4eHgXeLPv7HnDwakQtj1yXvmq4+Hh4Y14+Zf82fV3VtZq51ak1Hh4eHiH2lU3Bft8CWZhxPBAwsPDw7vAmxX4k8161qjahiD5nwcPDw/vFG8zoU1TVLscwyIZHh4e3gXeqShh1VQahyDt8uHh4eHd4LVNpe2T/N92688v6Hh4eHg3eG1TadEqGv92FkYUjbN4eHh413izK+/skt3C2ratVY6Ch4eHV/KS4ODAZl3eeGfj4OHh4T3DmxWZ2si1Lb9tjhw8PDy8s7xZLHsq2P0+sDhwzODh4eFd4LWbb37JbsOOdiE2BwkeHh7entdu5W20mo+2iTaiPjI8PDy8o7y8mSnflDfNW4fPNDw8PLwP4LVb9iakaItweHh4eJ/G24QXbaPVrI0ADw8P7xleHgRsSLM4Y9MihoeHh3eDN/tGn5TwN0W1drTDgQUeHh7e35/fnlBzqLk+Zy0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

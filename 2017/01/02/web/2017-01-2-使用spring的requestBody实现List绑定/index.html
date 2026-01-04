@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>使用spring的requestBody实现List绑定 | 在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="java">
+    <meta name="description" content="使用spring的requestBody实现List绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用spring的requestBody实现List绑定">
+<meta property="og:url" content="http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/index.html">
+<meta property="og:site_name" content="在路上">
+<meta property="og:description" content="使用spring的requestBody实现List绑定">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-01-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-04T07:00:33.768Z">
+<meta property="article:author" content="machine">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="在路上" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.1">
+    <script>window.lazyScripts=[]</script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">machine</h5>
+          <a href="mailto:1357197829@qq.com" title="1357197829@qq.com" class="mail">1357197829@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lushunming" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用spring的requestBody实现List绑定</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">使用spring的requestBody实现List绑定</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-01-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用spring的requestBody实现List绑定"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用spring的requestBody实现List绑定</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-web/2017-01-2-使用spring的requestBody实现List绑定"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使用spring的requestBody实现List绑定</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-01-02 00:00:00" datetime="2017-01-01T16:00:00.000Z"  itemprop="datePublished">2017-01-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="使用spring的requestBody实现List绑定"><a href="#使用spring的requestBody实现List绑定" class="headerlink" title="使用spring的requestBody实现List绑定"></a>使用spring的requestBody实现List绑定</h1><p>最近有很多一对多关系的表单需要保存，比如一个人有好几本书，他会在一个表单提交所有的数据，我的后台参数需要绑定一个<code>List</code>。<br>    下面是人和书的model：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> &#123;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/** 自增型主键 */</span></span><br><span class="line">	<span class="keyword">private</span> Integer id;</span><br><span class="line">	<span class="comment">/** 姓名 */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">String</span> name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">String</span> groupId;</span><br><span class="line">	<span class="keyword">private</span> List&lt;Book&gt; books;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">public</span> class Book &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 书籍 */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">Integer</span> id;</span><br><span class="line"><span class="comment">/** 借书人（借书人的） */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">Integer</span> borrower;</span><br><span class="line"><span class="comment">/** 预订人 */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">Integer</span> booker;</span><br><span class="line"><span class="comment">/** 书名 */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">String</span> bookName;</span><br><span class="line"><span class="comment">/** 书本页数 */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">Integer</span> pageCount;</span><br><span class="line"><span class="comment">/** 价格 */</span></span><br><span class="line"><span class="keyword">private</span> Double price;</span><br><span class="line"><span class="comment">/** 作者 */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">String</span> author;</span><br><span class="line"><span class="comment">/** 出版社 */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">String</span> press;</span><br><span class="line"><span class="comment">/** 书籍类别（对应类别表的） */</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">Integer</span> catgory;</span><br></pre></td></tr></table></figure>
+<p>我的后台参数就是<code>User user</code>，其实用form提交也是可以的，只要把book的每一行设为<code>books[i].bookName</code>这样也能提交，但是公司用的是<code>EasyUI</code>的 <code>dataGrid</code>，所以name就不能由我控制。于是我查了很多资料，有了下一种方法，使用 <code>ajax</code>和<code>@RequestBody</code>的方法提交。</p>
+<p>在前台，我们用<code>ajax</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">			url : <span class="string">'/ztree/save'</span>,</span><br><span class="line">		<span class="built_in">	type </span>: <span class="string">"post"</span>,</span><br><span class="line">			data : JSON.stringify(&#123;</span><br><span class="line">				<span class="string">"name"</span> : <span class="string">"a"</span>,</span><br><span class="line">				<span class="string">"books"</span> : [&#123;<span class="string">"bookName"</span>:<span class="string">"a"</span>,<span class="string">"price"</span>:12.3&#125;,&#123;<span class="string">"bookName"</span>:<span class="string">"b"</span>&#125;]</span><br><span class="line">			&#125;),</span><br><span class="line">			contentType : <span class="string">"application/json"</span>,</span><br><span class="line">			beforeSend : function() &#123;</span><br><span class="line">				return $(<span class="string">"#form"</span>).valid();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure>
+<p>我们把<code>dataGrid</code>中的数据变为一个数组，然后将整个表单的数据变为一个json String，<code>contentType</code>设置为  <code> &quot;application/json&quot;</code>,需要校验表单就在<code>ajax</code>的 <code>beforeSend</code>中调用。</p>
+<p>后台我们使用<code>@RequestBody</code>来接受<code>json</code>类型的数据</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(<span class="meta-string">"save"</span>)</span></span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="keyword">public</span> String save(<span class="meta">@RequestBody</span> User user, HttpServletRequest request) &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(user.toString());</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"ztree"</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以直接填充<code>user</code>参数。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2026-01-04T07:00:33.768Z" itemprop="dateUpdated">2026-01-04 15:00:33</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/" target="_blank" rel="external">http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/</a>
+    </div>
+    <footer>
+        <a href="http://www.lushunming.com.cn">
+            <img src="/img/avatar.jpg" alt="machine">
+            machine
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/&title=《使用spring的requestBody实现List绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/&title=《使用spring的requestBody实现List绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用spring的requestBody实现List绑定》 — 在路上&url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/03/06/linux/2017-03-06-zabbix%E5%AE%89%E8%A3%85/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">zabbix安装</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/01/%E7%94%9F%E6%B4%BB/2017-01-1-%E5%9B%9E%E5%BF%862016/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2016的回忆</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131017"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>machine &copy; 2015 - 2026</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/&title=《使用spring的requestBody实现List绑定》 — 在路上&pic=http://www.lushunming.com.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/&title=《使用spring的requestBody实现List绑定》 — 在路上&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用spring的requestBody实现List绑定》 — 在路上&url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/&via=http://www.lushunming.com.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lushunming.com.cn/2017/01/02/web/2017-01-2-%E4%BD%BF%E7%94%A8spring%E7%9A%84requestBody%E5%AE%9E%E7%8E%B0List%E7%BB%91%E5%AE%9A/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEh0lEQVR42u3ay47aQBAF0Pz/T0+kKIssAtxbZSTaHK9GMH70MVJ1PX79io+fP0f7SXK12Vn/fvLv8eis2R3rAxMmTJgwfSTTz9MjufRmqc+XlJz7/MmTlxRdARMmTJgwHc502eWentuG9hlZ/klxfUyYMGHC9AVMs2D8ExzPQZP/f37fNg3GhAkTJkzfyZQTJGG+TZjbl5E/ISZMmDBh+gamdsGb0moC8XxT0i5+ti5MmDBhwnQPps2ozel/v3G+CRMmTJgwfQDTT3nsm6B5MTffNLxvvX/vggkTJkyYjmXKh13yRHS2ydiMk16VQr94KkyYMGHCdCDTc6C89DlrZG7C82w8aNhwxYQJEyZMhzPNGpNXNQjzxDgfn23HdF7cBRMmTJgwHcuUPFYemDdkbxymWbdvMWHChAnT6UybcdJNwE4KxHkxN98W5N9iwoQJE6bTmfIQvhnKuTbwb5qUs00PJkyYMGG6E9NVQTopv7Zl1g1EO0T7sBaOCRMmTJiOYroqrW3hrhrxuWpkJ1kLJkyYMGE6l2kTStvAvx/BmTVEZ5sMTJgwYcJ0D6bZUvOWZ9t6TF5V26qsOTBhwoQJ0y2Y9gM3swA8K/W2uG3C/PBemDBhwoTpcKYkoLal280WYVOKbZPnaCOCCRMmTJiOZWoXeW0Zt02P2+R2P94abQswYcKECdMHM+0Ha5IUdzNs2pJtQB8+FSZMmDBhuh1T3t2bNRfze+WtzTx1z++ICRMmTJjuzTRrPe6HhGYt1RludAVMmDBhwnRrprxsmieibfl1ltbOkvDhhgATJkyYMH08UzsikySibdl3k8rOhoGi14wJEyZMmA5nmiWx+wHTTeG1TcvbgvJ/NgSYMGHChOl2TPvEOE9lk082ZeL8hdUbAkyYMGHC9MFMbatvM3zTFnNnSfi125SH98KECRMmTAcytUXedsgmWXyygFkSm9O/eBmYMGHChOkopk3JtR2yadPgHGg/tFpvAjBhwoQJ0yFMCVkS1Ddpbb5daIuz+Xak+OlgwoQJE6YDmdqHni0pD/8XD5jGP4IXpWRMmDBhwnQLptnCZpuDfMC03ZrMXi0mTJgwYfoGpk1ts+2gzkZz8sLuJnl+Mc+LCRMmTJiOYkqC7rXF3/bcWRty8/pfXAETJkyYMN2IKb9ljvWORmme+uZPWE/3YMKECROmQ5ja9mTe2pyF8M199xsLTJgwYcJ0LlNbZt2UcZN3NWPNA/9sSAgTJkyYMN2DaTOaMxuLaYu5mxGczdNiwoQJE6ZzmWZA+7Zim4jOCsTt8xfbF0yYMGHCdAjTT3m0j54ztUnsbAwoT/KLGjMmTJgwYfpgpvxIguts2e8YzZmNE13AhwkTJkyYPpJp1uRri6qzR0zuOyOrR3wwYcKECdPhTHmA35+1LxnnrcpNkRcTJkyYMH0b03DMZb28JHgn4X82JIQJEyZMmL6NadaqzMvH+6HSWZs2mmnChAkTJkzHMuUl1DyNbBecv57829mP4D/nYsKECROmY5n2gzv7ADyDa6+/f/2YMGHChOkopt9xWf0ukbCIwAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.1"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.6.1" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'On The Way！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Call Me Machine';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

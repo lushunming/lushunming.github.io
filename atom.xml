@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.lushunming.com.cn/"/>
-  <updated>2026-01-04T23:57:45.477Z</updated>
+  <updated>2026-01-08T01:13:05.837Z</updated>
   <id>http://www.lushunming.com.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.lushunming.com.cn/2026/01/04/tvbox/2026-01-04-FreeBox%E6%BA%90%E4%BD%BF%E7%94%A8/"/>
     <id>http://www.lushunming.com.cn/2026/01/04/tvbox/2026-01-04-FreeBox源使用/</id>
     <published>2026-01-03T16:00:00.000Z</published>
-    <updated>2026-01-04T23:57:45.477Z</updated>
+    <updated>2026-01-08T01:13:05.837Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="FreeBox源使用"><a href="#FreeBox源使用" class="headerlink" title="FreeBox源使用"></a>FreeBox源使用</h1><h2 id="地址-任意选一个"><a href="#地址-任意选一个" class="headerlink" title="地址(任意选一个)"></a>地址(任意选一个)</h2><ol><li><code>https://pc.lushunming.qzz.io/json/index.json</code></li></ol><h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><ol><li><p>下载FreeBox <code>https://github.com/kknifer7/FreeBox</code></p></li><li><p>清除源缓存，更新到最新的源</p></li><li><p>站源切换到<code>Cookie设置</code></p></li><li><p>UC设置:选择分类<code>UC</code>,然后点击设置Token，弹出二维码后，用手机端扫码即可。如果以前使用过UC，那么就可以直接享受UC原画高清视频。如果是本源的新用户，需要找一个UC资源观看，他会自动弹出窗口，然后选择扫二维码扫码即可观看。</p></li><li><p>天翼云盘设置：在用户目录（一般是<code>C:\Users\Administrator</code>）里找到<code>TV</code>文件夹，然后创建<code>.tianyi</code>,内容是</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"user"</span>:&#123;<span class="attr">"cookie"</span>:<span class="string">"&#123;\"username\":\"用户名\",\"password\":\"密码\"&#125;"</span>&#125;&#125;</span><br></pre></td></tr></table></figure></li><li><p>其他网盘在打开资源的时候会弹出二维码提示扫码</p></li></ol><h2 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h2><ol><li>有的旧用户设置了Cookie还是无法观看，可以到用户目录（一般是<code>C:\Users\Administrator</code>）里面找到TV文件夹，删除里面的<code>.uc</code> 和<code>.uctoken</code>文件（可能被隐藏，设置里打开显示隐藏文件，或者将文件夹删除）,再重新按照操作走一遍。</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="FreeBox源使用"><a href="#FreeBox源使用" class="headerlink" title="FreeBox源使用"></a>FreeBox源使用</h1><h2 id="地址-任意选一个"><a href="#地址-任意选一个" class="headerlink" title="地址(任意选一个)"></a>地址(任意选一个)</h2><ol><li><code>https://pc.lushunming.qzz.io/json/config.json</code></li></ol><h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><ol><li><p>下载FreeBox <code>https://github.com/kknifer7/FreeBox</code></p></li><li><p>清除源缓存，更新到最新的源</p></li><li><p>站源切换到<code>Cookie设置</code></p></li><li><p>UC设置:选择分类<code>UC</code>,然后点击设置Token，弹出二维码后，用手机端扫码即可。如果以前使用过UC，那么就可以直接享受UC原画高清视频。如果是本源的新用户，需要找一个UC资源观看，他会自动弹出窗口，然后选择扫二维码扫码即可观看。</p></li><li><p>天翼云盘设置：在用户目录（一般是<code>C:\Users\Administrator</code>）里找到<code>TV</code>文件夹，然后创建<code>.tianyi</code>,内容是</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"user"</span>:&#123;<span class="attr">"cookie"</span>:<span class="string">"&#123;\"username\":\"用户名\",\"password\":\"密码\"&#125;"</span>&#125;&#125;</span><br></pre></td></tr></table></figure></li><li><p>其他网盘在打开资源的时候会弹出二维码提示扫码</p></li></ol><h2 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h2><ol><li>有的旧用户设置了Cookie还是无法观看，可以到用户目录（一般是<code>C:\Users\Administrator</code>）里面找到TV文件夹，删除里面的<code>.uc</code> 和<code>.uctoken</code>文件（可能被隐藏，设置里打开显示隐藏文件，或者将文件夹删除）,再重新按照操作走一遍。</li></ol>]]></content>
     
     <summary type="html">
     
